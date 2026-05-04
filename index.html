@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            background-color: grey;
+        }
+
+
+
+        /* 1. Container for the whole line */
+        .row {
+            display: flex;
+            gap: 10px;
+            padding: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+            scale: .9;
+            /* NEW: Allows groups to drop to the next line if screen is too small */
+        }
+
+        @media (max-width: 768px) {
+            .row {
+                display: grid;
+                position: absolute;
+            }
+        }
+
+        /* Logical wrapper for each letter group */
+        .group {
+            display: flex;
+            gap: 0;
+            cursor: pointer;
+            transition: gap 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .group:hover {
+            gap: 10px;
+        }
+
+        /* 2. Individual boxes holding the images */
+        .item {
+            border-radius: 8px;
+            overflow: hidden;
+            flex-shrink: 0;
+            /* CRITICAL: Prevents flexbox from squishing and overlapping elements */
+        }
+
+        /* 
+  3. The Max-Width Trick
+  Instead of hardcoding a width, we use max-width. 
+*/
+        .item.prime {
+            max-width: 0;
+            /* Hides the element */
+            opacity: 0;
+            transition: max-width 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* 
+  Expand to a max-width LARGER than your widest image.
+  (e.g., if your image is 250px, 500px is perfectly fine. It will only expand to the image's actual size)
+*/
+        .group:hover .item.prime {
+            max-width: 500px;
+            opacity: 1;
+        }
+
+        /* 4. Set your actual image sizes here */
+        .item img {
+            width: 200px;
+            /* Put your desired large width here */
+            height: 100px;
+            /* Put your desired height here */
+            display: block;
+            object-fit: cover;
+            min-width: 260px;
+            /* NEW: Forces the image to never squish */
+        }
+
+        .item.prime,
+        .item.main {
+            border: 2px black solid;
+        }
+
+        .darkSouls img {
+            width: 550px;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row">
+
+
+        <!-- Souls -->
+        <div class="group">
+            <div class="darkSouls item prime"><img src="img/header/DarkS/DarkS.png" alt="Dark Souls"></div>
+            <div class="item prime"><img src="img/header/DS/demons.png" alt="Demon's'"></div>
+            <div class="item main"><img src="img/header/DS/image1.png" alt="Souls"></div>
+        </div>
+        <!-- Borne -->
+        <div class="group">
+            <div class="item prime"><img src="img/header/BB/blood.png" alt="Blood'"></div>
+            <div class="item main"><img src="img/header/BB/borne.png" alt="borne"></div>
+        </div>
+        <!-- Kiro -->
+        <div class="group">
+            <div class="item prime"><img src="https://placehold.co/60x60/9999ff/black?text=C'" alt="Se'"></div>
+            <div class="item main"><img src="https://placehold.co/60x60/0000ff/white?text=C" alt="kiro"></div>
+        </div>
+        <!-- Ring -->
+        <div class="group">
+            <div class="item prime"><img src="https://placehold.co/60x60/ffff99/black?text=D'" alt="Elden'"></div>
+            <div class="item main"><img src="https://placehold.co/60x60/ffaa00/white?text=D" alt="Ring"></div>
+        </div>
+    </div>
+</body>
+
+</html>
