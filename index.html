@@ -13,7 +13,7 @@
 
 
 
-        /* 1. Container for the whole line */
+        /* bigger wrapper */
         .row {
             display: flex;
             gap: 20px;
@@ -21,7 +21,6 @@
             flex-wrap: wrap;
             justify-content: center;
             scale: .9;
-            /* NEW: Allows groups to drop to the next line if screen is too small */
         }
 
         .item {
@@ -31,7 +30,7 @@
             flex-shrink: 0;
         }
 
-        /* mensi wrapper */
+        /* smaller wrapper */
         .group {
             display: flex;
             gap: 0;
@@ -45,7 +44,6 @@
 
         .item.prime {
             max-width: 0;
-            /* Hides the element */
             opacity: 0;
             transition: max-width 0.8s cubic-bezier(0.4, 0, 0.2, 1),
                 opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
