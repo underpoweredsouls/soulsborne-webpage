@@ -1,26 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Soulsborne Univerzum | Hlavní stránka</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        body {
-            background-color: grey;
+        /* ZÁKLADNÍ NASTAVENÍ */
+        * {
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
         }
 
+        ::-webkit-scrollbar {
+            background-color: #111;
+            margin: 0;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #2a2a2a;
+        }
+
+        body {
+            background-color: #111;
+            color: #d3d3d3;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #ff8400;
+            text-align: center;
+            font-weight: normal;
+        }
+
+        /* --- OBRÁZKOVÁ NAVIGACE --- */
 
 
-        /* bigger wrapper */
+        header {
+            background-color: #0c0b0b;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
         .row {
             display: flex;
-            gap: 20px;
-            padding: 40px;
+            gap: clamp(10px, 1.5vw, 20px);
+            padding: clamp(10px, 2vw, 20px);
             flex-wrap: wrap;
             justify-content: center;
-            scale: .9;
+            align-items: center;
         }
 
         .item {
@@ -28,9 +62,9 @@
             border-radius: 8px;
             overflow: hidden;
             flex-shrink: 0;
+            display: flex;
         }
 
-        /* smaller wrapper */
         .group {
             display: flex;
             gap: 0;
@@ -39,7 +73,7 @@
         }
 
         .group:hover {
-            gap: 10px;
+            gap: 5px;
         }
 
         .item.prime {
@@ -49,49 +83,470 @@
                 opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .group:hover .item.prime {
-            max-width: 700px;
+        .group:hover .item.prime,
+        .group:focus-within .item.prime {
+            max-width: 500px;
+            opacity: 1;
+        }
+
+        .fa.fa-home {
+            font-size: 32px;
+            position: fixed;
+            z-index: 100;
+            top: 40px;
+            left: 20px;
+        }
+
+        /* --- ŠKÁLOVÁNÍ SAMOTNÝCH OBRÁZKŮ --- */
+        .item img {
+            height: clamp(45px, 6vw, 85px);
+            width: auto;
+            max-width: none;
+            display: block;
+        }
+
+        /* darksouls je dělený jinak */
+        .darkSouls img {
+            width: var(--item-width);
+            max-width: none;
+            object-fit: cover;
+            object-position: left center;
+        }
+
+        /* --- TEXTOVÉ SEKCE --- */
+        .content-section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .content-section p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        /*  HERNÍ KARTY */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .menu-card {
+            position: relative;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #444;
+            opacity: 0.7;
+            min-height: 80px;
+            max-height: 80px;
+            overflow: hidden;
+            transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .menu-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-color: #2a2a2a;
+            background-size: cover;
+            background-position: center;
+            opacity: .8;
+            z-index: -10;
+            transition: opacity .8s ease;
+        }
+
+
+        .menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            opacity: 1;
+        }
+
+        .menu-card.is-open.menu-card::before {
+            opacity: .3;
+        }
+
+        #SekiroCard::before {
+            content: "";
+            background-image: url('img/header/SSDT/titlescreen.jpg');
+        }
+
+
+        #DarkSoulsCard::before {
+            content: "";
+            background-image: url('img/header/DarkS/DS3.jpg');
+        }
+
+        #EldenRingCard::before {
+            content: "";
+            background-image: url(img/header/ER/coverart.jpg);
+        }
+
+        #BloodborneCard::before {
+            content: "";
+            background-image: url(img/header/BB/bloodborne-cover.jpg);
+        }
+
+
+
+        .buttonHeader {
+            font-size: 35px;
+            color: white;
+            cursor: pointer;
+            user-select: none;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            /* Výraznější stín pro lepší čitelnost na obrázku */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .select {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            font-size: 22px;
+            opacity: 0;
+            transition: opacity 1s ease;
+            color: #ff8400;
+            pointer-events: none;
+            margin-top: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+        a {
+            color: #ff8400;
+            text-decoration: none;
+            transition: all .8s ease;
+
+        }
+
+        a:hover {
+            color: rgb(255, 224, 140);
+            transform: translateY(5px), scale(1.2);
+        }
+
+        .fa.fa-chevron-down {
+            transition: transform 1s ease;
+        }
+
+        /* --- JS TŘÍDY PRO KARTY --- */
+        .menu-card.is-open {
+            min-height: 275px;
+            opacity: 1;
+        }
+
+        .menu-card.is-open .select {
+            opacity: 1;
+            transition-delay: 0.3s;
+            pointer-events: all;
+        }
+
+        .menu-card.is-open .fa.fa-chevron-down {
+            transform: rotate(180deg);
+        }
+
+        .item img {
+            height: 80px;
+        }
+
+
+        .wrapper {
+            display: grid;
+            grid-template-rows: 20px auto;
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: fixed;
+            top: 120px;
+            height: 90vh;
+            padding: 10vh 20px;
+            font-size: large;
+            /* background-color: black; */
+        }
+
+        /* tooltips */
+        .tooltip::after {
+            content: "";
+            position: relative;
+            opacity: 0;
+            transition: opacity 0.5s;
+            left: 10px;
+            background-color: #111;
+        }
+
+        .sidebar i:hover+#cast1::after {
+            content: "example";
             opacity: 1;
         }
 
 
-        .item img {
-            width: var(--item-width);
-            min-width: var(--item-width);
-            max-width: var(--item-width);
-            height: 130px;
-            display: block;
+        .sidebar i:hover+#cast2::after {
+            content: "example";
+            opacity: 1;
         }
 
 
+        .sidebar i:hover+#cast3::after {
+            content: "example";
+            opacity: 1;
+        }
+
+        .sidebar i:hover+#cast4::after {
+            content: "example";
+            opacity: 1;
+        }
+
+        /* Zmenšení obrázků menu na malých mobilech */
+        .buttonHeader {
+            font-size: 25px;
+        }
+
+        /* --- RESPONZIVITA OBRÁZKOVÉHO MENU --- */
+
+        /* --- MOBILNÍ ROZLOŽENÍ --- */
+
+        @media (max-width: 1000px) {
+            header {
+                position: relative;
+                flex-direction: column;
+            }
+
+            #souls {
+                display: grid;
+                grid-template-areas: "dark dark"
+                    "demon dsouls";
+                gap: 5px;
+                /* Kompaktnější mezery pro grid na mobilu */
+                justify-content: center;
+            }
+
+            #souls>#item {
+                grid-area: demon;
+                justify-self: end;
+                /* Zarovná k levé půlce */
+            }
+
+            #souls>.item.main {
+                grid-area: dsouls;
+                justify-self: start;
+                /* Zarovná k pravé půlce */
+            }
+
+            #souls>.darkSouls {
+                grid-area: dark;
+                justify-self: center;
+                /* Nadpis vycentrován nahoře */
+            }
+        }
     </style>
 </head>
 
 <body>
-    <div class="row">
-        <!-- Souls -->
-        <div class="group">
-            <div class="darkSouls item prime" style="--item-width:100%;"><a href=""><img class="darkSouls" src="img/header/DarkS/image1.png" alt="Dark Souls"></a>
+
+    <!-- TOP NAVIGACE (Z index.html) -->
+
+    <a href=""><i class="fa fa-home"></i></a>
+
+    <header>
+        <div class="row">
+            <!-- Souls -->
+            <div class="group" id="souls">
+                <div class="darkSouls item prime" style="--item-width:100%;">
+                    <a href="dark_souls.html"><img src="img/header/DarkS/darkSouls.png" alt="Dark"></a>
+                </div>
+                <div class="item prime" id="item">
+                    <a href="DS.html"><img src="img/header/DS/demons.png" alt="Demon's"></a>
+                </div>
+                <div class="item main">
+                    <a href="DS.html"><img src="img/header/DS/souls.png" alt="Souls"></a>
+                </div>
             </div>
-            <div class="item prime"><a href=""><img src="img/header/DS/demons.png" alt="Demon's'"></a></div>
-            <div class="item main"><a href=""><img src="img/header/DS/souls.png" alt="Souls"></a></div>
+            <!-- Borne -->
+            <div class="group">
+                <div class="item prime">
+                    <a href="BB.html"><img src="img/header/BB/blood.png" alt="Blood'"></a>
+                </div>
+                <div class="item main">
+                    <a href="BB.html"><img src="img/header/BB/borne.png" alt="borne"></a>
+                </div>
+            </div>
+            <!-- Kiro -->
+            <div class="group">
+                <div class="item prime" style="--item-width:var(--item-width);">
+                    <a href="sekiro.html"><img src="img/header/SSDT/se.png" alt="Se"></a>
+                </div>
+                <div class="item main">
+                    <a href="sekiro.html"><img src="img/header/SSDT/kiro.png" alt="kiro"></a>
+                </div>
+            </div>
+            <!-- Ring -->
+            <div class="group">
+                <div class="er item prime">
+                    <a href="ER.html"><img src="img/header/ER/elden.png" alt="Elden'"></a>
+                </div>
+                <div class="item main">
+                    <a href="ER.html"><img src="img/header/ER/ring.png" alt="Ring"></a>
+                </div>
+            </div>
         </div>
-        <!-- Borne -->
-        <div class="group">
-            <div class="item prime"><a href=""><img src="img/header/BB/blood.png" alt="Blood'"></a></div>
-            <div class="item main"><a href=""><img src="img/header/BB/borne.png" alt="borne"></a></div>
-        </div>
-        <!-- Kiro -->
-        <div class="group">
-            <div class="item prime" style="--item-width:var(--item-width);"><a href=""><img src="img/header/SSDT/se.png" alt="Se"></a></div>
-            <div class="item main"><a href=""><img src="img/header/SSDT/kiro.png" alt="kiro"></a></div>
-        </div>
-        <!-- Ring -->
-        <div class="group">
-            <div class="er item prime"><a href=""><img src="img/header/ER/elden.png" alt="Elden'"></a></div>
-            <div class="item main"><a href=""><img src="img/header/ER/ring.png" alt="Ring"></a></div>
-        </div>
+    </header>
+
+    <div class="wrapper">
+        <nav id="zlysidebar" style="visibility: hidden; position: relative;"></nav>
+        <nav class="sidebar" id="sidebar">
+            <div><a href="#"><i class="fa fa-flag"></i><span class="tooltip" id="cast1"></span></a></div>
+            <div><a href="#"><i class="fa fa-flag"></i><span class="tooltip" id="cast2"></span></a></div>
+            <div><a href="#"><i class="fa fa-flag"></i><span class="tooltip" id="cast3"></span></a></div>
+            <div><a href="#"><i class="fa fa-flag"></i><span class="tooltip" id="cast4"></span></a></div>
+        </nav>
+
+        <!-- úvod -->
+        <section class="content-section">
+            <h1>Fenomén jménem Soulsborne</h1>
+            <!-- TIP: Tento první blok může obsahovat vysvětlení původu termínu (Demon's Souls -> Dark Souls -> Bloodborne) -->
+            <p>Vítejte v ultimátním průvodci světy, které stvořil Hidetaka Miyazaki a studio FromSoftware. Pojem
+                "Soulsborne" vznikl spojením názvů sérií <a href=""><em>Souls</em></a> a hry <a
+                    href=""><em>Bloodborne</em></a>, a dnes reprezentuje
+                specifický žánr akčních RPG, který definoval uplynulou dekádu herního průmyslu.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore
+                et
+                dolore
+                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                ea
+                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+
+            <!-- TIP: Zde DOPORUČUJI vytvořit odkaz na samostatnou podstránku o vývojářích nebo panu Miyazakim.
+             Např.: <a href="studio.html" class="read-more">Přečíst si více o FromSoftware...</a> -->
+        </section>
+
+        <!-- HERNÍ ROZCESTNÍK (Vaše karty z gameButtons.html) -->
+        <section class="cards-grid">
+
+            <!-- KARTA 1: DARK SOULS -->
+            <div id="DarkSoulsCard" class="menu-card">
+                <div class="buttonHeader menu-button">
+                    <span>DARK SOULS</span><i class="fa fa-chevron-down"></i>
+                </div>
+                <div class="select">
+                    <div><a href="ds_svet.html">Svět a Lore</a></div>
+                    <div><a href="ds_pribeh.html">Příběh</a></div>
+                    <div><a href="ds_postavy.html">NPC Postavy</a></div>
+                    <div><a href="ds_bosses.html">Démoni a Bossové</a></div>
+                    <div><a href="ds_predmety.html">Klíčové předměty</a></div>
+                    <div><a href="ds_zbrane.html">Výzbroj a zbraně</a></div>
+                </div>
+            </div>
+
+            <!-- KARTA 2: BLOODBORNE -->
+            <div id="BloodborneCard" class="menu-card">
+                <div class="buttonHeader menu-button">
+                    <span>BLOODBORNE</span><i class="fa fa-chevron-down"></i>
+                </div>
+                <div class="select">
+                    <div><a href="bb_svet.html">Yharnam</a></div>
+                    <div><a href="bb_pribeh.html">Lovecká noc</a></div>
+                    <div><a href="bb_postavy.html">Lovci a Oběti</a></div>
+                    <div><a href="bb_bosses.html">Prastaří (Great Ones)</a></div>
+                    <div><a href="bb_predmety.html">Krev a Raritní lov</a></div>
+                    <div><a href="bb_zbrane.html">Trik-zbraně</a></div>
+                </div>
+            </div>
+
+            <!-- KARTA 3: SEKIRO -->
+            <div id="SekiroCard" class="menu-card">
+                <div class="buttonHeader menu-button">
+                    <span>SEKIRO</span><i class="fa fa-chevron-down"></i>
+                </div>
+                <div class="select">
+                    <div><a href="sek_svet.html">Ashina</a></div>
+                    <div><a href="sek_pribeh.html">Cesta Shinobiho</a></div>
+                    <div><a href="sek_postavy.html">Postavy</a></div>
+                    <div><a href="sek_bosses.html">Nepřátelé</a></div>
+                    <div><a href="sek_predmety.html">Prostetické nástroje</a></div>
+                    <div><a href="sek_zbrane.html">Bojová umění</a></div>
+                </div>
+            </div>
+
+            <!-- KARTA 4: ELDEN RING -->
+            <div id="EldenRingCard" class="menu-card">
+                <div class="buttonHeader menu-button">
+                    <span>ELDEN RING</span><i class="fa fa-chevron-down"></i>
+                </div>
+                <div class="select">
+                    <div><a href="er_svet.html">The Lands Between</a></div>
+                    <div><a href="er_pribeh.html">Roztříštění</a></div>
+                    <div><a href="er_postavy.html">Polobozi (Demigods)</a></div>
+                    <div><a href="er_bosses.html">Nepřátelé</a></div>
+                    <div><a href="er_predmety.html">Hlavní runy (Great Runes)</a></div>
+                    <div><a href="er_zbrane.html">Výzbroj a Kouzla</a></div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- DALŠÍ TEXTOVÁ SEKCE - FILOZOFIE HRATELNOSTI -->
+        <section class="content-section">
+            <h2>Filozofie herního designu a "Neodpustitelná obtížnost"</h2>
+            <!-- TIP: Sem se skvěle hodí dlouhý text o tom, proč jsou tyto hry těžké, 
+             jak funguje vyprávění skrz prostředí (environmental storytelling) atd. -->
+            <p>Často diskutovaným prvkem Souls her je jejich pověstná obtížnost. Nejde však o prvoplánovou snahu
+                hráče
+                frustrovat, ale o pečlivě navržený systém, kde smrt slouží jako nástroj učení. Každý krok do neznáma
+                vyžaduje respekt k hernímu prostředí.</p>
+
+            <p>Suspendisse potenti. Nullam ac tortor leo. Curabitur sed lectus vehicula, rutrum metus ac, malesuada
+                diam.
+                Phasellus consectetur odio a vulputate tempus. Mauris eleifend bibendum justo, at fermentum felis.
+                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In hac
+                habitasse platea dictumst. Quisque iaculis dolor nec nunc tincidunt, non dapibus augue venenatis.
+            </p>
+
+        </section>
     </div>
+    <!-- JAVASCRIPT -->
+    <script>
+
+        const menuButtons = document.querySelectorAll('.menu-button');
+
+        menuButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                // nalezeni specificke kliknute karty
+                const parentCard = this.closest('.menu-card');
+                // exklusivita karet
+                document.querySelectorAll('.menu-card').forEach(card => {
+                    if (card !== parentCard) card.classList.remove('is-open');
+                });
+
+                // přepne třídu .is-open
+                parentCard.classList.toggle('is-open');
+            });
+        });
+
+        // sidebar fix
+        const sidebar = document.getElementById("sidebar");
+        const hiddennav = document.getElementById("zlysidebar")
+
+        hiddennav.innerHTML = sidebar.innerHTML;
+
+    </script>
+
 </body>
 
 </html>
