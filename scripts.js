@@ -46,7 +46,6 @@ window.addEventListener('resize', function () {
         row.style.pointerEvents = "none";
         header.style.maxHeight = "100px";
         row.classList.remove('mobile-active');
-        headerButtonIcon.className = "fa fa-bars";
     }
     else {
         row.style.opacity = "";
