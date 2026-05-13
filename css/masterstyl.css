@@ -196,23 +196,23 @@
 
         #SekiroCard::before {
             content: "";
-            background-image: url('img/header/SSDT/titlescreen.jpg');
+            background-image: url(../img/header/SSDT/titlescreen.jpg);
         }
 
 
         #DarkSoulsCard::before {
             content: "";
-            background-image: url('img/header/DarkS/DS3.jpg');
+            background-image: url(../img/header/DarkS/DS3.jpg);
         }
 
         #EldenRingCard::before {
             content: "";
-            background-image: url(img/header/ER/coverart.jpg);
+            background-image: url(../img/header/ER/coverart.jpg);
         }
 
         #BloodborneCard::before {
             content: "";
-            background-image: url(img/header/BB/bloodborne-cover.jpg);
+            background-image: url(../img/header/BB/bloodborne-cover.jpg);
         }
 
         #EldenRingCard .select>div>a {
