@@ -1,0 +1,519 @@
+        /* ZÁKLADNÍ NASTAVENÍ */
+        * {
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        ::-webkit-scrollbar {
+            background-color: #0c0b0b;
+            margin: 0;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #2a2a2a;
+        }
+
+        body {
+            background-color: #111;
+            color: #d3d3d3;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #ff8400;
+            text-align: center;
+            font-weight: normal;
+        }
+
+        /* --- OBRÁZKOVÁ NAVIGACE --- */
+
+
+        header {
+            background-color: #0c0b0b;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            position: sticky;
+            top: 0;
+            z-index: 5;
+            transition: all 1s ease;
+            max-height: 120px;
+        }
+
+        .row {
+            display: flex;
+            gap: clamp(10px, 1.5vw, 15px);
+            padding: clamp(10px, 2vw, 15px);
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            transition: opacity .5s ease;
+            opacity: 0;
+        }
+
+        .item {
+            --item-width: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            flex-shrink: 0;
+            display: flex;
+        }
+
+        .group {
+            display: flex;
+            gap: 0;
+            cursor: pointer;
+            transition: gap 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .group:hover {
+            gap: 5px;
+        }
+
+        .item.prime {
+            max-width: 0;
+            opacity: 0;
+            transition: max-width 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .group:hover .item.prime,
+        .group:focus-within .item.prime {
+            max-width: 500px;
+            opacity: 1;
+        }
+
+        .fa.fa-home {
+            font-size: 32px;
+            position: fixed;
+            z-index: 100;
+            top: 40px;
+            left: 30px;
+        }
+
+        .fa.fa-bars {
+            position: fixed;
+            z-index: 1000;
+            right: 0;
+            top: 0;
+            margin-right: 35px;
+            margin-top: 35px;
+            font-size: 32px;
+            color: #ff8400;
+            transition: all .8s ease;
+            cursor: pointer;
+            display: none;
+        }
+
+        .fa.fa-bars:hover {
+            color: rgb(255, 224, 140);
+        }
+
+        /* --- ŠKÁLOVÁNÍ SAMOTNÝCH OBRÁZKŮ --- */
+        .item img {
+            height: clamp(45px, 6vw, 85px);
+            width: auto;
+            max-width: none;
+            display: block;
+        }
+
+        /* darksouls je dělený jinak */
+        .darkSouls img {
+            width: var(--item-width);
+            max-width: none;
+            object-fit: cover;
+            object-position: left center;
+        }
+
+        /* --- TEXTOVÉ SEKCE --- */
+        .content-section {
+            max-width: 900px;
+            width: 90%;
+            margin: 40px auto;
+            padding: 0 20px;
+            border: 2px solid #0c0b0b;
+            background-color: #0c0b0b;
+            border-radius: 16px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            transition: all 1s ease;
+        }
+
+        .content-section p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        /*  HERNÍ KARTY */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .menu-card {
+            position: relative;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #444;
+            opacity: 0.7;
+            min-height: 80px;
+            max-height: 80px;
+            overflow: hidden;
+            transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .menu-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-color: #2a2a2a;
+            background-size: cover;
+            background-position: center;
+            opacity: .8;
+            z-index: -10;
+            transition: opacity .8s ease;
+        }
+
+
+        .menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            opacity: 1;
+        }
+
+        .menu-card.is-open.menu-card::before {
+            opacity: .3;
+        }
+
+        #SekiroCard::before {
+            content: "";
+            background-image: url('img/header/SSDT/titlescreen.jpg');
+        }
+
+
+        #DarkSoulsCard::before {
+            content: "";
+            background-image: url('img/header/DarkS/DS3.jpg');
+        }
+
+        #EldenRingCard::before {
+            content: "";
+            background-image: url(img/header/ER/coverart.jpg);
+        }
+
+        #BloodborneCard::before {
+            content: "";
+            background-image: url(img/header/BB/bloodborne-cover.jpg);
+        }
+
+        #EldenRingCard .select>div>a {
+            color: green
+        }
+
+        #DarkSoulsCard .select>div>a {
+            color: yellow
+        }
+
+        #BloodborneCard .select>div>a {
+            color: rgb(0, 174, 255);
+        }
+
+        .buttonHeader {
+            font-size: 35px;
+            color: white;
+            cursor: pointer;
+            user-select: none;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .select {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            font-size: 22px;
+            opacity: 0;
+            transition: opacity 1s ease;
+            color: #ff8400;
+            pointer-events: none;
+            margin-top: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+        a {
+            color: #ff8400;
+            text-decoration: none;
+            transition: all .8s ease;
+
+        }
+
+        a:hover {
+            color: rgb(255, 224, 140);
+            transform: translateY(5px), scale(1.2);
+        }
+
+        .fa.fa-chevron-down {
+            transition: transform 1s ease;
+        }
+
+
+        .item img {
+            height: 80px;
+        }
+
+
+        .wrapper {
+            margin-left: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            position: fixed;
+            top: 100px;
+            left: 0;
+            width: 80px;
+            height: calc(100vh - 100px);
+            padding-top: 10vh;
+            align-items: center;
+            justify-content: space-evenly;
+            z-index: 20;
+            background-color: #0c0b0b;
+        }
+
+        .sidebar div a {
+            position: relative;
+            font-size: 28px;
+            display: flex;
+            align-items: center;
+            padding-bottom: 50px;
+        }
+
+        .buttonHeader {
+            font-size: 25px;
+        }
+
+        /* --- JS TŘÍDY --- */
+        .dissappear {
+            display: none;
+        }
+
+        .menu-card.is-open {
+            min-height: 275px;
+            opacity: 1;
+        }
+
+        .menu-card.is-open .select {
+            opacity: 1;
+            transition-delay: 0.3s;
+            pointer-events: all;
+        }
+
+        .menu-card.is-open .fa.fa-chevron-down {
+            transform: rotate(180deg);
+        }
+
+        .tooltip {
+            position: absolute;
+            left: 150%;
+            top: 20%;
+            transform: translateY(-50%);
+            background-color: #ff8400;
+            color: #111;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 5px 12px;
+            border-radius: 6px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .sidebar div a:hover .tooltip {
+            opacity: 1;
+            left: 130%;
+        }
+
+
+        @media (max-width: 1536px) {
+
+            .row {
+                display: grid;
+                grid-template-rows: auto auto;
+                grid-template-columns: auto auto;
+            }
+
+            #SSDT {
+                transition: transform 1s ease;
+            }
+
+            #souls:hover+.group+.group {
+                position: relative;
+                transform: translateX(33%);
+            }
+
+            .fa.fa-bars {
+                display: inline;
+            }
+
+            .row {
+                pointer-events: none;
+            }
+
+            header {
+                max-height: 100px;
+            }
+
+            .sidebar {
+                height: calc(100vh - 100px)
+            }
+        }
+
+        @media (max-width: 1200px) {
+
+            #souls:hover+.group+.group {
+                transform: translateX(25%);
+            }
+
+            .menu-card {
+                max-width: 70vw;
+            }
+
+            .cards-grid {
+                display: flex;
+                flex-direction: column;
+            }
+
+            #souls:hover {
+                display: grid;
+                grid-template-areas: "dark dark"
+                    "demon dsouls";
+                gap: 5px;
+                justify-content: center;
+            }
+
+            #souls>#item {
+                grid-area: demon;
+                justify-self: end;
+            }
+
+            #souls>.item.main {
+                grid-area: dsouls;
+                justify-self: start;
+            }
+
+            #souls>.darkSouls {
+                grid-area: dark;
+                justify-self: center;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1536px) {
+
+            #souls {
+                transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            .row:has(#SSDT:hover) #souls {
+                transform: translateX(20%);
+            }
+        }
+
+        @media (max-width: 768px) {
+            #souls:hover+.group+.group {
+                transform: translateX(0);
+            }
+
+            .wrapper {
+                margin-left: 45px;
+            }
+
+            .sidebar {
+                position: fixed;
+                top: 0;
+                width: 45px;
+                gap: 25px;
+                height: 100vh;
+
+            }
+
+            .fa.fa-home {
+                left: 8px
+            }
+
+            .sidebar div a {
+                font-size: 20px;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .wrapper {
+                margin-left: 45px;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+
+            .row {
+
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background-color: rgba(12, 11, 11, 0.95);
+                backdrop-filter: blur(8px);
+                z-index: 999;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.5s ease;
+                margin: 0;
+            }
+
+            .row.mobile-active {
+                opacity: 1;
+                pointer-events: all;
+            }
+
+            .item img {
+                height: clamp(50px, 8vh, 75px);
+            }
+
+            .fa.fa-bars {
+                z-index: 1000;
+                position: fixed;
+            }
+
+        }
