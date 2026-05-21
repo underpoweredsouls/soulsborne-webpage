@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<!-- https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:nth-child -->
+
+<!-- úkoly:
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soulsborne Univerzum | Hlavní stránka</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/masterstyl.css">
+    <link rel="icon" href="img/favicon.ico">
+</head>
+
+<body>
+    <a href=""><i class="fa fa-home"></i></a>
+
+    <div id="headerButton"><i class="fa fa-bars"></i></div>
+    <header id="header">
+        <div class="row" id="row">
+            <!-- Souls -->
+            <div class="group" id="souls">
+                <div class="darkSouls item prime" style="--item-width:100%;">
+                    <a href="dark_souls.html"><img src="img/header/DarkS/darkSouls.png" alt="Dark"></a>
+                </div>
+                <div class="item prime" id="item">
+                    <a href="DS.html"><img src="img/header/DS/demons.png" alt="Demon's"></a>
+                </div>
+                <div class="item main">
+                    <a href="DS.html"><img src="img/header/DS/souls.png" alt="Souls"></a>
+                </div>
+            </div>
+            <!-- Borne -->
+            <div class="group" id="BB">
+                <div class="item prime">
+                    <a href="BB.html"><img src="img/header/BB/blood.png" alt="Blood'"></a>
+                </div>
+                <div class="item main">
+                    <a href="BB.html"><img src="img/header/BB/borne.png" alt="borne"></a>
+                </div>
+            </div>
+            <!-- Kiro -->
+            <div class="group" id="SSDT">
+                <div class="item prime" style="--item-width:var(--item-width);">
+                    <a href="sekiro.html"><img src="img/header/SSDT/se.png" alt="Se"></a>
+                </div>
+                <div class="item main">
+                    <a href="sekiro.html"><img src="img/header/SSDT/kiro.png" alt="kiro"></a>
+                </div>
+            </div>
+            <!-- Ring -->
+            <div id="ER" class="group">
+                <div class="er item prime">
+                    <a href="ER.html"><img src="img/header/ER/elden.png" alt="Elden'"></a>
+                </div>
+                <div class="item main">
+                    <a href="ER.html"><img src="img/header/ER/ring.png" alt="Ring"></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="wrapper">
+        <nav class="sidebar" id="sidebar">
+            <div><a href="#"><i class="fa fa-flag"></i><span class="tooltip" id="cast1">example</span></a></div>
+            <div><a href="#"><i class="fa fa-flag"></i><span class="tooltip" id="cast2">example</span></a></div>
+            <div><a href="#"><i class="fa fa-flag"></i><span class="tooltip" id="cast3">example</span></a></div>
+            <div><a href="#"><i class="fa fa-flag"></i><span class="tooltip" id="cast4">example</span></a></div>
+        </nav>
+
+        <!-- úvod -->
+        <section class="content-section" id="content">
+            <h1>Fenomén jménem Soulsborne</h1>
+            <p>Vítejte v ultimátním průvodci světy, které stvořil Hidetaka Miyazaki v čele japonského studia
+                FromSoftware. Pojem
+                "Soulsborne" vznikl spojením názvů sérií <a href=""><em>Souls</em></a> a hry <a
+                    href=""><em>Bloodborne</em></a>, a dnes reprezentuje
+                specifický žánr akčních RPG, který definoval uplynulou dekádu herního průmyslu.</p>
+
+            <p>Žánr začal roku 2009, kdy FromSoftware, nově s Hidetakou Miyazakim v popředí, vydal <a
+                    href=""><em>Demon's Souls</em></a> exklusivně na konzoli Playstation 3. Toto bylo nejdříve negativně
+                setkáno v Japonsku, i od Sony. jako vynahrazení se ale zanedlouho po publikování v Evropě a Americe hra
+                stala hitem, což vedlo k vytvoření bez-otázky-legendární Dark Souls trilogii.</p>
+
+            <p>
+
+            </p>
+            <!-- stranka o miyazakim a fromu -->
+        </section>
+
+        <section class="cards-grid">
+
+            <!-- DeS -->
+            <div id="DemonSoulsCard" class="menu-card">
+                <div class="buttonHeader menu-button">
+                    <span>DEMON'S SOULS</span><i class="fa fa-chevron-down"></i>
+                </div>
+                <div class="select">
+                    <div><a href="demonsouls.html#">Obecné informace</a></div>
+                    <div><a href="demonsouls.html#">Svět a Lore</a></div>
+                    <div><a href="demonsouls.html#">Příběh</a></div>
+                    <div><a href="demonsouls.html#">Postavy</a></div>
+                    <div><a href="demonsouls.html#">Démoni a Bossové</a></div>
+                    <div><a href="demonsouls.html#">Klíčové předměty</a></div>
+                    <div><a href="demonsouls.html#">Zbroj a zbraně</a></div>
+                </div>
+            </div>
+            <!-- DS -->
+            <div id="DarkSoulsCard" class="menu-card">
+                <div class="buttonHeader menu-button">
+                    <span>DARK SOULS</span><i class="fa fa-chevron-down"></i>
+                </div>
+                <div class="select">
+                    <div><a href="darksouls.html#">Obecné informace</a></div>
+                    <div><a href="darksouls.html#">Svět a Lore</a></div>
+                    <div><a href="darksouls.html#">Příběh</a></div>
+                    <div><a href="darksouls.html#">Postavy</a></div>
+                    <div><a href="darksouls.html#">Démoni a Bossové</a></div>
+                    <div><a href="darksouls.html#">Klíčové předměty</a></div>
+                    <div><a href="darksouls.html#">Zbroj a zbraně</a></div>
+                </div>
+            </div>
+
+            <!-- BB -->
+            <div id="BloodborneCard" class="menu-card">
+                <div class="buttonHeader menu-button">
+                    <span>BLOODBORNE</span><i class="fa fa-chevron-down"></i>
+                </div>
+                <div class="select">
+                    <div><a href="bloodborne.html#">Obecné informace</a></div>
+                    <div><a href="bloodborne.html#">Yharnam</a></div>
+                    <div><a href="bloodborne.html#">Lovecká noc</a></div>
+                    <div><a href="bloodborne.html#">Lovci a Oběti</a></div>
+                    <div><a href="bloodborne.html#">Ti Prastaří</a></div>
+                    <div><a href="bloodborne.html#">Krev a Raritní lov</a></div>
+                    <div><a href="bloodborne.html#">Trik-zbraně a Nástroje Lovce</a></div>
+                </div>
+            </div>
+
+            <!-- SSDT -->
+            <div id="SekiroCard" class="menu-card">
+                <div class="buttonHeader menu-button">
+                    <span>SEKIRO</span><i class="fa fa-chevron-down"></i>
+                </div>
+                <div class="select">
+                    <div><a href="sekiro.html#">Obecné informace</a></div>
+                    <div><a href="sekiro.html#">Ashina</a></div>
+                    <div><a href="sekiro.html#">Cesta Shinobiho</a></div>
+                    <div><a href="sekiro.html#">Postavy</a></div>
+                    <div><a href="sekiro.html#">Nepřátelé</a></div>
+                    <div><a href="sekiro.html#">Prostetické nástroje</a></div>
+                    <div><a href="sekiro.html#">Bojová umění</a></div>
+                </div>
+            </div>
+
+            <!-- ER -->
+            <div id="EldenRingCard" class="menu-card">
+                <div class="buttonHeader menu-button">
+                    <span>ELDEN RING</span><i class="fa fa-chevron-down"></i>
+                </div>
+                <div class="select">
+                    <div><a href="eldenring.html#">Obecné informace</a></div>
+                    <div><a href="eldenring.html#">The Lands Between</a></div>
+                    <div><a href="eldenring.html#">Roztříštění</a></div>
+                    <div><a href="eldenring.html#">Polobozi (Demigods)</a></div>
+                    <div><a href="eldenring.html#">Nepřátelé</a></div>
+                    <div><a href="eldenring.html#">Velké runy a Upomínky</a></div>
+                    <div><a href="eldenring.html#">Výzbroj a Kouzla</a></div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- filozofie hratelnosti -->
+        <section class="content-section">
+            <h2>Filozofie herního designu a "Neodpouštějící obtížnost"</h2>
+
+            <p>Často diskutovaným prvkem Souls her je jejich pověstná obtížnost. Nejde však o prvoplánovou snahu
+                hráče
+                frustrovat, ale o pečlivě navržený systém, kde smrt slouží jako nástroj učení. Každý krok do neznáma
+                vyžaduje respekt k hernímu prostředí.</p>
+
+            <p>Suspendisse potenti. Nullam ac tortor leo. Curabitur sed lectus vehicula, rutrum metus ac, malesuada
+                diam.
+                Phasellus consectetur odio a vulputate tempus. Mauris eleifend bibendum justo, at fermentum felis.
+                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In hac
+                habitasse platea dictumst. Quisque iaculis dolor nec nunc tincidunt, non dapibus augue venenatis.
+            </p>
+
+        </section>
+    </div>
+
+    <script src="scripts.js"></script>
+
+</body>
+
+</html>
