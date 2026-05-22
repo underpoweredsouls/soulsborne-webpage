@@ -36,26 +36,28 @@ headerButton.addEventListener('click', function () {
             }, 100);
         }
     };
-    window.addEventListener('resize', function () {
-        if (window.innerWidth > 1536) {
-            row.style.opacity = "1";
-            row.style.pointerEvents = "all";
-            header.style.maxHeight = "120px";
-            row.classList.remove('mobile-active');
-            headerButtonIcon.className = "fa fa-bars";
-        }
-        else if (window.innerWidth <= 1536 && window.innerWidth > 768) {
-            row.style.opacity = "0";
-            row.style.pointerEvents = "none";
-            header.style.maxHeight = "100px";
-            row.classList.remove('mobile-active');
-            headerButtonIcon.className = "fa fa-bars";
-        }
-        else {
-            row.style.opacity = "";
-            row.style.pointerEvents = "";
-            header.style.maxHeight = "";
-        }
-    });
+})
 
-    window.dispatchEvent(new Event('resize'))})
+window.addEventListener('resize', function () {
+    if (window.innerWidth > 1536) {
+        row.style.opacity = "1";
+        row.style.pointerEvents = "all";
+        header.style.maxHeight = "120px";
+        row.classList.remove('mobile-active');
+        headerButtonIcon.className = "fa fa-bars";
+    }
+    else if (window.innerWidth <= 1536 && window.innerWidth > 768) {
+        row.style.opacity = "0";
+        row.style.pointerEvents = "none";
+        header.style.maxHeight = "100px";
+        row.classList.remove('mobile-active');
+        headerButtonIcon.className = "fa fa-bars";
+    }
+    else {
+        row.style.opacity = "";
+        row.style.pointerEvents = "";
+        header.style.maxHeight = "";
+    }
+});
+
+window.dispatchEvent(new Event('resize'))
