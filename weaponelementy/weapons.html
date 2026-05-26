@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zbraně | Soulsborne</title>
+    <style>
+        :root {
+            --transition: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #111;
+            /* Temnější Souls pozadí */
+            color: #d3d3d3;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* --- HLAVNÍ KARTA ZBRANĚ --- */
+        .weapon-card {
+            background-color: #0c0b0b;
+            border-radius: 12px;
+            border: 1px solid #333;
+            width: 100%;
+            max-width: 80%;
+            min-height: 120px;
+            /* Výchozí výška zavřené karty */
+            padding: 25px 30px;
+
+            /* Flexbox rozdělí kartu na levou (text) a pravou (obrázek) část */
+            display: flex;
+            gap: 30px;
+            position: relative;
+
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            transition: border-color 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .weapon-card:hover {
+            border-color: #ff8400;
+            box-shadow: 0 10px 30px rgba(255, 132, 0, 0.15);
+        }
+
+        /* --- LEVÁ ČÁST (NADPIS A TEXT) --- */
+        .weapon-info {
+            flex: 1;
+            /* Zabere veškeré dostupné místo nalevo */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .weapon-info h2 {
+            margin: 0;
+            color: #ff8400;
+            font-size: 28px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+            transition: transform 1s var(--transition);
+        }
+
+        /* MODERNÍ TRIK: Animace výšky pomocí CSS Grid */
+        .weapon-lore-wrapper {
+            display: grid;
+            grid-template-rows: 0fr;
+            /* Výchozí stav: schováno (výška 0) */
+            opacity: 0;
+            transition: grid-template-rows 1s var(--transition),
+                opacity 0.6s ease;
+        }
+
+        .weapon-lore-inner {
+            overflow: hidden;
+            /* Nutné pro funkčnost 0fr triku */
+            text-align: justify;
+            line-height: 1.6;
+            padding-right: 20px;
+            margin-top: 15px;
+            /* Mezera mezi nadpisem a textem po otevření */
+        }
+
+        /* --- PRAVÁ ČÁST (OBRÁZEK) --- */
+        .weapon-visual {
+            width: 200px;
+            /* Fixní prostor pro obrázek */
+            flex-shrink: 0;
+            position: relative;
+            /* Důležité pro absolutní pozicování obrázku uvnitř */
+        }
+
+        .weapon-visual img {
+            width: 100%;
+            object-fit: contain;
+
+            /* KLÍČ K ÚSPĚCHU: Absolutní pozice */
+            position: absolute;
+            right: 0;
+
+            /* Výchozí stav: nahoře */
+            top: 0;
+            transform: translateY(0) scale(0.8);
+            /* Mírně zmenšený v zavřeném stavu */
+            transform-origin: top right;
+
+            max-height: 100px;
+            /* V zavřeném stavu nepřečnívá */
+            transition: all .6s var(--transition);
+            transition-delay: 0s;
+            filter: drop-shadow(0 0 0.2rem);
+        }
+
+        /* --- HOVER EFEKTY (CO SE STANE PŘI NAJETÍ MYŠÍ) --- */
+
+        /* 1. Rozbalení textu */
+        .weapon-card:hover .weapon-lore-wrapper {
+            grid-template-rows: 1fr;
+            /* Text se roztáhne na svou přirozenou výšku */
+            opacity: 1;
+        }
+
+        /* 2. Zvětšení a dokonalé vycentrování obrázku */
+        .weapon-card:hover .weapon-visual img {
+            top: 50%;
+            /* Posune horní hranu obrázku do poloviny karty */
+            transform: translateY(-50%) scale(1);
+            /* Posune obrázek o polovinu jeho vlastní výšky nahoru = dokonalý střed */
+            transform-origin: center right;
+            transition: all 1s var(--transition);
+            max-height: 350px;
+            transition-delay: .4s;
+            /* Dovolí obrázku se zvětšit */
+        }
+
+        /* --- RESPONZIVITA (Méně než 768px) --- */
+        @media (max-width: 768px) {
+            .weapon-card {
+                flex-direction: column;
+                /* Obrázek a text pod sebe */
+                min-height: auto;
+                max-width: 100%;
+                /* Na mobilu ať zabere celou šířku */
+            }
+
+            .weapon-visual {
+                width: 100%;
+                height: auto;
+                /* ZRUŠENO fixních 150px */
+                display: flex;
+                justify-content: center;
+                /* Vycentruje obrázek */
+                margin-top: 20px;
+            }
+
+            .weapon-visual img {
+                position: static !important;
+                /* Zruší absolutní pozici */
+                transform: none !important;
+                /* Zruší posuny */
+                max-height: 120px;
+                transition: max-height 0.8s var(--transition);
+            }
+
+            /* Na mobilu povolíme jen mírné zvětšení, aby to nerozbilo kartu */
+            .weapon-card:hover .weapon-visual img {
+                max-height: 160px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="weapon-card">
+
+        <div class="weapon-info">
+            <h2>Svatý Meč Měsíčního Světla</h2>
+
+            <!-- Tento obal zajišťuje plynulou animaci výšky -->
+            <div class="weapon-lore-wrapper">
+                <div class="weapon-lore-inner">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus facere, architecto quo dicta
+                        velit ullam optio modi voluptatem aliquid repudiandae officia a id impedit ipsa accusamus at
+                        quia, quibusdam corrupti.</p>
+                    <p>Sunt sapiente quaerat reiciendis enim aliquid, nesciunt molestiae ipsa possimus accusantium
+                        inventore mollitia magnam, quod autem! Alias porro unde reiciendis odit numquam, voluptate velit
+                        rem ut dolor ipsum, nulla recusandae. Debitis, ad distinctio minus id alias eligendi quibusdam
+                        perferendis sunt?</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="weapon-visual">
+            <!-- Doporučuji přidat class s filtrem, např. drop-shadow v CSS, pokud mají vaše obrázky průhledné pozadí -->
+            <img src="img/Holy_Moonlight_Sword.png" alt="Holy Moonlight Sword">
+        </div>
+
+    </div>
+
+</body>
+
+</html>
