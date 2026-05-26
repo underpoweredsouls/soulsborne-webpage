@@ -1,603 +1,977 @@
-        /* ZÁKLADNÍ NASTAVENÍ */
-
-
-        @font-face {
-            font-family: CinzelDecorative;
-            src: url(../font/CinzelDecorative-Medium.otf);
-        }
-
-        * {
-            box-sizing: border-box;
-            font-family: 'Times New Roman', Times, serif;
-        }
-
-        ::-webkit-scrollbar {
-            background-color: #0c0b0b;
-            margin: 0;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background-color: #2a2a2a;
-        }
-
-        #background {
-            height: 100vh;
-            width: 100%;
-            background-size: cover;
-            background-position: center center;
-            position: fixed;
-            top: 0;
-            opacity: .15;
-            z-index: -1;
-        }
-
-        body {
-            background-color: #111;
-            color: #d3d3d3;
-            margin: 0;
-            line-height: 1.6;
-        }
-
-        h1,
-        h2,
-        h3 {
-            color: #ff8400;
-            text-align: center;
-            font-weight: normal;
-            font-family: CinzelDecorative;
-        }
-
-        :root {
-            --transition: cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        /* --- OBRÁZKOVÁ NAVIGACE --- */
-
-
-        header {
-            background-color: #0c0b0b;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-            position: sticky;
-            top: 0;
-            z-index: 5;
-            transition: all 1s var(--transition);
-            max-height: 120px;
-        }
-
-        .row {
-            display: flex;
-            gap: clamp(10px, 1.5vw, 15px);
-            padding: clamp(10px, 2vw, 15px);
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            transition: opacity .5s var(--transition);
-            opacity: 0;
-        }
-
-        .item {
-            --item-width: 400px;
-            border-radius: 8px;
-            overflow: hidden;
-            flex-shrink: 0;
-            display: flex;
-        }
-
-        .group {
-            display: flex;
-            gap: 0;
-            cursor: pointer;
-            transition: gap 0.8s var(--transition);
-        }
-
-        .group:hover {
-            gap: 5px;
-        }
-
-        .item.prime {
-            max-width: 0;
-            opacity: 0;
-            transition: max-width 0.8s var(--transition),
-                opacity 0.8s var(--transition);
-        }
-
-        .group:hover .item.prime {
-            max-width: 300px;
-            opacity: 1;
-        }
-
-        #souls:hover .item.prime {
-            max-width: 500px;
-        }
-
-        .fa.fa-home {
-            font-size: 32px;
-            position: fixed;
-            z-index: 100;
-            top: 40px;
-            left: 30px;
-        }
-
-        .fa.fa-bars,
-        .fa.fa-times {
-            position: fixed;
-            z-index: 100;
-            right: 0;
-            top: 0;
-            margin-right: 35px;
-            margin-top: 35px;
-            font-size: 32px;
-            color: #ff8400;
-            transition: all .8s var(--transition);
-            cursor: pointer;
-            display: none;
-        }
-
-        .fa.fa-times {
-            display: none;
-        }
-
-        .fa.fa-bars:hover,
-        .fa.fa-times:hover {
-            color: rgb(255, 224, 140);
-        }
-
-        .item img {
-            height: clamp(45px, 6vw, 85px);
-            width: auto;
-            max-width: none;
-            display: block;
-        }
-
-        .darkSouls img {
-            width: var(--item-width);
-            max-width: none;
-            object-fit: cover;
-            object-position: left center;
-        }
-
-        .content-section {
-            max-width: 900px;
-            width: 90%;
-            margin: 40px auto;
-            padding: 0 20px;
-            border: 2px solid #0c0b0b;
-            background-color: #0c0b0b;
-            border-radius: 16px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            transition: all 1s var(--transition);
-        }
-
-        .content-section p {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-            text-align: justify;
-        }
-
-        /*  HERNÍ KARTY */
-        .cards-grid {
-            display: grid;
-            /* Karty budou mít max 400px. Pokud je jich málo, neroztáhnou se na 800px. */
-            grid-template-columns: repeat(auto-fit, minmax(550px, 550px));
-            justify-content: center;
-            /* Když je karet málo, vycentruje celou mřížku doprostřed */
-            gap: 30px;
-            max-width: 1200px;
-            margin: 40px auto;
-        }
-
-        .cards-grid:has(> :last-child:nth-child(odd))>.menu-card:last-of-type {
-            position: relative;
-            left: 50%;
-        }
-
-        .menu-card {
-            position: relative;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-            padding: 20px;
-            border-radius: 12px;
-            border: 1px solid #444;
-            opacity: 0.7;
-            max-height: 80px;
-            overflow: hidden;
-            transition: all 1s var(--transition), max-height 1.5s var(--transition);
-        }
-
-        .menu-card.is-open {
-            max-height: 500px;
-            opacity: 1;
-        }
-
-        .menu-card::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background-color: #2a2a2a;
-            background-size: cover;
-            background-position: center;
-            opacity: .8;
-            z-index: -10;
-            transition: opacity .8s var(--transition);
-        }
-
-        .menu-card.is-open.menu-card::before {
-            opacity: .3;
-        }
-
-        .menu-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-            opacity: 1;
-        }
-
-
-
-        #DemonSoulsCard::before {
-            content: "";
-            background-image: url(../img/header/DS/penetratorpng.png);
-        }
-
-        #DarkSoulsCard1::before {
-            content: "";
-            background-image: url(../img/header/DarkS/gwyn.jpeg)
-        }
-
-        #DarkSoulsCard2::before {
-            content: "";
-            background-image: url(../img/header/DarkS/ds2.png);
-        }
-
-        #DarkSoulsCard3::before {
-            content: "";
-            background-image: url(../img/header/DarkS/DS3.jpg);
-        }
-
-        #BloodborneCard::before {
-            content: "";
-            background-image: url(../img/header/BB/bloodborne-cover.jpg);
-        }
-
-        #SekiroCard::before {
-            content: "";
-            background-image: url(../img/header/SSDT/titlescreen.jpg);
-        }
-
-        #EldenRingCard::before {
-            content: "";
-            background-image: url(../img/header/ER/coverart.jpg);
-        }
-
-        #DemonSoulsCard .select>div>a {
-            color: #d3d3d3
-        }
-
-        #DarkSoulsCard1 .select>div>a {
-            color: #ffc400
-        }
-
-        #DarkSoulsCard2 .select>div>a {
-            color: rgb(134, 116, 116)
-        }
-
-        #DarkSoulsCard3 .select>div>a {
-            color: yellow
-        }
-
-        #BloodborneCard .select>div>a {
-            color: rgb(0, 174, 255);
-        }
-
-        #EldenRingCard .select>div>a {
-            color: green
-        }
-
-        .select {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            font-size: 22px;
-            opacity: 0;
-            transition: opacity 1s var(--transition);
-            color: #ff8400;
-            pointer-events: none;
-            padding: 20px 0 10px 0;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-        }
-
-        a {
-            color: #ff8400;
-            text-decoration: none;
-            transition: all .8s var(--transition);
-
-        }
-
-        a:hover {
-            color: rgb(255, 224, 140) !important;
-        }
-
-        .select>div:first-of-type>a,
-        .select>div:first-of-type>a:hover {
-            color: #d3d3d3 !important;
-        }
-
-        .buttonHeader {
-            color: white;
-            cursor: pointer;
-            user-select: none;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-            font-size: 25px;
-        }
-
-        .buttonHeader>span {
-            font-family: CinzelDecorative;
-            scale: 1.25;
-            transform: translateX(10px);
-        }
-
-        .fa.fa-chevron-down {
-            transition: transform 1s var(--transition);
-        }
-
-        .wrapper {
-            margin-left: 80px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-            position: fixed;
-            top: 100px;
-            left: 0;
-            width: 80px;
-            height: calc(100vh - 100px);
-            padding-top: 10vh;
-            align-items: center;
-            justify-content: space-evenly;
-            background-color: #0c0b0b;
-            opacity: .7;
-            transition: opacity 1s var(--transition);
-        }
-
-        .sidebar:has(div a:hover) {
-            opacity: 1;
-        }
-
-        .sidebar div a {
-            position: relative;
-            font-size: 28px;
-            display: flex;
-            align-items: center;
-            padding-bottom: 50px;
-        }
-
-        /* --- JS TŘÍDY --- */
-        .dissappear {
-            display: none;
-        }
-
-
-
-        .menu-card.is-open .select {
-            opacity: 1;
-            transition-delay: 0.3s;
-            pointer-events: all;
-        }
-
-        .menu-card.is-open .fa.fa-chevron-down {
-            transform: rotate(180deg);
-        }
-
-        .tooltip {
-            position: absolute;
-            left: 150%;
-            top: 20%;
-            transform: translateY(-50%);
-            background-color: #ff8400;
-            color: #111;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            font-weight: bold;
-            padding: 5px 12px;
-            border-radius: 6px;
-            white-space: nowrap;
-            opacity: 0;
-            pointer-events: none;
-            transition: all 0.4s var(--transition);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .sidebar div a:hover .tooltip {
-            opacity: 1;
-            left: 130%;
-        }
-
-
-        @media (max-width: 1536px) {
-
-            .row {
-                display: grid;
-                grid-template-rows: auto auto;
-                grid-template-columns: auto auto;
-            }
-
-            #SSDT {
-                transition: transform 1s var(--transition);
-            }
-
-            #souls:hover+.group+.group {
-                position: relative;
-                transform: translateX(33%);
-            }
-
-            .fa.fa-bars,
-            .fa.fa-times {
-                display: inline;
-            }
-
-            .row {
-                pointer-events: none;
-            }
-
-            header {
-                max-height: 100px;
-            }
-
-            .sidebar {
-                height: calc(100vh - 100px);
-            }
-
-            .sidebar::-webkit-scrollbar {
-                width: 10px;
-            }
-
-            .item img {
-                height: 60px;
-            }
-        }
-
-
-
-        @media (max-width: 1200px) {
-
-            #souls:hover+.group+.group,
-            #BB:hover+.group+.group {
-                transform: translateX(25%);
-            }
-
-            .menu-card {
-                max-width: 70vw;
-            }
-
-            .cards-grid {
-                display: flex;
-                flex-direction: column;
-            }
-
-            .cards-grid:has(> :last-child:nth-child(odd))>.menu-card:last-of-type {
-                left: 0;
-            }
-
-            #souls:hover {
-                display: grid;
-                grid-template-areas: "dark dark"
-                    "demon dsouls";
-                gap: 5px;
-                justify-content: center;
-            }
-
-            #souls>#item {
-                grid-area: demon;
-                justify-self: end;
-            }
-
-            #souls>.item.main {
-                grid-area: dsouls;
-                justify-self: start;
-            }
-
-            #souls>.darkSouls {
-                grid-area: dark;
-                justify-self: center;
-            }
-        }
-
-        @media (min-width: 768px) and (max-width: 1536px) {
-
-            .group {
-                transition: transform 0.8s var(--transition);
-            }
-
-            .row:has(#SSDT:hover) #souls {
-                transform: translateX(25%);
-            }
-
-            .row:has(#ER:hover) #BB {
-                transform: translateX(27%);
-            }
-        }
-
-        @media (max-width: 768px) {
-
-            #souls:hover+.group+.group,
-            #BB:hover+.group+.group {
-                transform: translateX(0);
-            }
-
-            .wrapper {
-                margin-left: 45px;
-            }
-
-            .sidebar {
-                position: fixed;
-                top: 0px;
-                width: 45px;
-                gap: 25px;
-                height: 100vh;
-            }
-
-            .sidebar div a {
-                font-size: 20px;
-            }
-
-            .cards-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .select>div {
-                line-height: normal;
-            }
-
-            .wrapper {
-                margin-left: 45px;
-            }
-
-            .row {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100vw;
-                height: 100vh;
-                background-color: rgba(12, 11, 11, 0.95);
-                backdrop-filter: blur(8px);
-                z-index: 999;
-
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                gap: 20px;
-
-                opacity: 0;
-                pointer-events: none;
-                transition: all 1s var(--transition);
-                margin: 0;
-            }
-
-            .row.mobile-active {
-                opacity: 1;
-                pointer-events: all;
-            }
-
-            .item img {
-                height: clamp(50px, 8vh, 75px);
-            }
-
-            .fa.fa-bars,
-            .fa.fa-times {
-                z-index: 1000;
-                position: fixed;
-                box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            }
-
-        }
+/* --- ZÁKLADNÍ NASTAVENÍ A PROMĚNNÉ --- */
+@font-face {
+  font-family: CinzelDecorative;
+  src:
+    url(../font/CinzelDecorative-Medium.woff2) format("woff2"),
+    url(../font/CinzelDecorative-Medium.woff) format("woff"),
+    url(../font/CinzelDecorative-Medium.ttf) format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: CinzelNormal;
+  src: url(../font/Cinzel-Regular.woff2);
+  font-display: swap;
+}
+
+:root {
+  --transition: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, serif;
+}
+
+::-webkit-scrollbar {
+  background-color: #0c0b0b;
+  margin: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #2a2a2a;
+}
+
+body {
+  background-color: #111;
+  color: #d3d3d3;
+  margin: 0;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+  font-weight: normal;
+  font-family: CinzelDecorative;
+}
+
+a {
+  color: #ff8400;
+  text-decoration: none;
+  transition: all 0.8s var(--transition);
+}
+
+a:hover {
+  color: rgb(255, 224, 140) !important;
+}
+
+/* --- JS TŘÍDY (Utility) --- */
+.dissappear {
+  display: none;
+}
+
+/* --- POZADÍ --- */
+#background {
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+  position: fixed;
+  top: 0;
+  opacity: 0.15;
+  z-index: -1;
+}
+
+/* --- GLOBÁLNÍ UI A IKONY --- */
+h1,
+h2,
+h3,
+.fa.fa-flag,
+.fa.fa-times,
+.fa.fa-home,
+.fa.fa-bars,
+.author,
+.close-modal {
+  background: var(--gradient, #ff8400);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.fa.fa-home {
+  font-size: 32px;
+  position: fixed;
+  z-index: 100;
+  top: 40px;
+  left: 30px;
+}
+
+.fa.fa-bars,
+.fa.fa-times {
+  position: fixed;
+  z-index: 100;
+  right: 0;
+  top: 0;
+  margin-right: 35px;
+  margin-top: 35px;
+  font-size: 32px;
+  transition: all 0.8s var(--transition);
+  cursor: pointer;
+  display: none;
+}
+
+.fa.fa-times {
+  display: none;
+}
+
+.fa.fa-bars:hover,
+.fa.fa-times:hover {
+  color: rgb(255, 224, 140);
+}
+
+/* --- OBRÁZKOVÁ NAVIGACE (HEADER) --- */
+header {
+  opacity: 0.7;
+  background-color: #0c0b0b;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  transition: all 1s var(--transition);
+  max-height: 120px;
+}
+
+header:has(.group:hover) {
+  opacity: 1;
+}
+
+.row {
+  display: flex;
+  gap: clamp(10px, 1.5vw, 15px);
+  padding: clamp(10px, 2vw, 15px);
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s var(--transition);
+  opacity: 0;
+}
+
+.group {
+  display: flex;
+  gap: 0;
+  cursor: pointer;
+  transition: gap 0.8s var(--transition);
+}
+
+.group:hover {
+  gap: 5px;
+}
+
+.item {
+  --item-width: 400px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+}
+
+.item img {
+  height: clamp(45px, 6vw, 85px);
+  width: auto;
+  max-width: none;
+  display: block;
+}
+
+.item.prime {
+  max-width: 0;
+  opacity: 0;
+  transition:
+    max-width 0.8s var(--transition),
+    opacity 0.8s var(--transition);
+}
+
+.group:hover .item.prime {
+  max-width: 300px;
+  opacity: 1;
+}
+
+#souls:hover .item.prime {
+  max-width: 500px;
+}
+
+#ER {
+  transition: all 1s var(--transition);
+}
+
+.darkSouls img {
+  width: var(--item-width);
+  max-width: none;
+  object-fit: cover;
+  object-position: left center;
+}
+
+/* --- HLAVNÍ OBSAH (MAIN) --- */
+main {
+  margin-left: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- CITÁT (QUOTEWRAP) --- */
+.quotewrap {
+  opacity: 0.5;
+  margin-top: 50px;
+  max-height: 100px;
+  border-radius: 16px;
+  max-width: 50vw;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  transition: all 2s var(--transition);
+}
+
+.quotewrap::before,
+.quotewrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: right center;
+  mask-image: linear-gradient(to right, transparent, black);
+  -webkit-mask-image: linear-gradient(to right, transparent, black);
+  z-index: -1;
+}
+
+.quotewrap::after {
+  background-image: none;
+  background-color: #0c0b0b;
+  mask-image: linear-gradient(to left, transparent, black);
+  -webkit-mask-image: linear-gradient(to left, transparent, black);
+}
+
+.quotewrap:hover {
+  opacity: 1;
+  max-height: 500px;
+}
+
+.quote hr {
+  mask-image: linear-gradient(to left, transparent, black);
+  -webkit-mask-image: linear-gradient(to left, transparent, black);
+}
+
+.quote > p {
+  font-family: CinzelNormal;
+  padding-left: 30px;
+  width: 40%;
+  text-align: justify;
+  text-shadow: 1px 1px 2px;
+}
+
+.author {
+  font-family: CinzelDecorative;
+  margin-left: 20px;
+  padding-right: 1rem;
+  display: inline-block;
+}
+
+.fa.fa-quote-left,
+.fa.fa-quote-right {
+  font-size: 24px;
+}
+
+.fa.fa-quote-right {
+  float: right;
+}
+
+/* --- BOČNÍ PANEL (SIDEBAR) --- */
+.sidebar {
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  position: fixed;
+  left: 0;
+  width: 80px;
+  height: calc(100vh - 100px);
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #0c0b0b;
+  opacity: 0.7;
+  transition: opacity 1s var(--transition);
+}
+
+.sidebar:has(div a:hover) {
+  opacity: 1;
+}
+
+.sidebar div a {
+  position: relative;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar div:last-of-type a {
+  margin-bottom: 40px;
+}
+
+.tooltip {
+  z-index: 500;
+  position: absolute;
+  left: 150%;
+  top: 20%;
+  transform: translateY(-50%);
+  background: var(--gradient, #ff8400);
+  color: #000000;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 5px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s var(--transition);
+  text-shadow: 0 0 2px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar div a:hover .tooltip {
+  opacity: 1;
+  left: 130%;
+}
+
+/* --- OBECNÉ SEKCE S TEXTEM --- */
+.content-section {
+  position: relative;
+  max-width: 900px;
+  width: 90%;
+  margin: 40px auto;
+  padding: 0 20px;
+  background-color: #0c0b0bc7;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  transition: all 1s var(--transition);
+}
+
+.content-section p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+/*  HERNÍ KARTY */
+.cards-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 550px);
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+.cards-grid:has(> :last-child:nth-child(odd)) > .menu-card:last-of-type {
+  left: 50%;
+}
+
+.menu-card {
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #444;
+  opacity: 0.7;
+  max-height: 80px;
+  overflow: hidden;
+  transition:
+    all 1s var(--transition),
+    max-height 1.5s var(--transition);
+}
+
+.menu-card.is-open {
+  max-height: 500px;
+  opacity: 1;
+}
+
+.menu-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #2a2a2a;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.8;
+  z-index: -10;
+  transition: opacity 0.8s var(--transition);
+}
+
+.menu-card.is-open.menu-card::before {
+  opacity: 0.3;
+}
+
+.menu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  opacity: 1;
+}
+
+.menu-card.is-open .select {
+  opacity: 1;
+  transition-delay: 0.3s;
+  pointer-events: all;
+}
+
+.menu-card.is-open .fa.fa-chevron-down {
+  transform: rotate(180deg);
+}
+
+.buttonHeader {
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  font-size: 25px;
+}
+
+.buttonHeader > span {
+  font-family: CinzelDecorative;
+  scale: 1.25;
+  transform: if(media(width>500px): translateX(10px));
+  margin: if(media(width<500px): auto);
+}
+
+.fa.fa-chevron-down {
+  transition: transform 1s var(--transition);
+  visibility: if(media(width < 500px): hidden);
+}
+
+.select {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  font-size: 22px;
+  opacity: 0;
+  transition: opacity 1s var(--transition);
+  color: #ff8400;
+  pointer-events: none;
+  padding: 20px 0 10px 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.select > div:first-of-type > a,
+.select > div:first-of-type > a:hover {
+  color: #d3d3d3 !important;
+}
+
+/* Herní karty specifická pozadí a barvy */
+
+/* prettier-ignore */
+#DemonSoulsCard::before {content: ""; background-image: url(../img/DeS/penetratorpng.png);} /* prettier-ignore */
+#DarkSoulsCard1::before { content: ""; background-image: url(../img/DS1/gwyn.jpeg); } /* prettier-ignore */
+#DarkSoulsCard2::before { content: ""; background-image: url(../img/DS2/cardbackground.png); } /* prettier-ignore */
+#DarkSoulsCard3::before { content: ""; background-image: url(../img/DS3/DS3.jpg); } /* prettier-ignore */
+#BloodborneCard::before { content: ""; background-image: url(../img/BB/bloodborne-cover.jpg); } /* prettier-ignore */
+#SekiroCard::before { content: ""; background-image: url(../img/SSDT/titlescreen.jpg); } /* prettier-ignore */
+#EldenRingCard::before { content: ""; background-image: url(../img/ER/coverart.jpg); } /* prettier-ignore */
+#DemonSoulsCard .select>div>a { color: #d3d3d3; } /* prettier-ignore */
+#DarkSoulsCard1 .select>div>a { color: #ffc400; } /* prettier-ignore */
+#DarkSoulsCard2 .select>div>a { color: rgb(134, 116, 116); } /* prettier-ignore */
+#DarkSoulsCard3 .select>div>a { color: yellow; } /* prettier-ignore */
+#BloodborneCard .select>div>a { color: rgb(0, 174, 255); } /* prettier-ignore */
+#EldenRingCard .select>div>a { color: green; }
+
+/* --- KARTY POSTAV A GRID --- */
+.characters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+  max-width: 70vw;
+  margin: auto;
+  justify-items: center;
+}
+
+.char-card {
+  position: relative;
+  height: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid #333;
+  transition:
+    transform 0.4s var(--transition),
+    box-shadow 0.4s var(--transition),
+    border-color 0.4s ease;
+}
+
+.char-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left center;
+  transition: transform 0.8s var(--transition);
+}
+
+.char-hover-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(
+    to top,
+    rgba(12, 11, 11, 1) 10%,
+    rgba(12, 11, 11, 0.8) 70%,
+    transparent
+  );
+  padding: 40px 15px 15px 15px;
+  text-align: center;
+  transform: translateY(101%);
+  transition: transform 0.4s var(--transition);
+}
+
+.char-hover-info h3 {
+  margin: 0 0 5px 0;
+  font-size: 22px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.click-hint {
+  color: #d3d3d3;
+  font-size: 14px;
+  font-style: italic;
+}
+
+/* --- HOVER EFEKTY KARTY --- */
+.char-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
+  border: 2px solid #d3d3d3;
+}
+
+.char-card:hover .char-image {
+  transform: scale(1.05);
+}
+
+.char-card:hover .char-hover-info {
+  transform: translateY(0);
+}
+
+/* --- FULLSCREEN MODÁLNÍ OKNO --- */
+.char-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s var(--transition);
+}
+
+.char-modal.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.char-modal-content {
+  margin: auto;
+  background-color: #0c0b0b;
+  border: 2px solid #d3d3d3;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 900px;
+  max-height: 75vh;
+  display: flex;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+  position: relative;
+  overflow: hidden;
+  transform: scale(0.95);
+  transition: transform 0.5s var(--transition);
+}
+
+.char-modal.active .char-modal-content {
+  transform: scale(1);
+}
+
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 35px;
+  cursor: pointer;
+  z-index: 10;
+  transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+  color: white;
+}
+
+.modal-left {
+  flex: 1;
+  object-position: right !important;
+}
+
+.modal-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-right: 1px solid #333;
+}
+
+.modal-right {
+  flex: 1.5;
+  padding: 40px;
+  overflow-y: auto;
+}
+
+.modal-right h2 {
+  text-align: left;
+  margin-top: 0;
+  border-bottom: 1px solid #333;
+  padding-bottom: 15px;
+}
+
+/* --- ZBRANĚ --- */
+.weapon-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  max-width: 1000px;
+  align-self: center;
+}
+
+.weapon-card {
+  margin: 40px auto;
+  background-color: #0c0b0bc7;
+  border-radius: 12px;
+  border: 1px solid #333;
+  width: 100%;
+  max-width: 80%;
+  min-height: 120px;
+  padding: 25px 30px;
+
+  display: flex;
+  gap: 30px;
+  position: relative;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  transition:
+    border-color 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+.weapon-card:hover {
+  border-color: var(--gradient);
+  box-shadow: 0 10px 30px var(--gradient);
+  background-color: #0c0b0b;
+}
+
+.weapon-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.weapon-info h2 {
+  margin: 0;
+  font-size: 28px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  transition: transform 1s var(--transition);
+}
+
+.weapon-lore-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows 1s var(--transition),
+    opacity 0.6s ease;
+}
+
+.weapon-lore-inner {
+  overflow: hidden;
+  text-align: justify;
+  line-height: 1.6;
+  padding-right: 20px;
+  margin-top: 15px;
+}
+
+.weapon-visual {
+  width: 200px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.weapon-visual img {
+  width: 100%;
+  object-fit: contain;
+
+  position: absolute;
+  right: 0;
+
+  top: 0;
+  transform: translateY(0) scale(0.8);
+  transform-origin: top right;
+
+  max-height: 100px;
+  transition: all 0.6s var(--transition);
+  transition-delay: 0s;
+  filter: drop-shadow(0 0 0.2rem);
+}
+
+.weapon-card:hover .weapon-lore-wrapper {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.weapon-card:hover .weapon-visual img {
+  top: 50%;
+  transform: translateY(-50%) scale(1);
+  transform-origin: center right;
+  transition: all 1s var(--transition);
+  max-height: 350px;
+  transition-delay: 0.4s;
+}
+
+.modal-weapon {
+  max-width: 100% !important;
+  margin-top: 30px !important;
+}
+
+.modal-weapon .weapon-visual img {
+  max-height: unset !important;
+}
+
+/* =========================================
+   MEDIA QUERIES 
+========================================= */
+
+@media (max-width: 1700px) {
+  /* Ikony zobrazení pro menší displeje */
+  .fa.fa-bars,
+  .fa.fa-times {
+    display: inline;
+  }
+
+  /* Hlavička a navigace */
+  header {
+    max-height: 100px;
+  }
+
+  .row {
+    pointer-events: none;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto auto;
+  }
+
+  .item img {
+    height: 60px;
+  }
+
+  #SSDT {
+    transition: transform 1s var(--transition);
+  }
+
+  #souls:hover + .group + .group {
+    position: relative;
+    transform: translateX(33%);
+  }
+
+  .sidebar {
+    height: calc(100vh - 100px);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1536px) {
+  .group {
+    transition: transform 0.8s var(--transition);
+  }
+
+  .row:has(#SSDT:hover) #souls {
+    transform: translateX(25%);
+  }
+
+  .row:has(#ER:hover) #BB,
+  .row:has(#BB:hover) #ER {
+    transform: translateX(27%);
+  }
+}
+
+@media (max-width: 1200px) {
+  #souls:hover + .group + .group,
+  #BB:hover + .group + .group {
+    transform: translateX(25%);
+  }
+
+  #souls:hover {
+    display: grid;
+    grid-template-areas:
+      "dark dark"
+      "demon dsouls";
+    gap: 5px;
+  }
+
+  #souls > #item {
+    grid-area: demon;
+    justify-self: end;
+  }
+
+  #souls > .item.main {
+    grid-area: dsouls;
+    justify-self: start;
+  }
+
+  #souls > .darkSouls {
+    grid-area: dark;
+    justify-self: center;
+  }
+
+  .quotewrap {
+    max-width: 70vw;
+  }
+
+  .quote > p {
+    width: 50%;
+  }
+
+  .cards-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu-card {
+    max-width: 70vw;
+  }
+
+  .cards-grid:has(> :last-child:nth-child(odd)) > .menu-card:last-of-type {
+    left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .fa.fa-home {
+    top: 10px;
+    left: 9px;
+    z-index: 300;
+  }
+
+  header {
+    opacity: 1;
+  }
+
+  .row {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(12, 11, 11, 0.95);
+    backdrop-filter: blur(8px);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 1s var(--transition);
+    margin: 0;
+  }
+
+  .row.mobile-active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  #souls:hover + .group + .group,
+  #BB:hover + .group + .group {
+    transform: translateX(0);
+  }
+
+  .item img {
+    height: clamp(50px, 8vh, 75px);
+  }
+
+  .quote > p {
+    width: 90%;
+  }
+
+  .sidebar {
+    top: 0px;
+    width: 45px;
+    gap: 25px;
+    height: 100vh;
+  }
+
+  .sidebar div a {
+    font-size: 20px;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .buttonHeader span {
+    white-space: nowrap;
+  }
+
+  .select > div {
+    line-height: normal;
+  }
+
+  .char-modal-content {
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: 90vh;
+  }
+
+  .modal-left {
+    height: 200px;
+    flex: none;
+  }
+
+  .modal-left img {
+    border-right: none;
+    border-bottom: 1px solid #333;
+    object-position: top;
+  }
+
+  .modal-right {
+    padding: 20px;
+  }
+
+  /* Zbraně */
+  .weapon-card {
+    flex-direction: column;
+    min-height: auto;
+    max-width: 90%;
+  }
+
+  .weapon-visual {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .weapon-visual img {
+    position: static !important;
+    transform: none !important;
+    transition: max-height 0.8s var(--transition);
+  }
+
+  .weapon-card:hover .weapon-visual img {
+    max-height: 160px;
+  }
+}

@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<!-- https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:nth-child -->
+
+<!-- úkoly:
+ pridat char modal obrazky
+ sekce pro zbroj/vyzbroj
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soulsborne Univerzum | Dark Souls Trilogie</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/masterstyl.css">
+    <link rel="stylesheet" href="css/games.css">
+    <link rel="icon" href="img//icon/favicon.ico">
+    <link rel="preload" href="font/CinzelDecorative-Medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="font/Cinzel-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <style>
+        #background {
+            background-image: url(img/DS2/sitebackground.jpg);
+        }
+        :root {
+            --gradient: linear-gradient(90deg, rgb(65, 63, 43) 0%, rgba(211, 211, 211, 1) 100%);
+        }
+        .quotewrap::before {
+            background-image: url(../img/DS2/aldiaquote.jpg);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="background"></div>
+
+    <a href="index.html"><i class="fa fa-home"></i></a>
+
+    <div id="headerButton"><i class="fa fa-bars"></i></div>
+    <header id="header">
+        <div class="row" id="row">
+            <!-- Souls -->
+            <div class="group" id="souls">
+                <div class="darkSouls item prime" style="--item-width:100%;">
+                    <a href="darksoulstrilogy.html"><img src="img/DarkSouls/darkSouls.png" alt="Dark"></a>
+                </div>
+                <div class="item prime" id="item">
+                    <a href="demonsouls.html"><img src="img/DeS/demons.png" alt="Demon's"></a>
+                </div>
+                <div class="item main">
+                    <a href="demonsouls.html"><img src="img/DeS/souls.png" alt="Souls"></a>
+                </div>
+            </div>
+            <!-- Borne -->
+            <div class="group" id="BB">
+                <div class="item prime">
+                    <a href="bloodborne.html"><img src="img/BB/blood.png" alt="Blood"></a>
+                </div>
+                <div class="item main">
+                    <a href="bloodborne.html"><img src="img/BB/borne.png" alt="borne"></a>
+                </div>
+            </div>
+            <!-- Kiro -->
+            <div class="group" id="SSDT">
+                <div class="item prime" style="--item-width:var(--item-width);">
+                    <a href="sekiro.html"><img src="img/SSDT/se.png" alt="Se"></a>
+                </div>
+                <div class="item main">
+                    <a href="sekiro.html"><img src="img/SSDT/kiro.png" alt="kiro"></a>
+                </div>
+            </div>
+            <!-- Ring -->
+            <div id="ER" class="group">
+                <div class="er item prime">
+                    <a href="eldenring.html"><img src="img/ER/elden.png" alt="Elden"></a>
+                </div>
+                <div class="item main">
+                    <a href="eldenring.html"><img src="img/ER/ring.png" alt="Ring"></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+        <div class="quotewrap" id="quote">
+            <span class="quote">
+                <p><i class="fa fa-quote-left"></i> Prázdnoto Mladá, přemožiteli strachu.
+                    Copak tě navádí překonat tuto údajnou 'klenbu' ?
+                    (...)
+                    Kdysi, Pán Světla vyhnal Temnotu, a vše, co vedlo z lidstva.
+                    Tak muž nabral prchavé podoby. To jsou kořeny našeho světa.
+                    Muži jsou rekvizita v divadle života, a bez ohledu na to, jak je něžná, jak vynikající...
+                    Lež zůstane lží. <i class="fa fa-quote-right"></i><br>
+                    <hr style="margin-left:20px;"> <em><span class="author">Aldia, Učenec
+                            Prvního
+                            Hříchu</span></em>
+                </p>
+            </span>
+        </div>
+        <nav class="sidebar" id="sidebar">
+            <div><a href="#quote"><i class="fa fa-flag"></i><span class="tooltip" id="cast1">Hlavní Informace</span></a></div>
+            <div><a href="#"><i class="fa fa-flag"></i><span class="tooltip" id="cast2">example</span></a></div>
+            <div><a href="#"><i class="fa fa-flag"></i><span class="tooltip" id="cast3">example</span></a></div>
+            <div><a href="#"><i class="fa fa-flag"></i><span class="tooltip" id="cast4">example</span></a></div>
+            <div><a href="#"><i class="fa fa-flag"></i><span class="tooltip" id="cast5">example</span></a></div>
+            <div><a href="#"><i class="fa fa-flag"></i><span class="tooltip" id="cast6">example6</span></a></div>
+        </nav>
+
+        <!-- úvod -->
+        <section class="content-section" id="content">
+            <h1>Dark Souls ii</h1>
+            <p>Vítejte v ultimátním průvodci světy, které stvořil Hidetaka Miyazaki v čele japonského studia
+                FromSoftware. Pojem
+                "Soulsborne" vznikl spojením názvů sérií <a href=""><em>Souls</em></a> a hry <a
+                    href=""><em>Bloodborne</em></a>, a dnes reprezentuje
+                specifický žánr akčních RPG, který definoval uplynulou dekádu herního průmyslu.</p>
+
+            <p>Žánr začal roku 2009, kdy FromSoftware, nově s Hidetakou Miyazakim v popředí, vydal <a
+                    href=""><em>Demon's Souls</em></a> exklusivně na konzoli Playstation 3. Toto bylo nejdříve negativně
+                setkáno v Japonsku, i od Sony. Jako vynahrazení se ale zanedlouho po publikování v Evropě a Americe hra
+                stala hitem, což vedlo k vytvoření bez-otázky-legendární Dark Souls trilogii.</p>
+        </section>
+        <section class="cards-grid">
+            <!-- DS1 -->
+            <div id="DarkSoulsCard1" class="menu-card">
+                <div class="buttonHeader menu-button">
+                    <span>DARK SOULS i</span><i class="fa fa-chevron-down"></i>
+                </div>
+                <div class="select">
+                    <div><a href="darksouls1.html#">Obecné informace</a></div>
+                    <div><a href="darksouls1.html#">Lordran a Lore</a></div>
+                    <div><a href="darksouls1.html#">Příběh</a></div>
+                    <div><a href="darksouls1.html#">Postavy</a></div>
+                    <div><a href="darksouls1.html#">Démoni a Bossové</a></div>
+                    <div><a href="darksouls1.html#">Klíčové předměty</a></div>
+                    <div><a href="darksouls1.html#">Zbroj a zbraně</a></div>
+                </div>
+            </div>
+            <!-- DS2 -->
+            <div id="BloodborneCard" class="menu-card">
+                <div class="buttonHeader menu-button">
+                    <span>BLOODBORNE</span><i class="fa fa-chevron-down"></i>
+                </div>
+                <div class="select">
+                    <div><a href="darksouls2.html#">Obecné informace</a></div>
+                    <div><a href="darksouls2.html#">Drangleic a Lore</a></div>
+                    <div><a href="darksouls2.html#">Příběh</a></div>
+                    <div><a href="darksouls2.html#">Postavy</a></div>
+                    <div><a href="darksouls2.html#">Démoni a Bossové</a></div>
+                    <div><a href="darksouls2.html#">Klíčové předměty</a></div>
+                    <div><a href="darksouls2.html#">Zbroj a zbraně</a></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- filozofie hratelnosti -->
+        <section class="content-section">
+            <h2>Filozofie Herního Designu a "Neodpouštějící Obtížnost"</h2>
+
+            <p>Často diskutovaným prvkem Souls her je jejich pověstná obtížnost. Nejde však o prvoplánovou snahu
+                hráče
+                frustrovat, ale o pečlivě navržený systém, kde smrt slouží jako nástroj učení. Každý krok do neznáma
+                vyžaduje respekt k hernímu prostředí.</p>
+
+            <p>Suspendisse potenti. Nullam ac tortor leo. Curabitur sed lectus vehicula, rutrum metus ac, malesuada
+                diam.
+                Phasellus consectetur odio a vulputate tempus. Mauris eleifend bibendum justo, at fermentum felis.
+                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In hac
+                habitasse platea dictumst. Quisque iaculis dolor nec nunc tincidunt, non dapibus augue venenatis.
+            </p>
+
+        </section>
+
+        <section class="content-section" style="width: auto;">
+            <h2>Postavy</h2>
+        </section>
+
+        <!-- 1. MŘÍŽKA POSTAV -->
+        <section class=" characters-grid">
+
+            <!-- karta 1 -->
+            <div class="char-card">
+                <img src="img/DS2/bearer.jpg" alt="Nositel Klenby" class="char-image" style="object-position: center">
+
+                <div class="char-hover-info">
+                    <h3>Nositel Klenby</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+
+                <div class="char-detail-text dissappear">
+                    <p>(text)</p>
+                    <p>(text)</p>
+                    <div class="weapon-card modal-weapon">
+
+                        <div class="weapon-info">
+                            <h2>Svatý Meč Měsíčního Světla</h2>
+
+                            <!-- Tento obal zajišťuje plynulou animaci výšky -->
+                            <div class="weapon-lore-wrapper">
+                                <div class="weapon-lore-inner">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus facere,
+                                        architecto quo
+                                        dicta
+                                        velit ullam optio modi voluptatem aliquid repudiandae officia a id impedit ipsa
+                                        accusamus at
+                                        quia, quibusdam corrupti.</p>
+                                    <p>Sunt sapiente quaerat reiciendis enim aliquid, nesciunt molestiae ipsa possimus
+                                        accusantium
+                                        inventore mollitia magnam, quod autem! Alias porro unde reiciendis odit numquam,
+                                        voluptate velit
+                                        rem ut dolor ipsum, nulla recusandae. Debitis, ad distinctio minus id alias
+                                        eligendi
+                                        quibusdam
+                                        perferendis sunt?</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="weapon-visual">
+                            <!-- Doporučuji přidat class s filtrem, např. drop-shadow v CSS, pokud mají vaše obrázky průhledné pozadí -->
+                            <img src="img/BB/Holy_Moonlight_Sword.png" alt="Holy Moonlight Sword">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- karta 2 -->
+            <div class="char-card">
+                <img src="img/DS2/herald.jpg" alt="Smaragdový Herold" class="char-image">
+
+                <div class="char-hover-info">
+                    <h3>Smaragdový Herold</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+
+                <div class="char-detail-text dissappear">
+                    <p>(text)</p>
+                    <p>(text)</p>
+                </div>
+            </div>
+            <!-- karta 3 -->
+            <div class="char-card">
+                <img src="img/DS2/shalquior.jpg" alt="Příjemná Shalquoir" class="char-image">
+
+                <div class="char-hover-info">
+                    <h3>Příjemná Shalquoir</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+
+                <div class="char-detail-text dissappear">
+                    <p>(text)</p>
+                    <p>(text)</p>
+                </div>
+
+            </div><!-- karta 4 -->
+            <div class="char-card">
+                <img src="img/DS2/lenigrast.jpg" alt="Kovář Lenigrast" class="char-image">
+
+                <div class="char-hover-info">
+                    <h3>Kovář Lenigrast</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+
+                <div class="char-detail-text dissappear">
+                    <p>(text)</p>
+                    <p>(text)</p>
+                </div>
+
+            </div><!-- karta 5 -->
+            <div class="char-card">
+                <img src="img/DS2/King_Vendrick.jpg" alt="Král Vendrick" class="char-image">
+
+                <div class="char-hover-info">
+                    <h3>Král Vendrick</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+
+                <div class="char-detail-text dissappear">
+                    <p>(text)</p>
+                    <p>(text)</p>
+                </div>
+
+            </div><!-- karta 6 -->
+            <div class="char-card">
+                <img src="img/DS2/velstadt.jpg" alt="Velstadt, Královská Ochrana" class="char-image">
+
+                <div class="char-hover-info">
+                    <h3>Velstadt, Královská Ochrana</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+
+                <div class="char-detail-text dissappear">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt obcaecati laudantium atque porro temporibus magnam cumque, dicta unde dolores velit vel? Sed soluta ipsam officia mollitia, vero incidunt esse voluptas?
+                    Cum maxime quidem omnis, dolorem error dignissimos. Voluptates ea quas animi magni dolor error at, sunt aliquid iusto autem minima explicabo sequi ratione minus perspiciatis dolorum, velit esse, cupiditate dolores.
+                    Pariatur, laborum consectetur praesentium est corrupti libero iste quod dolorum eaque odit quas a placeat, illum nesciunt. Perspiciatis ipsum sint adipisci excepturi repellat vitae et exercitationem amet alias, maiores officia.
+                    Reprehenderit esse ipsa ratione rem harum ex necessitatibus autem? Minima soluta dolorem et quisquam quam maxime, cum aliquam optio doloremque temporibus omnis exercitationem quos ullam accusamus porro asperiores ipsam voluptatibus!
+                    Temporibus quibusdam aliquid similique suscipit maiores eligendi facilis impedit laboriosam dignissimos, optio nesciunt nobis accusantium sint a quia laborum totam reiciendis ea? Debitis eum aperiam ipsa ad, non nemo similique!
+                    Atque excepturi quisquam tempore quis, itaque non iste eaque esse magni cum est porro deleniti quidem perspiciatis et reiciendis. Consectetur cumque velit quo enim impedit esse ratione, illum perspiciatis eius.
+                    Minima voluptate quidem ab illum unde, architecto rerum est quas consequuntur distinctio! Necessitatibus minima ab ut esse saepe? Sunt, quas earum cupiditate facilis vel reprehenderit voluptatibus a adipisci numquam quos.
+                    Nisi quod hic unde! Assumenda voluptatibus placeat sed quasi veniam illum vel molestiae possimus, iusto necessitatibus soluta sint! Ducimus assumenda accusamus quia aliquid perferendis alias esse porro dicta! Incidunt, sapiente!
+                    Molestias fugiat voluptatem nam distinctio perferendis iusto hic necessitatibus nemo magnam expedita nulla numquam at tempora odit, reprehenderit consequuntur nobis cupiditate, eum, perspiciatis architecto provident. Corporis tempore accusantium quam aperiam!
+                    Modi perspiciatis dolor non, voluptatem repellendus nam optio sit ratione sint, dolorem id quaerat dicta eveniet amet, sed dignissimos? Animi laboriosam corporis porro ea tempora quisquam totam, nobis harum error.</p>
+                    <p>(text)</p>
+                </div>
+
+            </div><!-- karta 7 -->
+            <div class="char-card">
+                <img src="img/DS2/raime.jpg" alt="Raime, Rytíř Výparu" class="char-image">
+
+                <div class="char-hover-info">
+                    <h3>Raime, Rytíř Výparu</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+
+                <div class="char-detail-text dissappear">
+                    <p>(text)</p>
+                    <p>(text)</p>
+                </div>
+
+            </div><!-- karta 8 -->
+            <div class="char-card">
+                <img src="img/DS2/nashandra.jpg" alt="Královna Nashandra" class="char-image">
+
+                <div class="char-hover-info">
+                    <h3>Královna Nashandra</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+
+                <div class="char-detail-text dissappear">
+                    <p>(text)</p>
+                    <p>(text)</p>
+                </div>
+
+            </div><!-- karta 9 -->
+            <div class="char-card">
+                <img src="img/DS2/BIK.jpg" alt="Ohořelý Král ze slonoviny" class="char-image">
+
+                <div class="char-hover-info">
+                    <h3>Ohořelý Král ze slonoviny</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+
+                <div class="char-detail-text dissappear">
+                    <p>(text)</p>
+                    <p>(text)</p>
+                </div>
+
+            </div><!-- karta 10 -->
+            <div class="char-card">
+                <img src="img/DS2/giantlord.jpg" alt="Král Obrů" class="char-image">
+
+                <div class="char-hover-info">
+                    <h3>Král Obrů</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+
+                <div class="char-detail-text dissappear">
+                    <p>(text)</p>
+                    <p>(text)</p>
+                </div>
+
+            </div><!-- karta 11 -->
+            <div class="char-card">
+                <img src="img/DS2/aldia.webp" alt="Aldia, Učenec Prvního Hříchu" class="char-image" style="object-position: right">
+
+                <div class="char-hover-info">
+                    <h3>Aldia, Učenec Prvního Hříchu</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+
+                <div class="char-detail-text dissappear">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime voluptatum adipisci officiis numquam eos hic quod ut veniam aperiam ea minima, facilis quis quia culpa ratione. Totam voluptates laboriosam quibusdam?
+                    Impedit voluptate ipsa nulla accusamus pariatur similique, ullam repellat voluptates vitae, id repellendus alias. Dignissimos fugit laborum, error nobis, velit minima dolores inventore quam ipsam, veritatis omnis tempora quia eius.
+                    Dignissimos vero nam inventore laboriosam minus ut dolores minima, molestias alias eos repudiandae repellendus illo, possimus atque earum est eveniet. Sunt consequatur voluptas dolores in nulla explicabo temporibus, ipsa quae?
+                    Accusamus aperiam suscipit aliquid placeat, assumenda voluptates voluptas minima dolore deserunt, cupiditate nobis cum. Dolor provident, illum possimus alias eligendi sunt repudiandae sapiente exercitationem, pariatur odio, velit necessitatibus reprehenderit ullam.
+                    Earum, fugiat quaerat? Molestiae cum impedit accusantium quibusdam maiores dicta cumque sunt labore libero facilis dignissimos vitae corrupti quod possimus magni obcaecati laborum commodi, reprehenderit voluptatum necessitatibus qui cupiditate ad?</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime voluptatum adipisci officiis numquam eos hic quod ut veniam aperiam ea minima, facilis quis quia culpa ratione. Totam voluptates laboriosam quibusdam?
+                    Impedit voluptate ipsa nulla accusamus pariatur similique, ullam repellat voluptates vitae, id repellendus alias. Dignissimos fugit laborum, error nobis, velit minima dolores inventore quam ipsam, veritatis omnis tempora quia eius.
+                    Dignissimos vero nam inventore laboriosam minus ut dolores minima, molestias alias eos repudiandae repellendus illo, possimus atque earum est eveniet. Sunt consequatur voluptas dolores in nulla explicabo temporibus, ipsa quae?
+                    Accusamus aperiam suscipit aliquid placeat, assumenda voluptates voluptas minima dolore deserunt, cupiditate nobis cum. Dolor provident, illum possimus alias eligendi sunt repudiandae sapiente exercitationem, pariatur odio, velit necessitatibus reprehenderit ullam.
+                    Earum, fugiat quaerat? Molestiae cum impedit accusantium quibusdam maiores dicta cumque sunt labore libero facilis dignissimos vitae corrupti quod possimus magni obcaecati laborum commodi, reprehenderit voluptatum necessitatibus qui cupiditate ad?</p>
+                </div>
+
+            </div><!-- karta 12 -->
+            <div class="char-card">
+                <img src="img/DS2/Navlaan.jpg" alt="Zrozený Mág Navlaan" class="char-image">
+
+                <div class="char-hover-info">
+                    <h3>Zrozený Mág Navlaan</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+
+                <div class="char-detail-text dissappear">
+                    <p>(text)</p>
+                    <p>(text)</p>
+                </div>
+
+            </div>
+        </section>
+
+        <div id="character-modal" class="char-modal">
+            <div class="char-modal-content">
+                <span class="close-modal"><i class="fa fa-times"></i></span>
+
+                <!-- Sem JS doplní obrázek a text podle toho, na koho se klikne -->
+                <div class="modal-left">
+                    <img id="modal-img" src="" alt="Character Detail">
+                </div>
+                <div class="modal-right">
+                    <h2 id="modal-title">Jméno Postavy</h2>
+                    <div id="modal-desc">
+                        <!-- Zde se objeví detailní text -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <section class="content-section" style="width: auto; margin-bottom: 
+        0;">
+            <h2>Zbraně</h2>
+        </section>
+
+        <section class="weapon-list">
+            <div class="weapon-card">
+
+                <div class="weapon-info">
+                    <h2>Svatý Meč Měsíčního Světla</h2>
+
+                    <!-- Tento obal zajišťuje plynulou animaci výšky -->
+                    <div class="weapon-lore-wrapper">
+                        <div class="weapon-lore-inner">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus facere, architecto quo
+                                dicta
+                                velit ullam optio modi voluptatem aliquid repudiandae officia a id impedit ipsa
+                                accusamus at
+                                quia, quibusdam corrupti.</p>
+                            <p>Sunt sapiente quaerat reiciendis enim aliquid, nesciunt molestiae ipsa possimus
+                                accusantium
+                                inventore mollitia magnam, quod autem! Alias porro unde reiciendis odit numquam,
+                                voluptate velit
+                                rem ut dolor ipsum, nulla recusandae. Debitis, ad distinctio minus id alias eligendi
+                                quibusdam
+                                perferendis sunt?</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="weapon-visual">
+                    <img src="img/BB/Holy_Moonlight_Sword.png" alt="Holy Moonlight Sword">
+                </div>
+
+            </div>
+            <div class="weapon-card">
+
+                <div class="weapon-info">
+                    <h2>Svatý Meč Měsíčního Světla</h2>
+
+                    <!-- Tento obal zajišťuje plynulou animaci výšky -->
+                    <div class="weapon-lore-wrapper">
+                        <div class="weapon-lore-inner">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus facere, architecto quo
+                                dicta
+                                velit ullam optio modi voluptatem aliquid repudiandae officia a id impedit ipsa
+                                accusamus at
+                                quia, quibusdam corrupti.</p>
+                            <p>Sunt sapiente quaerat reiciendis enim aliquid, nesciunt molestiae ipsa possimus
+                                accusantium
+                                inventore mollitia magnam, quod autem! Alias porro unde reiciendis odit numquam,
+                                voluptate velit
+                                rem ut dolor ipsum, nulla recusandae. Debitis, ad distinctio minus id alias eligendi
+                                quibusdam
+                                perferendis sunt?</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="weapon-visual">
+                    <!-- Doporučuji přidat class s filtrem, např. drop-shadow v CSS, pokud mají vaše obrázky průhledné pozadí -->
+                    <img src="img/BB/Holy_Moonlight_Sword.png" alt="Holy Moonlight Sword">
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
