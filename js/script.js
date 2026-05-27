@@ -116,3 +116,15 @@ if (characterCards.length > 0) { // Ochrana: Spustí se jen na stránkách, kde 
         }
     });
 }
+
+// --- LOGIKA PRO LOKACE (SCHOVÁNÍ TEXTU A ZOBRAZENÍ SCENÉRIE) ---
+const locationCards = document.querySelectorAll('.location-card');
+
+if (locationCards.length > 0) {
+    locationCards.forEach(card => {
+        card.addEventListener('click', function () {
+            // Přepne třídu 'view-mode' při každém kliknutí
+            this.classList.toggle('view-mode');
+        });
+    });
+}

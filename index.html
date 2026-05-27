@@ -3,18 +3,26 @@
 
 <!-- https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:nth-child -->
 
-<!-- úkoly: při hoveru nad Souls textem v prvnim odstavci zobrazit dva tooltipy, ktere vedou na stranku demons souls a dark souls trilogie.
-
+<!-- úkoly:
 -->
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soulsborne Univerzum | Hlavní stránka</title>
+    <title>Soulsborne Univerzum | Dark Souls Trilogie</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/masterstyl.css">
-    <link rel="icon" href="img/icon/favicon.ico">
+    <link rel="icon" href="img//icon/favicon.ico">
     <link rel="preload" href="font/CinzelDecorative-Medium.woff2" as="font" type="font/woff2" crossorigin>
+    <style>
+        #background {
+            background-image: url(img/DarkSouls/open-graph-dark-souls-trilogy.jpg);
+        }
+
+        :root {
+            /* --gradient: linear-gradient(90deg, rgba(138, 12, 25, 1) 0%, rgba(211, 211, 211, 1) 100%); */
+        }
+    </style>
 </head>
 
 <body>
@@ -79,53 +87,27 @@
 
         <!-- úvod -->
         <section class="content-section" id="content">
-            <h1>Fenomén Jménem Soulsborne</h1>
+            <h1>Legendární Trilogie</h1>
             <p>Vítejte v ultimátním průvodci světy, které stvořil Hidetaka Miyazaki v čele japonského studia
                 FromSoftware. Pojem
                 "Soulsborne" vznikl spojením názvů sérií <a href=""><em>Souls</em></a> a hry <a
                     href=""><em>Bloodborne</em></a>, a dnes reprezentuje
-                specifický žánr akčních RPG, který definoval uplynulou dekádu herního průmyslu. Pouději se k pojmu
-                přidalo "kiro" a "ring", s vydáním dalších hlavních her od Fromsofttwaru, kterými jsou <a
-                    href="sekiro.html"><em>Sekiro</em></a> a <a href="eldenring.html"><em>Elden Ring</em></a>.
-            </p>
+                specifický žánr akčních RPG, který definoval uplynulou dekádu herního průmyslu.</p>
+
             <p>Žánr začal roku 2009, kdy FromSoftware, nově s Hidetakou Miyazakim v popředí, vydal <a
-                    href=""><em>Demon's
-                        Souls</em></a> exklusivně na konzoli Playstation 3. Toto bylo nejdříve negativně
+                    href=""><em>Demon's Souls</em></a> exklusivně na konzoli Playstation 3. Toto bylo nejdříve negativně
                 setkáno v Japonsku, i od Sony. Jako vynahrazení se ale zanedlouho po publikování v Evropě a Americe hra
                 stala hitem, což vedlo k vytvoření bez-otázky-legendární Dark Souls trilogii.</p>
-
-            <p>
-
-            </p>
-            <!-- stranka o miyazakim a fromu -->
         </section>
-
         <section class="cards-grid">
-
-            <!-- DeS -->
-            <div id="DemonSoulsCard" class="menu-card">
-                <div class="buttonHeader menu-button">
-                    <span>DEMON'S SOULS</span><i class="fa fa-chevron-down"></i>
-                </div>
-                <div class="select">
-                    <div><a href="demonsouls.html#">Obecné informace</a></div>
-                    <div><a href="demonsouls.html#">Svět a Lore</a></div>
-                    <div><a href="demonsouls.html#">Příběh</a></div>
-                    <div><a href="demonsouls.html#">Postavy</a></div>
-                    <div><a href="demonsouls.html#">Démoni a Bossové</a></div>
-                    <div><a href="demonsouls.html#">Klíčové předměty</a></div>
-                    <div><a href="demonsouls.html#">Zbroj a zbraně</a></div>
-                </div>
-            </div>
-            <!-- DS -->
-
+            <!-- DS1 -->
             <div id="DarkSoulsCard1" class="menu-card">
                 <div class="buttonHeader menu-button">
                     <span>DARK SOULS i</span><i class="fa fa-chevron-down"></i>
                 </div>
                 <div class="select">
                     <div><a href="darksouls1.html#">Obecné informace</a></div>
-                    <div><a href="darksouls1.html#">Svět a Lore</a></div>
+                    <div><a href="darksouls1.html#">Lordran a Lore</a></div>
                     <div><a href="darksouls1.html#">Příběh</a></div>
                     <div><a href="darksouls1.html#">Postavy</a></div>
                     <div><a href="darksouls1.html#">Démoni a Bossové</a></div>
@@ -133,13 +115,14 @@
                     <div><a href="darksouls1.html#">Zbroj a zbraně</a></div>
                 </div>
             </div>
+            <!-- DS2 -->
             <div id="DarkSoulsCard2" class="menu-card">
                 <div class="buttonHeader menu-button">
                     <span>DARK SOULS ii</span><i class="fa fa-chevron-down"></i>
                 </div>
                 <div class="select">
                     <div><a href="darksouls2.html#">Obecné informace</a></div>
-                    <div><a href="darksouls2.html#">Svět a Lore</a></div>
+                    <div><a href="darksouls2.html#">Drangleic a Lore</a></div>
                     <div><a href="darksouls2.html#">Příběh</a></div>
                     <div><a href="darksouls2.html#">Postavy</a></div>
                     <div><a href="darksouls2.html#">Démoni a Bossové</a></div>
@@ -147,13 +130,14 @@
                     <div><a href="darksouls2.html#">Zbroj a zbraně</a></div>
                 </div>
             </div>
+            <!-- DS3 -->
             <div id="DarkSoulsCard3" class="menu-card">
                 <div class="buttonHeader menu-button">
                     <span>DARK SOULS iii</span><i class="fa fa-chevron-down"></i>
                 </div>
                 <div class="select">
                     <div><a href="darksouls3.html#">Obecné informace</a></div>
-                    <div><a href="darksouls3.html#">Svět a Lore</a></div>
+                    <div><a href="darksouls3.html#">Lothric a Lore</a></div>
                     <div><a href="darksouls3.html#">Příběh</a></div>
                     <div><a href="darksouls3.html#">Postavy</a></div>
                     <div><a href="darksouls3.html#">Démoni a Bossové</a></div>
@@ -161,55 +145,6 @@
                     <div><a href="darksouls3.html#">Zbroj a zbraně</a></div>
                 </div>
             </div>
-
-            <!-- BB -->
-            <div id="BloodborneCard" class="menu-card">
-                <div class="buttonHeader menu-button">
-                    <span>BLOODBORNE</span><i class="fa fa-chevron-down"></i>
-                </div>
-                <div class="select">
-                    <div><a href="bloodborne.html#">Obecné informace</a></div>
-                    <div><a href="bloodborne.html#">Yharnam</a></div>
-                    <div><a href="bloodborne.html#">Lovecká noc</a></div>
-                    <div><a href="bloodborne.html#">Lovci a Oběti</a></div>
-                    <div><a href="bloodborne.html#">Ti Prastaří</a></div>
-                    <div><a href="bloodborne.html#">Krev a Raritní lov</a></div>
-                    <div><a href="bloodborne.html#">Trik-zbraně a Nástroje Lovce</a></div>
-                </div>
-            </div>
-
-            <!-- SSDT -->
-            <div id="SekiroCard" class="menu-card">
-                <div class="buttonHeader menu-button">
-                    <span>SEKIRO</span><i class="fa fa-chevron-down"></i>
-                </div>
-                <div class="select">
-                    <div><a href="sekiro.html#">Obecné informace</a></div>
-                    <div><a href="sekiro.html#">Ashina</a></div>
-                    <div><a href="sekiro.html#">Cesta Shinobiho</a></div>
-                    <div><a href="sekiro.html#">Postavy</a></div>
-                    <div><a href="sekiro.html#">Nepřátelé</a></div>
-                    <div><a href="sekiro.html#">Prostetické nástroje</a></div>
-                    <div><a href="sekiro.html#">Bojová umění</a></div>
-                </div>
-            </div>
-
-            <!-- ER -->
-            <div id="EldenRingCard" class="menu-card">
-                <div class="buttonHeader menu-button">
-                    <span>ELDEN RING</span><i class="fa fa-chevron-down"></i>
-                </div>
-                <div class="select">
-                    <div><a href="eldenring.html#">Obecné informace</a></div>
-                    <div><a href="eldenring.html#">Země Mezi</a></div>
-                    <div><a href="eldenring.html#">Roztříštění</a></div>
-                    <div><a href="eldenring.html#">Polobozi (Demigods)</a></div>
-                    <div><a href="eldenring.html#">Nepřátelé</a></div>
-                    <div><a href="eldenring.html#">Velké runy a Upomínky</a></div>
-                    <div><a href="eldenring.html#">Výzbroj a Kouzla</a></div>
-                </div>
-            </div>
-
         </section>
 
         <!-- filozofie hratelnosti -->
@@ -229,8 +164,121 @@
             </p>
 
         </section>
+        <!-- 1. MŘÍŽKA POSTAV -->
+        <section class="characters-grid">
+
+            <!-- Karta postavy 1 -->
+            <div class="char-card">
+                <img src="img/header/DarkS/raime.jpg" alt="Solaire" class="char-image">
+
+                <!-- Tento div vyjede zespodu při najetí myší -->
+                <div class="char-hover-info">
+                    <h3>Solaire of Astora</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+
+                <!-- Skrytý detailní text (JS si ho odsud vytáhne při kliknutí) -->
+                <div class="char-detail-text dissappear">
+                    <p>Solaire je rytíř slunce, který dobrovolně přišel do Lordranu, aby nalezl své vlastní slunce. Na
+                        rozdíl od většiny ostatních nemrtvých si udržuje neochvějný optimismus.</p>
+                    <p>Je to pravděpodobně nejoblíbenější NPC celé série, známý svým ikonickým gestem "Praise the Sun!".
+                        Lze ho vyvolat na pomoc u mnoha klíčových bossů.</p>
+                </div>
+            </div>
+            <div class="char-card">
+                <!-- Zde doplňte cestu k obrázku postavy -->
+                <img src="img/header/DarkS/raime.jpg" alt="Solaire" class="char-image">
+
+                <!-- Tento div vyjede zespodu při najetí myší -->
+                <div class="char-hover-info">
+                    <h3>Solaire of Astora</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+
+                <!-- Skrytý detailní text (JS si ho odsud vytáhne při kliknutí) -->
+                <div class="char-detail-text dissappear">
+                    <p>Solaire je rytíř slunce, který dobrovolně přišel do Lordranu, aby nalezl své vlastní slunce. Na
+                        rozdíl od většiny ostatních nemrtvých si udržuje neochvějný optimismus.</p>
+                    <p>Je to pravděpodobně nejoblíbenější NPC celé série, známý svým ikonickým gestem "Praise the Sun!".
+                        Lze ho vyvolat na pomoc u mnoha klíčových bossů.</p>
+                </div>
+            </div>
+            <div class="char-card">
+                <!-- Zde doplňte cestu k obrázku postavy -->
+                <img src="img/header/DarkS/raime.jpg" alt="Solaire" class="char-image">
+
+                <!-- Tento div vyjede zespodu při najetí myší -->
+                <div class="char-hover-info">
+                    <h3>Solaire of Astora</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+
+                <!-- Skrytý detailní text (JS si ho odsud vytáhne při kliknutí) -->
+                <div class="char-detail-text dissappear">
+                    <p>Solaire je rytíř slunce, který dobrovolně přišel do Lordranu, aby nalezl své vlastní slunce. Na
+                        rozdíl od většiny ostatních nemrtvých si udržuje neochvějný optimismus.</p>
+                    <p>Je to pravděpodobně nejoblíbenější NPC celé série, známý svým ikonickým gestem "Praise the Sun!".
+                        Lze ho vyvolat na pomoc u mnoha klíčových bossů.</p>
+                </div>
+            </div>
+            <div class="char-card">
+                <!-- Zde doplňte cestu k obrázku postavy -->
+                <img src="img/header/DarkS/raime.jpg" alt="Solaire" class="char-image">
+
+                <!-- Tento div vyjede zespodu při najetí myší -->
+                <div class="char-hover-info">
+                    <h3>Solaire of Astora</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+
+                <!-- Skrytý detailní text (JS si ho odsud vytáhne při kliknutí) -->
+                <div class="char-detail-text dissappear">
+                    <p>Solaire je rytíř slunce, který dobrovolně přišel do Lordranu, aby nalezl své vlastní slunce. Na
+                        rozdíl od většiny ostatních nemrtvých si udržuje neochvějný optimismus.</p>
+                    <p>Je to pravděpodobně nejoblíbenější NPC celé série, známý svým ikonickým gestem "Praise the Sun!".
+                        Lze ho vyvolat na pomoc u mnoha klíčových bossů.</p>
+                </div>
+            </div>
+            <div class="char-card">
+                <!-- Zde doplňte cestu k obrázku postavy -->
+                <img src="img/header/DarkS/raime.jpg" alt="Solaire" class="char-image">
+
+                <!-- Tento div vyjede zespodu při najetí myší -->
+                <div class="char-hover-info">
+                    <h3>Solaire of Astora</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+
+                <!-- Skrytý detailní text (JS si ho odsud vytáhne při kliknutí) -->
+                <div class="char-detail-text dissappear">
+                    <p>Solaire je rytíř slunce, který dobrovolně přišel do Lordranu, aby nalezl své vlastní slunce. Na
+                        rozdíl od většiny ostatních nemrtvých si udržuje neochvějný optimismus.</p>
+                    <p>Je to pravděpodobně nejoblíbenější NPC celé série, známý svým ikonickým gestem "Praise the Sun!".
+                        Lze ho vyvolat na pomoc u mnoha klíčových bossů.</p>
+                </div>
+            </div>
+        </section> <!-- Konec mřížky -->
+
+        <div id="character-modal" class="char-modal">
+            <div class="char-modal-content">
+                <span class="close-modal"><i class="fa fa-times"></i></span>
+
+                <!-- Sem JS doplní obrázek a text podle toho, na koho se klikne -->
+                <div class="modal-left">
+                    <img id="modal-img" src="" alt="Character Detail">
+                </div>
+                <div class="modal-right">
+                    <h2 id="modal-title">Jméno Postavy</h2>
+                    <div id="modal-desc">
+                        <!-- Zde se objeví detailní text -->
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
     </main>
+    <!-- 2. GLOBÁLNÍ MODÁLNÍ OKNO (Umístěte mimo section, např. nad <script>) -->
+
     <script src="js/script.js"></script>
 
 </body>

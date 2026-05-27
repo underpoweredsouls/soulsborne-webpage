@@ -1,4 +1,4 @@
-/* --- ZÁKLADNÍ NASTAVENÍ A PROMĚNNÉ --- */
+/* Proměnné, základní nastavení */
 @font-face {
   font-family: CinzelDecorative;
   src:
@@ -10,7 +10,7 @@
 
 @font-face {
   font-family: CinzelNormal;
-  src: url(../font/Cinzel-Regular.woff2);
+  src: url(../font/Cinzel-Regular.woff2) format("woff2");
   font-display: swap;
 }
 
@@ -57,12 +57,12 @@ a:hover {
   color: rgb(255, 224, 140) !important;
 }
 
-/* --- JS TŘÍDY (Utility) --- */
+/* JS třídy */
 .dissappear {
   display: none;
 }
 
-/* --- POZADÍ --- */
+/* Pozadí */
 #background {
   height: 100vh;
   width: 100%;
@@ -74,7 +74,7 @@ a:hover {
   z-index: -1;
 }
 
-/* --- GLOBÁLNÍ UI A IKONY --- */
+/* Globální */
 h1,
 h2,
 h3,
@@ -83,7 +83,9 @@ h3,
 .fa.fa-home,
 .fa.fa-bars,
 .author,
-.close-modal {
+.close-modal,
+.weapon-lore-inner > p:last-of-type,
+.view-hint {
   background: var(--gradient, #ff8400);
   background-clip: text;
   -webkit-background-clip: text;
@@ -122,7 +124,7 @@ h3,
   color: rgb(255, 224, 140);
 }
 
-/* --- OBRÁZKOVÁ NAVIGACE (HEADER) --- */
+/* Header */
 header {
   opacity: 0.7;
   background-color: #0c0b0b;
@@ -203,7 +205,7 @@ header:has(.group:hover) {
   object-position: left center;
 }
 
-/* --- HLAVNÍ OBSAH (MAIN) --- */
+/* Main */
 main {
   margin-left: 45px;
   display: flex;
@@ -211,7 +213,7 @@ main {
   align-items: center;
 }
 
-/* --- CITÁT (QUOTEWRAP) --- */
+/* Citát */
 .quotewrap {
   opacity: 0.5;
   margin-top: 50px;
@@ -230,7 +232,6 @@ main {
   position: absolute;
   inset: 0;
   background-size: cover;
-  background-position: right center;
   mask-image: linear-gradient(to right, transparent, black);
   -webkit-mask-image: linear-gradient(to right, transparent, black);
   z-index: -1;
@@ -277,7 +278,7 @@ main {
   float: right;
 }
 
-/* --- BOČNÍ PANEL (SIDEBAR) --- */
+/* Sidebar */
 .sidebar {
   z-index: 100;
   display: flex;
@@ -353,9 +354,8 @@ main {
   text-align: justify;
 }
 
-/*  HERNÍ KARTY */
+/*  Herní karty */
 .cards-grid {
-  position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fit, 550px);
   justify-content: center;
@@ -365,6 +365,11 @@ main {
 }
 
 .cards-grid:has(> :last-child:nth-child(odd)) > .menu-card:last-of-type {
+  left: 50%;
+}
+
+.select:has(:last-child:nth-child(odd)) div:last-of-type {
+  position: relative;
   left: 50%;
 }
 
@@ -447,6 +452,7 @@ main {
 }
 
 .select {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
@@ -481,7 +487,7 @@ main {
 #BloodborneCard .select>div>a { color: rgb(0, 174, 255); } /* prettier-ignore */
 #EldenRingCard .select>div>a { color: green; }
 
-/* --- KARTY POSTAV A GRID --- */
+/* Grid a karty postav */
 .characters-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -541,7 +547,7 @@ main {
   font-style: italic;
 }
 
-/* --- HOVER EFEKTY KARTY --- */
+/* Hover efekty karty */
 .char-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
@@ -556,7 +562,7 @@ main {
   transform: translateY(0);
 }
 
-/* --- FULLSCREEN MODÁLNÍ OKNO --- */
+/* Modální okno */
 .char-modal {
   position: fixed;
   top: 0;
@@ -593,6 +599,10 @@ main {
   overflow: hidden;
   transform: scale(0.95);
   transition: transform 0.5s var(--transition);
+}
+
+.modal-right::-webkit-scrollbar {
+  display: none;
 }
 
 .char-modal.active .char-modal-content {
@@ -638,23 +648,145 @@ main {
   padding-bottom: 15px;
 }
 
-/* --- ZBRANĚ --- */
+/* Lokace */
+
+.locations-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: 40px auto;
+  gap: 30px;
+}
+
+.location-card {
+  position: relative;
+  width: 90%;
+  max-width: 1000px;
+  min-height: 120px;
+  border-radius: 12px;
+  border: 1px solid #333;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  transition:
+    border-color 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+.location-card::before {
+  content: "";
+  inset: 0;
+  z-index: -1;
+  position: absolute;
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  height: 100%;
+}
+
+.location-card:hover {
+  border: 2px solid #d3d3d3;
+  box-shadow: 0 10px 30px rgba(235, 235, 235, 0.144);
+}
+
+/* Obrázek na pozadí */
+.location-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  /* Ztmavíme obrázek, aby byl text čitelný */
+  opacity: 0.3;
+  filter: grayscale(30%);
+  transition: all 1s var(--transition);
+  z-index: 0;
+}
+
+/* Obal pro text (musí být nad obrázkem) */
+.location-content {
+  position: relative;
+  z-index: 1;
+  padding: 25px 40px;
+  transition: opacity 0.8s var(--transition);
+}
+
+.location-content h2 {
+  margin: 0;
+  font-size: 32px;
+  text-align: left;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Malá nápověda, že lze kliknout */
+.view-hint {
+  display: block;
+  font-size: 14px;
+  font-style: italic;
+  opacity: 0.7;
+  margin-top: 5px;
+  transition: color 0.3s;
+}
+
+/* Animace výšky textu (stejný trik jako u zbraní) */
+.location-lore-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows 1s var(--transition),
+    opacity 0.6s ease;
+}
+
+.location-lore-inner {
+  overflow: hidden;
+  text-align: justify;
+  line-height: 1.6;
+  padding-top: 15px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9); /* Důležité pro čitelnost na obrázku */
+}
+
+/* Hover efekt pro rozbalení */
+.location-card:hover .location-lore-wrapper {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+/* --- TŘÍDA PRO "VIEW MODE" (Přepínaná přes JS) --- */
+.location-card.view-mode {
+  border: 2px solid rgba(255, 255, 255, 0);
+}
+
+.location-card.view-mode .location-content {
+  opacity: 0; /* Schová text, ale nezmenší kartu! */
+}
+
+.location-card.view-mode .location-bg {
+  opacity: 1; /* Plně rozsvítí obrázek */
+  filter: grayscale(0%);
+  transform: scale(1.025); /* Lehký dramatický zoom */
+}
+
+/* Zbraně */
 .weapon-list {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
-  max-width: 1000px;
+  max-width: 80vw;
   align-self: center;
 }
 
 .weapon-card {
-  margin: 40px auto;
+  background: #000000;
+  background: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(33, 33, 33, 1) 100%
+  );
+  margin: 15px auto;
   background-color: #0c0b0bc7;
   border-radius: 12px;
   border: 1px solid #333;
   width: 100%;
-  max-width: 80%;
   min-height: 120px;
   padding: 25px 30px;
 
@@ -673,7 +805,6 @@ main {
   box-shadow: 0 10px 30px var(--gradient);
   background-color: #0c0b0b;
 }
-
 .weapon-info {
   flex: 1;
   display: flex;
@@ -713,7 +844,6 @@ main {
 .weapon-visual img {
   width: 100%;
   object-fit: contain;
-
   position: absolute;
   right: 0;
 
@@ -721,7 +851,7 @@ main {
   transform: translateY(0) scale(0.8);
   transform-origin: top right;
 
-  max-height: 100px;
+  max-height: 225px;
   transition: all 0.6s var(--transition);
   transition-delay: 0s;
   filter: drop-shadow(0 0 0.2rem);
@@ -744,24 +874,15 @@ main {
 .modal-weapon {
   max-width: 100% !important;
   margin-top: 30px !important;
+  border: none;
 }
-
-.modal-weapon .weapon-visual img {
-  max-height: unset !important;
-}
-
-/* =========================================
-   MEDIA QUERIES 
-========================================= */
 
 @media (max-width: 1700px) {
-  /* Ikony zobrazení pro menší displeje */
   .fa.fa-bars,
   .fa.fa-times {
     display: inline;
   }
 
-  /* Hlavička a navigace */
   header {
     max-height: 100px;
   }
@@ -855,6 +976,30 @@ main {
   .cards-grid:has(> :last-child:nth-child(odd)) > .menu-card:last-of-type {
     left: 0;
   }
+
+  .weapon-card {
+    flex-direction: column;
+    min-height: auto;
+    max-width: 90%;
+  }
+
+  .weapon-visual {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .weapon-visual img {
+    position: static !important;
+    transform: none !important;
+    transition: max-height 0.8s var(--transition);
+  }
+
+  .weapon-card:hover .weapon-visual img {
+    max-height: 160px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -928,7 +1073,9 @@ main {
   .select > div {
     line-height: normal;
   }
+}
 
+@media (max-width: 620px) {
   .char-modal-content {
     flex-direction: column;
     overflow-y: auto;
@@ -948,30 +1095,5 @@ main {
 
   .modal-right {
     padding: 20px;
-  }
-
-  /* Zbraně */
-  .weapon-card {
-    flex-direction: column;
-    min-height: auto;
-    max-width: 90%;
-  }
-
-  .weapon-visual {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-
-  .weapon-visual img {
-    position: static !important;
-    transform: none !important;
-    transition: max-height 0.8s var(--transition);
-  }
-
-  .weapon-card:hover .weapon-visual img {
-    max-height: 160px;
   }
 }

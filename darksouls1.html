@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<!-- https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:nth-child -->
+
+<!-- úkoly:
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soulsborne Univerzum | Dark Souls Trilogie</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/masterstyl.css">
+    <link rel="icon" href="img//icon/favicon.ico">
+    <link rel="preload" href="font/CinzelDecorative-Medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="font/Cinzel-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <style>
+        #background {
+            background-image: url(img/DS2/sitebackground.jpg);
+        }
+
+        :root {
+            --gradient: linear-gradient(90deg, rgb(65, 63, 43) 0%, rgba(211, 211, 211, 1) 100%);
+        }
+
+        .quotewrap::before {
+            background-position: right top 25%;
+            background-image: url(/img/DS2/aldiaquote.jpg);
+        }
+
+        h1,
+        h2,
+        h3 {
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="background"></div>
+
+    <a href="index.html"><i class="fa fa-home"></i></a>
+
+    <div id="headerButton"><i class="fa fa-bars"></i></div>
+    <header id="header">
+        <div class="row" id="row">
+            <!-- Souls -->
+            <div class="group" id="souls">
+                <div class="darkSouls item prime" style="--item-width:100%;">
+                    <a href="darksoulstrilogy.html"><img src="img/DarkSouls/darkSouls.png" alt="Dark"></a>
+                </div>
+                <div class="item prime" id="item">
+                    <a href="demonsouls.html"><img src="img/DeS/demons.png" alt="Demon's"></a>
+                </div>
+                <div class="item main">
+                    <a href="demonsouls.html"><img src="img/DeS/souls.png" alt="Souls"></a>
+                </div>
+            </div>
+            <!-- Borne -->
+            <div class="group" id="BB">
+                <div class="item prime">
+                    <a href="bloodborne.html"><img src="img/BB/blood.png" alt="Blood"></a>
+                </div>
+                <div class="item main">
+                    <a href="bloodborne.html"><img src="img/BB/borne.png" alt="borne"></a>
+                </div>
+            </div>
+            <!-- Kiro -->
+            <div class="group" id="SSDT">
+                <div class="item prime" style="--item-width:var(--item-width);">
+                    <a href="sekiro.html"><img src="img/SSDT/se.png" alt="Se"></a>
+                </div>
+                <div class="item main">
+                    <a href="sekiro.html"><img src="img/SSDT/kiro.png" alt="kiro"></a>
+                </div>
+            </div>
+            <!-- Ring -->
+            <div id="ER" class="group">
+                <div class="er item prime">
+                    <a href="eldenring.html"><img src="img/ER/elden.png" alt="Elden"></a>
+                </div>
+                <div class="item main">
+                    <a href="eldenring.html"><img src="img/ER/ring.png" alt="Ring"></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+        <div class="quotewrap" id="quote">
+            <span class="quote">
+                <p><i class="fa fa-quote-left"></i> Prázdnoto Mladá, přemožiteli strachu.
+                    Copak tě navádí překonat tuto údajnou 'klenbu' ?
+                    (...)
+                    Kdysi, Pán Světla vyhnal Temnotu, a vše, co vedlo z lidstva.
+                    Tak muž nabral prchavé podoby—To jsou kořeny našeho světa.
+                    Muži jsou pouhá rekvizita v divadle života, a bez ohledu na to, jak je něžná, jak vynikající...
+                    Lež zůstane lží. <i class="fa fa-quote-right"></i><br>
+                    <hr style="margin-left:20px;"> <em><span class="author">Aldia, Učenec
+                            Prvního
+                            Hříchu</span></em>
+                </p>
+            </span>
+        </div>
+        <nav class="sidebar" id="sidebar">
+            <div><a href="# "><i class="fa fa-flag"></i><span class="tooltip" id="cast1">Hlavní Informace</span></a>
+            </div>
+            <div><a href="#drangleic"><i class="fa fa-flag"></i><span class="tooltip" id="cast2">O Drangleicu</span></a>
+            </div>
+            <div><a href="#postavy"><i class="fa fa-flag"></i><span class="tooltip" id="cast3">Postavy</span></a></div>
+            <div><a href="#lokace"><i class="fa fa-flag"></i><span class="tooltip" id="cast4">Lokace</span></a></div>
+            <div><a href="#zbraně"><i class="fa fa-flag"></i><span class="tooltip" id="cast5">Zbraně</span></a></div>
+        </nav>
+
+        <!-- úvod -->
+        <section class="content-section" id="content">
+            <h1>Dark Souls: Zrození legendy</h1>
+
+            <p>Když v září roku 2011 vyšlo <em>Dark Souls</em> pro konzole PlayStation 3 a Xbox 360, jen málokdo tušil,
+                že se právě zrodil jeden z nejvlivnějších titulů 21. století. Hra vznikla jako spirituální nástupce
+                <em>Demon's Souls</em> (2009). Režisér Hidetaka Miyazaki a studio FromSoftware se však chtěli vymanit z
+                exkluzivity pro Sony, a tak se spojili s vydavatelem Bandai Namco, aby svou temnou vizi mohli přinést
+                globálnímu, multiplatformnímu publiku.
+            </p>
+
+            <p>Vývoj hry byl nesmírně ambiciózní, což si vybralo svou daň. Miyazakiho snaha o vytvoření gigantického,
+                logicky propojeného světa bez nahrávacích obrazovek narážela na technické i časové limity. Zatímco první
+                polovina hry je dodnes považována za učebnicový příklad dokonalého level designu, druhá polovina vývoje
+                trpěla drastickými škrty. Zejména lokace <em>Ztracený Izalith (Lost Izalith)</em> a boss <em>Lůžko
+                    Chaosu (Bed of Chaos)</em> musely být dokončeny ve velkém spěchu, což sám Miyazaki v pozdějších
+                rozhovorech s lítostí přiznal a omluvil se za ně.</p>
+
+            <p>Navzdory těmto technickým škobrtnutím byla hra přijata s absolutním nadšením. Kritici opěvovali její
+                nekompromisní, ale férovou povahu, která ostře kontrastovala s tehdejším trendem herního průmyslu "vodit
+                hráče za ručičku". Fenomenální úspěch navíc spustil nevídanou komunitní akci – více než 90 tisíc
+                fanoušků podepsalo petici za vydání hry na PC. Bandai Namco v roce 2012 vyhovělo a vydalo <em>Prepare to
+                    Die</em> edici. Samotný PC port byl sice zpočátku katastrofálně neoptimalizovaný, ale komunita
+                (konkrétně modder s přezdívkou Durante) jej během několika hodin opravila, čímž se zpečetil status hry
+                jako kultovního díla s jednou z nejoddanějších komunit na světě.</p>
+
+            <p>Dopad Dark Souls na herní průmysl je nevyčíslitelný. Hra defacto stvořila vlastní subžánr známý jako
+                "Soulslike" a nastavila nový standard pro design soubojových systémů a budování světa. Sousloví <em>"Je
+                    to Dark Souls mezi..."</em> se stalo tak nadužívaným novinářským příměrem pro jakoukoliv obtížnější
+                hru, až se proměnilo v internetový mem. Dark Souls zkrátka změnilo způsob, jakým veřejnost vnímá výzvu
+                ve videohrách.</p>
+
+            <p>Dark Souls také vyhrálo několik extrémně prestižních cen, zejména herní-komunitou-zvolená <em>'Ultimate Game of all
+                Time'</em> ["Ultimátní Hra Všech Dob"] na Golden Joystick Awards roku 2021.</p>
+        </section>
+        <section class="cards-grid">
+            <!-- DS2 -->
+            <div id="DarkSoulsCard2" class="menu-card">
+                <div class="buttonHeader menu-button">
+                    <span>DARK SOULS ii</span><i class="fa fa-chevron-down"></i>
+                </div>
+                <div class="select">
+                    <div><a href="darksouls1.html#">Obecné informace</a></div>
+                    <div><a href="darksouls1.html#">Lordran a Lore</a></div>
+                    <div><a href="darksouls1.html#">Příběh</a></div>
+                    <div><a href="darksouls1.html#">Postavy</a></div>
+                    <div><a href="darksouls1.html#">Démoni a Bossové</a></div>
+                    <div><a href="darksouls1.html#">Klíčové předměty</a></div>
+                    <div><a href="darksouls1.html#">Zbroj a zbraně</a></div>
+                </div>
+            </div>
+            <!-- DS3 -->
+            <div id="DarkSoulsCard3" class="menu-card">
+                <div class="buttonHeader menu-button">
+                    <span>DARK SOULS iii</span><i class="fa fa-chevron-down"></i>
+                </div>
+                <div class="select">
+                    <div><a href="bloodborne.html">Obecné informace</a></div>
+                    <div><a href="bloodborne.html">Drangleic a Lore</a></div>
+                    <div><a href="bloodborne.html">Příběh</a></div>
+                    <div><a href="bloodborne.html">Postavy</a></div>
+                    <div><a href="bloodborne.html">Démoni a Bossové</a></div>
+                    <div><a href="bloodborne.html">Klíčové předměty</a></div>
+                    <div><a href="bloodborne.html">Zbroj a zbraně</a></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Lordran: Architektura zmaru a Skrytá pravda</h2>
+
+            <p>Z uměleckého hlediska je prvotní <em>Dark Souls</em> často analyzováno ne jako tradiční RPG, ale spíše
+                jako melancholická archeologická expedice. Hráč je vržen do Lordranu, bájné říše starých bohů. Nezkoumá
+                však prosperující království, nýbrž jeho hnijící mršinu. Zlatý věk (Věk ohně) už dávno pominul. Vše je
+                zchátralé, prorostlé kořeny a pokryté prachem staletí. Hra neprezentuje tradiční "Power fantasy" (iluzi
+                moci), kde by se hráč cítil jako nepřemožitelný zachránce. Jste jen bezvýznamný nemrtvý, který bloudí v
+                ruinách civilizace, jež byla nepředstavitelně větší než on sám.</p>
+
+            <p>Největším mistrovským dílem hry je bezpochyby design jejího světa. Lordran není sérií oddělených úrovní,
+                ale gigantickým, vertikálním, trojrozměrným labyrintem. Geografie dává dokonalý smysl. Hráč se může
+                hodiny prodírat jedovatými bažinami a temnými jeskyněmi, jen aby na konci otevřel zrezivělou bránu,
+                vyjel výtahem a zjistil, že se vrátil do výchozí Svatyně (Firelink Shrine). Tyto "Heuréka" momenty, kdy
+                se mapa v hráčově hlavě nečekaně propojí, jsou dodnes považovány za nepřekonaný vrchol herního level
+                designu.</p>
+
+            <p>Miyazaki tento svět naplnil narativní technikou zvanou <em>environmentální vyprávění (environmental
+                    storytelling)</em>. Jako dítě četl anglické fantasy knihy, a protože mnoha slovům nerozuměl, musel
+                si prázdná místa v příběhu domýšlet vlastní fantazií. Přesně tento pocit přenesl do hry. Příběh vám není
+                naservírován v dlouhých filmových ukázkách. Zjišťujete ho z popisků nalezených předmětů, z toho, kde
+                leží která mrtvola, jaký má na sobě prsten nebo jaká socha stojí v pozadí arény. Nic ve hře není
+                umístěno náhodně.</p>
+
+            <p>Tematicky se příběh zaobírá nevyhnutelností entropie a strachem z konce. Lord Gwyn, Pán slunečního svitu,
+                se natolik děsil příchodu Věku Temnoty (který je přirozeným věkem lidí), že obětoval vlastní duši, aby
+                uměle prodloužil Věk Ohně. Dopustil se "Prvního hříchu" a porušil zákony přírody. Celé slavné proroctví
+                o Vyvoleném Nemrtvém, za kterého hrajete, je ve skutečnosti jen propagandistická lež starých bohů. Mají
+                vás zmanipulovat k tomu, abyste porazili ty nejsilnější bytosti světa, zesílili, a nakonec se sami
+                upálili v Prvním plameni jako další palivo pro jejich umírající éru. Volba je na konci jen na hráči:
+                obětovat se pro udržení iluze, nebo nechat plamen vyhasnout a přivítat temnotu.</p>
+        </section>
+
+        <section class="content-section" style="width: auto;">
+            <h2>Postavy</h2>
+        </section>
+
+        <!-- 1. MŘÍŽKA POSTAV -->
+        <section class=" characters-grid" id="postavy">
+            <!-- karta 1 -->
+            <div class="char-card">
+                <img src="img/DS2/bearer.jpg" alt="Nositel Klenby" class="char-image" style="object-position: center">
+                <div class="char-hover-info">
+                    <h3>Nositel Klenby</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+                <div class="char-detail-text dissappear">
+                    <p>Hlavní protagonista příběhu. Na rozdíl od Vyvoleného Nemrtvého z prvního dílu, Nositel Klenby
+                        (Bearer of the Curse) není hrdinou z proroctví. Je to jen obyčejný člověk, který ztratil svou
+                        minulost, svou rodinu a kvůli prokletí nemrtvých pomalu ztrácí i svůj rozum.</p>
+                    <p>Jeho příchod do Drangleicu je veden čistým zoufalstvím a nadějí na nalezení léku. Během své cesty
+                        je však zmanipulován mnoha frakcemi – od Smaragdového Herolda až po samotnou Královnu. Záleží
+                        jen na hráči, zda na konci usedne na Trůn touhy a prodlouží cyklus, nebo odejde do temnoty
+                        hledat jinou cestu.</p>
+
+                    <div class="weapon-card modal-weapon">
+                        <div class="weapon-info">
+                            <h2>Zbroj Faraam</h2>
+                            <div class="weapon-lore-wrapper">
+                                <div class="weapon-lore-inner">
+                                    <p>Ikonická zbroj Nositele Klenby, pojmenovaná po válečném bohu Faraamovi. Zbroj je
+                                        navržena pro obratný boj a poskytuje svému nositeli výbornou ochranu bez ztráty
+                                        mobility. Nositel Klenby je v ní vidět v podstatě exklusivně v propagačním
+                                        materiálu Dark Souls II (jako je obrázek v tomto okně).</p>
+                                    <p><em><i class="fa fa-quote-left"></i> Zbroj, kterou nosili
+                                            Lví rytíři z Forossy. Tito těžce ozbrojení bojovníci byli obáváni pro svou
+                                            schopnost ovládat dvě zbraně současně. Po pádu Forossy se rozprchli do všech
+                                            koutů světa jako nájemní žoldáci. <i class="fa fa-quote-right"></i></em></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weapon-visual">
+                            <img src="img/DS2/faraam_helm.png" alt="Faraam Helm">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- karta 2 -->
+            <div class="char-card">
+                <img src="img/DS2/herald.jpg" alt="Smaragdový Herold" class="char-image">
+                <div class="char-hover-info">
+                    <h3>Smaragdový Herold</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+                <div class="char-detail-text dissappear">
+                    <p>Záhadná dívka čekající v Majule, jejíž skutečné jméno je Shanalotte. Je jediným bodem útěchy pro
+                        ztracené duše, kterým pomáhá zvyšovat jejich úroveň za pomoci sesbíraných duší.</p>
+                    <p>Její existence je tragická. Byla vytvořena draky a samotným Aldiou jako experiment, který měl
+                        nadobro zlomit Cyklus prokletí a odolat vlivu plamene. Experiment však selhal. Nyní, spoutaná
+                        svým účelem, vede Nositele Klenby vpřed, doufajíc, že on dokáže to, k čemu ona byla stvořena, a
+                        dopřeje jí konečně klid.</p>
+
+                    <div class="weapon-card modal-weapon">
+                        <div class="weapon-info">
+                            <h2>Pera času (Aged Feather)</h2>
+                            <div class="weapon-lore-wrapper">
+                                <div class="weapon-lore-inner">
+                                    <p>Tento předmět získá hráč od Herolda v pozdější fázi hry. Funguje jako nekonečná
+                                        Kost pro návrat, umožňující okamžitý přesun k poslednímu ohništi.</p>
+                                    <p><em><i class="fa fa-quote-left"></i> Dítě draka, jež nezná
+                                            své pravé rodiče, toto pírko chovalo u srdce, snad jako talisman v naději,
+                                            že ji jednoho dne vrátí tam, kam patří. Ale nakonec si uvědomila, že už se
+                                            nemá kam vrátit. <i class="fa fa-quote-right"></i></em></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weapon-visual">
+                            <img src="img/DS2/Aged_Feather.webp" alt="Aged Feather">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- karta 3 -->
+            <div class="char-card">
+                <img src="img/DS2/shalquior.jpg" alt="Příjemná Shalquoir" class="char-image">
+                <div class="char-hover-info">
+                    <h3>Příjemná Shalquoir</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+                <div class="char-detail-text dissappear">
+                    <p>Záhadná, sarkastická, nesmrtelná a lidsky inteligentní kočka přebývající v jedné z chatek v
+                        Majule. Zdá se, že jako
+                        jedna z mála bytostí v Drangleicu nepodléhá úpadku paměti a pamatuje si události z pradávných
+                        věků (dokonce i z éry Lordranu a prvního Dark Souls).</p>
+                    <p>Shalquoir je jakýmsi neoficiálním vypravěčem. S pobavením sleduje, jak lidé znovu a znovu opakují
+                        stejné chyby, zaslepeni svými touhami. Odkazuje na staré bohy (např. Seatha či Gwyna) jako na
+                        "hlupáky, co se snažili oklamat osud", a radí Nositeli Klenby, i když její rady bývají zaobalené
+                        do jízlivých hádanek.</p>
+
+                    <div class="weapon-card modal-weapon">
+                        <div class="weapon-info">
+                            <h2>Stříbrný kočičí prsten (Silver Cat Ring)</h2>
+                            <div class="weapon-lore-wrapper">
+                                <div class="weapon-lore-inner">
+                                    <p>Nesmírně užitečný předmět, který Shalquoir prodává. Razantně snižuje poškození
+                                        při pádu z výšky, což je kritické pro průzkum vertikálních lokací jako je
+                                        Propast (The Gutter).</p>
+                                    <p><em><i class="fa fa-quote-left"></i> Legenda praví, že
+                                            jakmile kočka zestárne, stane se z ní magická bytost plná skrytého poznání.
+                                            Ale kdo ví... možná jsou to všechno jen pohádky, kterými se lidé utěšují v
+                                            temnotě. <i class="fa fa-quote-right"></i></i></em>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weapon-visual">
+                            <img src="img/DS2/silver_cat_ring.png" alt="Silver Cat Ring">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- karta 4 -->
+            <div class="char-card">
+                <img src="img/DS2/lenigrast.jpg" alt="Kovář Lenigrast" class="char-image">
+                <div class="char-hover-info">
+                    <h3>Kovář Lenigrast</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+                <div class="char-detail-text dissappear">
+                    <p>Zelený, pokročile proměněný nemrtvý (Hollow), který si však navzdory svému děsivému zevnějšku
+                        udržel zdravý rozum. Je to vynikající kovář usazený v Majule, jehož jedinou záchranou před
+                        úplným zešílením je neustálá a monotónní práce se železem.</p>
+                    <p>Lenigrastův příběh perfektně ilustruje tragédii vyblednutí paměti v Drangleicu. Jeho vlastní
+                        dcera, obchodnice Chloanne, sedí jen pár metrů od jeho kovárny. Lenigrast ji okamžitě poznal a
+                        bedlivě ji hlídá, ale Chloanne, jejíž mysl je už prokletím narušená, v něm svého otce nepoznává
+                        – vidí jen ošklivého nemrtvého. On sám jí pravdu neřekne, aby ji nevyděsil.</p>
+
+                    <div class="weapon-card modal-weapon">
+                        <div class="weapon-info">
+                            <h2>Kovářské kladivo (Blacksmith's Hammer)</h2>
+                            <div class="weapon-lore-wrapper">
+                                <div class="weapon-lore-inner">
+                                    <p>Těžké kladivo, které Lenigrast daruje hráči, pokud u něj utratí dostatek duší.
+                                        Překvapivě silná zbraň s vynikajícím poškozením proti obrněným nepřátelům.</p>
+                                    <p><em><i class="fa fa-quote-left"></i> Kladivo užívané
+                                            kovářem v Majule. Tvarově strohé, ale nesmírně bytelné. Kovář, kterého
+                                            zradilo vlastní tělo i paměť, se upnul k tomuto nástroji jako k jediné
+                                            jistotě, co mu na světě zbyla. <i class="fa fa-quote-right"></i></em></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weapon-visual">
+                            <img src="img/DS2/blacksmith_hammer.png" alt="Blacksmith Hammer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- karta 5 -->
+            <div class="char-card">
+                <img src="img/DS2/King_Vendrick.jpg" alt="Král Vendrick" class="char-image">
+                <div class="char-hover-info">
+                    <h3>Král Vendrick</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+                <div class="char-detail-text dissappear">
+                    <p>Zakladatel a vládce Drangleicu. Vendrick kdysi porazil Čtyři Prastaré (reinkarnace bossů z DS1),
+                        založil mocné království a na radu své milované královny Nashandry překročil moře, aby ukradl
+                        moc z říše Obrů.</p>
+                    <p>Když si však uvědomil, že Nashandra je ve skutečnosti dcerou Temnoty (střípek Manuse z prvního
+                        dílu) a touží po Trůnu touhy a Prvním plameni, učinil absolutní oběť. Odešel hluboko do Krypt
+                        nemrtvých, svlékl svou zbroj a nechal za sebou svůj prsten, bez kterého nelze na trůn usednout.
+                        Nyní po hrobce bloudí jen jako obrovitánská, bezduchá prázdná schránka – trpká připomínka toho,
+                        kam vede slepá touha po moci.</p>
+
+                    <div class="weapon-card modal-weapon">
+                        <div class="weapon-info">
+                            <h2>Královský prsten (King's Ring)</h2>
+                            <div class="weapon-lore-wrapper">
+                                <div class="weapon-lore-inner">
+                                    <p>Prsten, který otevírá obrovské Královské brány po celém Drangleicu. Leží opuštěný
+                                        v kryptě, střežen Vendrickovým osobním strážcem Velstadtem, daleko z dosahu
+                                        zrádné Nashandry.</p>
+                                    <p><em><i class="fa fa-quote-left"></i> Prsten pravého krále.
+                                            Brány, jež se jím dají otevřít, se nezachvějí před ničím jiným. "Ukaž Symbol
+                                            Krále", hlásají dveře. A jen opravdový monarcha ví, jak těžké břímě tento
+                                            symbol představuje. <i class="fa fa-quote-right"></i></em></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weapon-visual">
+                            <img src="img/DS2/kings_ring.png" alt="Kings Ring">
+                        </div>
+                    </div>
+                </div>
+            </div><!-- karta 6 -->
+            <div class="char-card">
+                <img src="img/DS2/velstadt.jpg" alt="Velstadt, Královská Ochrana" class="char-image">
+                <div class="char-hover-info">
+                    <h3>Velstadt, Královská Ochrana</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+                <div class="char-detail-text dissappear">
+                    <p>Pravá ruka krále Vendricka a jeden z nejušlechtilejších rytířů Drangleicu. Velstadt pocházel ze
+                        vzdálené země a svému králi přísahal absolutní věrnost. Byl natolik oddaný, že když Vendrick
+                        ztratil naději a ukryl se v temné Kryptě nemrtvých (Undead Crypt), Velstadt ho následoval, aby
+                        ho chránil před zbytkem světa a hlavně před zrádnou královnou Nashandrou.</p>
+                    <p>Nekonečný pobyt v Kryptě bez slunečního světla Velstadta nakonec zlomil. Temnota naprosto
+                        pohltila jeho duši i zázraky, které dříve ovládal. Stále však jako neochvějný strážný pes stojí
+                        před hrobkou svého dávno zešílevšího krále, připraven zničit kohokoliv, kdo by rušil jeho
+                        odpočinek.</p>
+
+                    <div class="weapon-card modal-weapon">
+                        <div class="weapon-info">
+                            <h2>Kladivo Posvátného zvonce (Sacred Chime Hammer)</h2>
+                            <div class="weapon-lore-wrapper">
+                                <div class="weapon-lore-inner">
+                                    <p>Kolosální zbraň Velstadta. Původně šlo o obří klerický zvon pro sesílání světlých
+                                        zázraků. Vlivem pobytu v Kryptě však nasákl temnotou a při úderu nyní vyvolává
+                                        shluky černé magie.</p>
+                                    <p><em><i class="fa fa-quote-left"></i> Zvonec mocného rytíře
+                                            Velstadta. Dlouhá léta strávená ve stínu bez jediného paprsku světla změnila
+                                            povahu tohoto předmětu i jeho pána. Býval to zvon zlaťavého jasu, nyní zvoní
+                                            jen umíráčkem a černí Propasti. <i class="fa fa-quote-right"></i></em></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weapon-visual">
+                            <img src="img/DS2/Sacred_Chime_Hammer.webp" alt="Sacred Chime Hammer">
+                        </div>
+                    </div>
+                </div>
+            </div><!-- karta 7 -->
+            <div class="char-card">
+                <img src="img/DS2/raime.jpg" alt="Raime, Rytíř Výparu" class="char-image">
+                <div class="char-hover-info">
+                    <h3>Raime, Rytíř Výparu</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+                <div class="char-detail-text dissappear">
+                    <p>Známý jako "Fume Knight", Raime byl po boku Velstadta nejschopnějším válečníkem krále Vendricka.
+                        Na rozdíl od Velstadta však Raime poznal pravou podstatu královny Nashandry a označil ji za
+                        hrozbu.</p>
+                    <p>Za toto obvinění byl prohlášen za zrádce a po souboji s Velstadtem vyhnán do Brume Tower. Tam
+                        našel jinou dceru Temnoty – Nadalii. Místo aby ji zničil, uvědomil si krásu její osamělosti a
+                        zasvětil svůj život její ochraně. Z Raimeho se stal Rytíř výparu, jeden z nejtěžších a
+                        nejmilovanějších bossů celé série, využívající gigantický meč a temnou magii.</p>
+
+                    <div class="weapon-card modal-weapon">
+                        <div class="weapon-info">
+                            <h2>Ultra velký meč Výparu (FUGS)</h2>
+                            <div class="weapon-lore-wrapper">
+                                <div class="weapon-lore-inner">
+                                    <p>Ikonická, neuvěřitelně masivní zbraň (tzv. FUGS), která vyžaduje drastickou sílu.
+                                        Meč působí spíše jako zčernalá železná deska než jako čepel.</p>
+                                    <p><em><i class="fa fa-quote-left"></i> Meč, jenž patřil
+                                            zrádci Raimemu. Byl nasáknutý temnotou a černým mlžným oparem z nitra věže.
+                                            Raime kdysi nosil těžký štít jako havrání křídlo, ale nakonec jej odhodil a
+                                            místo toho pevně sevřel do rukou Temnotu. <i
+                                                class="fa fa-quote-right"></i></em>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weapon-visual">
+                            <img src="img/DS2/FUGS.png" alt="Fume Ultra Greatsword">
+                        </div>
+                    </div>
+                </div>
+            </div><!-- karta 8 -->
+            <div class="char-card">
+                <img src="img/DS2/nashandra.jpg" alt="Královna Nashandra" class="char-image">
+                <div class="char-hover-info">
+                    <h3>Královna Nashandra</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+                <div class="char-detail-text dissappear">
+                    <p>Ztělesněná touha. Nashandra je nejmenším a nejzranitelnějším střípkem Temnoty, který vznikl po
+                        porážce Manuse, Otce Propasti z Dark Souls 1. Vědoma si své slabosti, vyhledala bytost nezměrné
+                        moci – Krále Vendricka.</p>
+                    <p>Zmanipulovala ho k válce s Obry, aby pro ni získal moc k usednutí na Trůn touhy. Když Vendrick
+                        její plán prokoukl a znemožnil jí přístup, uvízla na hradě Drangleic a trpělivě vyčkávala. Po
+                        celou hru potichu naviguje Nositele Klenby v naději, že za ni zabije překážky a odemkne cestu k
+                        trůnu, kde se ho sama pokusí nakonec pohltit.</p>
+
+                    <div class="weapon-card modal-weapon">
+                        <div class="weapon-info">
+                            <h2>Luk Touhy (Bow of Want)</h2>
+                            <div class="weapon-lore-wrapper">
+                                <div class="weapon-lore-inner">
+                                    <p>Speciální zbraň utvořená ze samotné Duše Nashandry. Dokáže vystřelovat šípy
+                                        utkané z čiré elektřiny, což odkazuje na falešné světlo, kterým se maskovala
+                                        před světem.</p>
+                                    <p><em><i class="fa fa-quote-left"></i> Staří říkají, že
+                                            Temnota spočívá hluboko v každém z nás a dává o sobě vědět, když propadneme
+                                            nezměrné touze po moci. Ona toužila po jediné věci – moci skutečného
+                                            panovníka, aby zakryla svou vlastní křehkost. <i
+                                                class="fa fa-quote-right"></i></em></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weapon-visual">
+                            <img src="img/DS2/Bow_of_Want.webp" alt="Bow of Want">
+                        </div>
+                    </div>
+                </div>
+            </div><!-- karta 9 -->
+            <div class="char-card">
+                <img src="img/DS2/BIK.jpg" alt="Ohořelý Král ze slonoviny" class="char-image">
+                <div class="char-hover-info">
+                    <h3>Ohořelý Král ze slonoviny</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+                <div class="char-detail-text dissappear">
+                    <p>Jeden z nejvznešenějších panovníků v historii série (DLC Crown of the Ivory King). Tento král
+                        objevil Prastarý Chaos (pozůstatky Izalithu a Lůžka Chaosu z DS1) a rozhodl se na něm vybudovat
+                        své ledové město Eleum Loyce, aby pekelné plameny utěsnil a ochránil tak svět.</p>
+                    <p>Za manželku pojal Alsannu, která byla podobně jako Nashandra střípkem temnoty a Manuse. Král to
+                        ovšem věděl, a svou nezměrnou laskavostí ji dokázal vykoupit. Když ledová pečeť začala praskat a
+                        Chaos hrozil pohlcením města, král se svými nejvěrnějšími rytíři sestoupil přímo do plamenů
+                        propasti v zoufalém pokusu je zastavit. Uhořel a zešílel. Nyní čeká na spásnou smrt z vašich
+                        rukou.</p>
+
+                    <div class="weapon-card modal-weapon">
+                        <div class="weapon-info">
+                            <h2>Ultra velký meč Krále slonoviny (Ivory King UGS)</h2>
+                            <div class="weapon-lore-wrapper">
+                                <div class="weapon-lore-inner">
+                                    <p>Elegantní, ale masivní meč. Při držení obouruč a těžkém útoku se z čepele vynoří
+                                        zářivý magický paprsek, připomínající světelný meč, který má enormní dosah i
+                                        poškození.</p>
+                                    <p><em><i class="fa fa-quote-left"></i> Král Eleum Loyce byl
+                                            ke svému lidu nesmírně milosrdný. Když padl do Starého Chaosu, nepřestal
+                                            máchat svou čepelí ani ve chvíli, kdy jeho tělo polykaly plameny, jen aby
+                                            dal svému městu ještě pár hodin života. <i
+                                                class="fa fa-quote-right"></i></em>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weapon-visual">
+                            <img src="img/DS2/Ivory_King_Ultra_Greatsword.webp" alt="Ivory King UGS">
+                        </div>
+                    </div>
+                </div>
+            </div><!-- karta 10 -->
+            <div class="char-card">
+                <img src="img/DS2/giantlord.jpg" alt="Král Obrů" class="char-image">
+                <div class="char-hover-info">
+                    <h3>Král Obrů</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+                <div class="char-detail-text dissappear">
+                    <p>Vládce tajemné a primitivní rasy Obrů zpoza oceánu. Poté, co král Vendrick vpadl na jejich
+                        kontinent a odcizil jim nespecifikovanou, ale vitální Mocenskou trofej (Prize), Král obrů
+                        shromáždil svou armádu, přeplul moře a v drtivé invazi srovnal většinu Drangleicu se zemí.</p>
+                    <p>Setkání s ním je ukázkovým příkladem temporální anomálie, kterou prožívá Nositel Klenby. Do
+                        vzpomínky na dávnou bitvu o Drangleic musíte vstoupit prostřednictvím magie. Tam Krále obrů
+                        porazíte. Zmateným a poraženým pozůstatkem tohoto vládce v "současnosti" pak není nikdo jiný,
+                        než boss <i>Poslední Obr (The Last Giant)</i> – první boss hry, který po vás zuřivě útočí,
+                        protože si i přes propast času pamatuje tvář toho, kdo ho tehdy v minulosti srazil na kolena.
+                    </p>
+
+                    <div class="weapon-card modal-weapon">
+                        <div class="weapon-info">
+                            <h2>Přízeň obrů (Giant's Kinship)</h2>
+                            <div class="weapon-lore-wrapper">
+                                <div class="weapon-lore-inner">
+                                    <p>Klíčový příběhový předmět získaný po porážce Krále obrů ve Vzpomínce. Jde o
+                                        jedinou věc, která oživí golemy pod Trůnem touhy a dovolí hráči k trůnu vůbec
+                                        přistoupit.</p>
+                                    <p><em><i class="fa fa-quote-left"></i> Podivná, dřímající
+                                            aura. Není to duše, ale jakási rezonance, spřízněnost s obry. Trůn, na který
+                                            Vendrick nikdy neusedl, nyní čeká na nového vládce. Přijmeš jej ty? <i
+                                                class="fa fa-quote-right"></i></em></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weapon-visual">
+                            <img src="img/DS2/Giants_Kinship.webp" alt="Giant's Kinship">
+                        </div>
+                    </div>
+                </div>
+            </div><!-- karta 11 -->
+            <div class="char-card">
+                <img src="img/DS2/aldia.webp" alt="Aldia, Učenec Prvního Hříchu" class="char-image"
+                    style="object-position: right">
+                <div class="char-hover-info">
+                    <h3>Aldia, Učenec Prvního Hříchu</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+                <div class="char-detail-text dissappear">
+                    <p>Aldia, starší bratr krále Vendricka, se odmítl smířit s údělem cyklu. Rozhodl se odhalit pravdu o
+                        "Prvním hříchu" – události z úsvitu věků, kdy Gwyn, Pán Světla, nepřirozeně prodloužil Věk Ohně
+                        a tím proklel lidstvo.</p>
+                    <p>Při svých hrůzných experimentech na obrech, dracích i lidech se pokoušel najít cestu mimo dosah
+                        Světla a Temnoty. Ztratil při tom své lidské tělo a proměnil se v hořící masu oživlých kořenů a
+                        plamenů. Aldia neslouží jako tradiční nepřítel, ale jako filozofický průvodce. Nutí Nositele
+                        Klenby zpochybňovat vše, co dělá, a nabízí mu poprvé v sérii třetí volbu: opustit trůn a hledat
+                        novou, neznámou budoucnost.</p>
+
+                    <div class="weapon-card modal-weapon">
+                        <div class="weapon-info">
+                            <h2>Zakázané slunce (Forbidden Sun)</h2>
+                            <div class="weapon-lore-wrapper">
+                                <div class="weapon-lore-inner">
+                                    <p>Brutálně destruktivní pyromancie navržená v Aldiově Pevnosti. Sesílá gigantickou
+                                        kouli ohně s obrovským poloměrem výbuchu.</p>
+                                    <p><em><i class="fa fa-quote-left"></i> Magie vytvořená těmi,
+                                            kdo se pachtili po pravdě za hranicemi přirozenosti. Jaká pošetilost –
+                                            pokoušet se uchopit slunce z oblohy vlastníma rukama. Zanechalo to po sobě
+                                            jen popel a blázny. <i class="fa fa-quote-right"></i></em></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weapon-visual">
+                            <img src="img/DS2/forbidden_sun.png" alt="Forbidden Sun">
+                        </div>
+                    </div>
+                </div>
+            </div><!-- karta 12 -->
+            <div class="char-card">
+                <img src="img/DS2/Navlaan.jpg" alt="Zrozený Mág Navlaan" class="char-image">
+                <div class="char-hover-info">
+                    <h3>Zrozený Mág Navlaan</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+                <div class="char-detail-text dissappear">
+                    <p>Bývalý královský popravčí a dvorní mág, jehož najdete zamčeného v magické kleci v hlubinách
+                        Aldiovy Pevnosti. Navlaan se ve volném čase pokoušel rekonstruovat ztracené umění Temné magie
+                        (Hexes). Tyto experimenty s Temnotou roztříštily jeho mysl a stvořily v něm dvě zcela odlišné
+                        osobnosti.</p>
+                    <p>Základní osobností je ustrašený, slušný čaroděj, který hráče prosí, ať ho proboha nepouští z
+                        klece. Pokud však k němu přijdete ve formě Nemrtvého (Hollow), chopí se kormidla jeho druhá,
+                        psychopatická osobnost nájemného vraha. Hráč tak řeší velké dilema – osvobozením Navlaana
+                        vypustí do světa šílence, který ho bude napadat jako fiktivní (invader) hráč na těch nejméně
+                        vhodných místech v celé hře.</p>
+
+                    <div class="weapon-card modal-weapon">
+                        <div class="weapon-info">
+                            <h2>Kápě chaosu (Chaos Hood)</h2>
+                            <div class="weapon-lore-wrapper">
+                                <div class="weapon-lore-inner">
+                                    <p>Temná, až kultisticky vyhlížející kápě. Část zbroje, kterou vám udělí "zlý"
+                                        Navlaan jako odměnu, pokud pro něj v rámci jeho úkolové linky budete vykonávat
+                                        vraždy po celém Drangleicu.</p>
+                                    <p><em><i class="fa fa-quote-left"></i> Kápě, kterou nosil
+                                            kacířský popravčí Navlaan. Navlaan a lidé z jeho domoviny se s prapodivnou
+                                            fascinací nořili do tajů Temnoty. Nakonec byla celá jejich vesnice popravena
+                                            i s ním. Zůstal jen duch... a kápě nasáklá šílenstvím. <i
+                                                class="fa fa-quote-right"></i></em></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weapon-visual">
+                            <img src="img/DS2/Chaos_Hood.webp" alt="Chaos Hood">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="character-modal" class="char-modal">
+            <div class="char-modal-content">
+                <span class="close-modal"><i class="fa fa-times"></i></span>
+
+                <!-- Sem JS doplní obrázek a text podle toho, na koho se klikne -->
+                <div class="modal-left">
+                    <img id="modal-img" src="" alt="Character Detail">
+                </div>
+                <div class="modal-right">
+                    <h2 id="modal-title"></h2>
+                    <div id="modal-desc">
+                        <!-- Zde se objeví detailní text -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- Nadpis sekce lokací -->
+        <section class="content-section" style="width: auto; margin-bottom: 0;" id="lokace">
+            <h2>Ztracené kouty Drangleicu</h2>
+        </section>
+
+        <!-- Seznam lokací -->
+        <section class="locations-list">
+
+            <!-- Lokace: Majula -->
+            <div class="location-card">
+                <!-- Nezapomeňte si sehnat pěkný širokoúhlý screen Majuly do této složky -->
+                <div class="location-bg" style="background-image: url(img/DS2/Majula.webp);"></div>
+
+                <div class="location-content">
+                    <h2>Majula</h2>
+                    <span class="view-hint"><i class="fa fa-eye"></i> Kliknutím skryjete text a prohlédnete si
+                        scenérii</span>
+
+                    <div class="location-lore-wrapper">
+                        <div class="location-lore-inner">
+                            <p>Dříve či později, každá zlomená duše v Drangleicu dorazí sem. Majula, malá osada posazená
+                                na samotném okraji útesu nad nekonečným oceánem, slouží jako hlavní útočiště Nositele
+                                klenby. Je to jediné místo ve hře, které je omyto teplým slunečním svitem. Tento západ
+                                slunce však nepůsobí vesele – naopak, zdá se, jako by slunce nad tímto světem zapadalo
+                                naposledy, zamrzlé v čase těsně před tím, než vše pohltí temnota.</p>
+
+                            <p>Jak postupujete hrou, do Majuly se stahují různé postavy, které na svých cestách potkáte.
+                                Vzniká tak paradoxní mikrosvět: nádherná vesnička plná lidí, z nichž ale každý jeden
+                                pomalu ztrácí svou paměť i smysl života. Dívají se do moře, vzpomínají na domovy,
+                                jejichž jména už zapomněli, a čekají na nevyhnutelný konec.</p>
+
+                            <p>To, co dělá Majulu nezapomenutelnou napříč celou herní historií, je ale její hudba. Místo
+                                epických orchestrů vás zde uvítá osamělá, pomalá melodie hraná na zvonkohru a xylofon.
+                                Je to hudba, která zní jako ukolébavka na konci světa. Zabalí hráče po vyčerpávajících
+                                bojích do hřejivé deky, uleví od stresu, ale zároveň mu tiše připomíná, že všechno, co
+                                vidí, už je dávno mrtvé.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Lokace: Hrad Drangleic -->
+            <div class="location-card">
+                <!-- Doporučuji obrázek hradu v dešti a blescích -->
+                <div class="location-bg" style="background-image: url(img/DS2/Drangleic.webp);"></div>
+
+                <div class="location-content">
+                    <h2>Hrad Drangleic</h2>
+                    <span class="view-hint"><i class="fa fa-eye"></i> Kliknutím skryjete text a prohlédnete si
+                        scenérii</span>
+
+                    <div class="location-lore-wrapper">
+                        <div class="location-lore-inner">
+                            <p>Cesta k tomuto hradu je zdlouhavá a vyčerpávající. Poté, co shromáždíte čtyři Velké duše
+                                a projdete Svatyní Zimy, očekáváte triumfální příchod do srdce království. Místo toho
+                                vás přivítá neprostupná tma, bičující déšť a hromy křižující oblohu. Hrad Drangleic,
+                                monumentální sídlo moci, nestojí jako maják naděje, ale jako gigantická, chladná hrobka.
+                            </p>
+
+                            <p>Už při vstupu je jasné, že tady něco hrubě nehraje. Golemové otevírající brány jsou
+                                poháněni dušemi, které musíte prolít přímo před nimi. Uvnitř nenajdete žádný život, jen
+                                prázdné sály, oživlé sochy a Královnu Nashandru, která sedí na svém trůnu v naprosté tmě
+                                a tiše s vámi manipuluje. Po samotném králi Vendrickovi tu není ani památky.</p>
+
+                            <p>Z hlediska herního designu představuje Hrad Drangleic bod zlomu. Zde hráč s konečnou
+                                platností zjišťuje, že jeho úkol "najít krále a vyléčit klenbu" byla od samého začátku
+                                jen iluze. Místo odpovědí zde najdete jen prázdnotu a zjištění, že zlatý věk Drangleicu
+                                je už dávno, nenávratně pryč.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lokace: Aldiova pevnost -->
+            <div class="location-card">
+                <!-- Doporučuji obrázek hlavní haly s kostrou draka -->
+                <div class="location-bg" style="background-image: url(img/DS2/Aldiaskeep.webp);"></div>
+
+                <div class="location-content">
+                    <h2>Aldiova pevnost (Aldia's Keep)</h2>
+                    <span class="view-hint"><i class="fa fa-eye"></i> Kliknutím skryjete text a prohlédnete si
+                        scenérii</span>
+
+                    <div class="location-lore-wrapper">
+                        <div class="location-lore-inner">
+                            <p>Zatímco král Vendrick budoval své království z kamene a železa, jeho bratr Aldia se
+                                uchýlil do tohoto odlehlého sídla na okraji hor. Aldiova pevnost není hradem v pravém
+                                slova smyslu, je to zvrácená a krvavá laboratoř. Hned při vstupu do hlavní haly vám nad
+                                hlavou visí monstrózní, oživená kostra draka, která funguje jako jasné varování: zde
+                                končí zákony přírody i bohů.</p>
+
+                            <p>Aldia byl posedlý zlomením kletby nemrtvých a zničením "Cyklu". Ve své pevnosti proto
+                                prováděl noční můry připomínající experimenty na všem, co mu přišlo pod ruku – na
+                                obrech, zvířatech, a dokonce i na lidech. Chodby jsou lemovány klecemi plnými
+                                zmutovaných monster, rozbitými zrcadly, ze kterých vyskakují temní duchové, a ohavnými
+                                chimérami ukrytými v kyselinových kádích.</p>
+
+                            <p>Je to místo hlubokého znepokojení. Hráč zde odhaluje pravdu o vzniku Smaragdového Herolda
+                                a dalších hrůzách, které byly spáchány ve jménu "vyššího dobra". Aldiova pevnost
+                                připomíná, že největší monstra v Soulsborne univerzu nejsou démoni, ale lidé zahnání
+                                strachem z temnoty do kouta.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lokace: Dračí hnízdo -->
+            <div class="location-card">
+                <!-- Doporučuji širokoúhlý obrázek kamenných pilířů, mostů a draků v oblacích -->
+                <div class="location-bg" style="background-image: url(img/DS2/Dragonaerie.png);"></div>
+
+                <div class="location-content">
+                    <h2>Dračí hnízdo (Dragon Aerie)</h2>
+                    <span class="view-hint"><i class="fa fa-eye"></i> Kliknutím skryjete text a prohlédnete si
+                        scenérii</span>
+
+                    <div class="location-lore-wrapper">
+                        <div class="location-lore-inner">
+                            <p>Když se vymotáte z klaustrofobických a temných laboratoří Aldiovy pevnosti, zažijete
+                                jeden z nejkrásnějších a nejpřekvapivějších momentů v herní historii. Výtah vás vyveze
+                                vysoko nad mraky a před vámi se otevře nekonečná obloha plná gigantických kamenných
+                                sloupů, propojených jen vetchými lanovými mosty. Nad celou tou nádherou krouží desítky
+                                obrovských, majestátních draků.</p>
+
+                            <p>Zážitek z Dračího hnízda je definován neustálým pocitem závratě a zranitelnosti. Mosty se
+                                ve větru hrozivě kymácejí a každé pohlédnutí dolů ukazuje jen neproniknutelné moře
+                                mraků. Na vrcholcích sloupů podřimují ohromní vyverni chránící svá vejce. Hráč se musí
+                                tiše plížit, nebo podstoupit epické boje s těmito monstry na plošinkách, kde jediný
+                                chybný krok znamená pád do prázdnoty.</p>
+
+                            <p>Krása této lokace má však trpkou pachuť loru. Téměř žádný z draků, které zde vidíte, není
+                                "pravý". Jsou to jen umělé výtvory a genetické klony, vrcholné dílo šíleného Aldii.
+                                Ztělesňují zoufalou snahu Drangleicu napodobit nesmrtelnost Prastarých draků z úsvitu
+                                věků – dechberoucí, ale přesto falešné božstvo na konci cesty. Na konci lokace vám
+                                'Starodávný' drak (pouze ta nejlepší kopie, vytvořena z duše obra) předá Srdce Popelavé
+                                Mlhy, magický předmět, který Nositelovi Klenby předá schopnost cestovat časem pomocí
+                                Vzpomínek. Tak se utká s Králem Obrů.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" style="width: auto; margin-bottom: 
+        0;" id="zbraně">
+            <h2>Zbraně a předměty, které stojí za zmínku</h2>
+        </section>
+
+        <section class="weapon-list">
+            <div class="weapon-card">
+                <div class="weapon-info">
+                    <h2>Meč tavírny (Smelter Sword)</h2>
+                    <div class="weapon-lore-wrapper">
+                        <div class="weapon-lore-inner">
+                            <p>Jedna z vizuálně nejvýraznějších zbraní ve hře. Vznikla ze Zvrácené duše Démonské tavírny
+                                (Smelter Demon), mocného golema ze Železné bašty, jehož tělo ožilo, když se do něj
+                                přelila roztavená láva z hlubin země.</p>
+                            <p>Tento kolosální meč způsobuje masivní poškození ohněm. Při těžkém útoku navíc čepel
+                                vzplane ničivým výbuchem, který sice ničí odolnost samotné zbraně, ale dokáže zpopelnit
+                                cokoliv v dosahu.</p>
+                            <p><em><i class="fa fa-quote-left"></i> Starý Železný Král využíval
+                                    neuvěřitelných mas železa k vybudování svého ohnivého panství. Tento meč patřil
+                                    démonické bytosti z nitra země, která na oplátku zničila jeho samotného. <i
+                                        class="fa fa-quote-right"></i></em></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-visual">
+                    <img src="img/DS2/smelter_sword.png" alt="Smelter Sword">
+                </div>
+            </div>
+
+            <!-- Zbraň 2: Santier's Spear -->
+            <div class="weapon-card">
+                <div class="weapon-info">
+                    <h2>Santierovo kopí (Santier's Spear)</h2>
+                    <div class="weapon-lore-wrapper">
+                        <div class="weapon-lore-inner">
+                            <p>Jedna z nejunikátnějších mechanik v celé Soulsborne historii. Santierovo kopí zpočátku
+                                vypadá jako obrovská halapartna s masivním kamenem naraženým na čepeli. Hýbe se
+                                těžkopádně a ubírá málo života.</p>
+                            <p>Pokud však hráč tuto zbraň úmyslně používá tak dlouho, dokud nesníží její odolnost
+                                (durability) na absolutní nulu, kámen na špičce praskne. Zbraň se nezničí, ale naopak se
+                                odhalí její pravá čepel! Od té chvíle získá nekonečnou odolnost a jeden z nejrychlejších
+                                a nejsmrtelnějších pohybových setů v celé hře (kombinuje pohyby kopí, meče a
+                                halapartny).</p>
+                            <p><em><i class="fa fa-quote-left"></i> Halapartna pojmenovaná po
+                                    Santierovi, obávaném válečníkovi z předvoje. Na její špičku byla naražena obrovská
+                                    socha, jež zbrani dodává masivní váhu. Nikdo dnes už netuší, zdali to mělo sloužit
+                                    jako vylepšení, nebo jako trest pro toho, kdo ji nosil. <i
+                                        class="fa fa-quote-right"></i></em></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-visual">
+                    <img src="img/DS2/santier_spear.png" alt="Santier's Spear">
+                </div>
+            </div>
+
+            <div class="weapon-card">
+                <div class="weapon-info">
+                    <h2>Yorghovo kopí (Yorgh's Spear)</h2>
+                    <div class="weapon-lore-wrapper">
+                        <div class="weapon-lore-inner">
+                            <p>Tato ohromná zbraň (z DLC Crown of the Sunken King) vypráví příběh o lidské aroganci. Sir
+                                Yorgh, vůdce elitních Drakokrevných rytířů, vtrhl do podzemního svatého města Shulva.
+                                Toto město uctívalo dřímajícího draka Sinha. Yorgh, hnaný touhou po dračí krvi,
+                                dřímající bestii tímto samotným kopím probodl.</p>
+                            <p>Místo moci však nalezl jen zkázu. Rána neprobodla drakovo srdce, ale uvolnila obrovský
+                                oblak smrtelného jedu, který se v drakovi hromadil po staletí. Jed okamžitě vyhubil celé
+                                město Shulva i samotného Yorgha, jehož mrtvola a kopí zůstaly zapíchnuté v hrudi draka
+                                jako trpká připomínka jeho chamtivosti. Mechanicky jde o naprostý unikát – zbraň plynule
+                                kombinuje pohyby kopí, halapartny a obouručního meče.</p>
+                            <p><em><i class="fa fa-quote-left"></i> Kopí Sira Yorgha, který jím
+                                    probodl dřímajícího draka Sinha. Drak ale na oplátku ze sebe vyvrhl zkázu a potopil
+                                    celé město do smrtícího miasmatu. <i class="fa fa-quote-right"></i></em></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-visual">
+                    <img src="img/DS2/yorghs_spear.png" alt="Yorgh's Spear">
+                </div>
+            </div>
+
+            <!-- Zbraň 4: Moonlight Greatsword -->
+            <div class="weapon-card">
+                <div class="weapon-info">
+                    <h2>Velký meč Měsíčního svitu (Moonlight Greatsword)</h2>
+                    <div class="weapon-lore-wrapper">
+                        <div class="weapon-lore-inner">
+                            <p>Nejikoničtější zbraň celého studia FromSoftware. V kontextu Dark Souls 2 má však úžasný
+                                příběhový přesah. Lze jej vytvořit pouze z duše "Bledého draka", kterou získáte
+                                poražením obřího pavouka (Duke's Dear Freja) v režimu New Game+.</p>
+                            <p>Toto je důkaz onoho neúprosného Cyklu. Bledý drak není nikdo jiný než Seath the Scaleless
+                                z prvního Dark Souls. I když byl Seath dávno zabit, jeho esence (duše) přežila tisíce
+                                let a ovlivnila vévodu z Tseldory k podobně zvráceným experimentům. Krásným detailem hry
+                                je NPC bojovník Benhart z Juga, který třímá meč, o němž si myslí, že je to tento
+                                legendární Měsíční meč. Ve skutečnosti má jen obyčejnou, falešnou kopii, ale díky jeho
+                                neochvějné víře ve zbraň s ní dokáže bojovat jako skutečný mistr.</p>
+                            <p><em><i class="fa fa-quote-left"></i> Čepel tohoto velkého meče
+                                    září jako třpytivé paprsky měsíce. Starší verze této zbraně nesla jméno po velké
+                                    bílé bytosti, která z ní byla zrozena. <i class="fa fa-quote-right"></i></em></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-visual">
+                    <img src="img/DS2/moonlight_greatsword.png" alt="Moonlight Greatsword">
+                </div>
+            </div>
+
+            <!-- Předmět 1: Human Effigy -->
+            <div class="weapon-card">
+                <div class="weapon-info">
+                    <h2>Lidská podobizna (Human Effigy)</h2>
+                    <div class="weapon-lore-wrapper">
+                        <div class="weapon-lore-inner">
+                            <p>Zatímco v prvním díle hráči sbírali "Lidskost" (černé víly temné duše), Dark Souls 2
+                                přichází s Podobiznou. Jde o figurku upletenou ze starého proutí a temnoty. Hráč ji
+                                nemačká ani nepohlcuje; hra jasně uvádí, že se do ní hrdina "zadívá", aby si připomněl,
+                                kým vlastně je.</p>
+                            <p>Tento drobný herní detail mistrovsky podporuje ústřední téma ztráty paměti a demence.
+                                Kletba Nemrtvých v Drangleicu vám nebere jen tělo, bere vám vaši identitu. Panenka
+                                slouží jako psychologická kotva. Když do ní Nositel Klenby pohlédne, uvidí v jejím
+                                prázdném obličeji odraz svých vlastních rysů, což ho na chvíli ukotví v realitě a vrátí
+                                mu jeho lidskou podobu i plné zdraví.</p>
+                            <p><em><i class="fa fa-quote-left"></i> Teplá, měkká podobizna
+                                    připomínající stín. Pohlédni do ní pečlivě a začne na sebe brát lidský tvar. Záleží
+                                    jen na tvé vlastní mysli, čí tvář se v ní nakonec objeví. <i
+                                        class="fa fa-quote-right"></i></em></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-visual">
+                    <img src="img/DS2/human_effigy.png" alt="Human Effigy">
+                </div>
+            </div>
+
+            <!-- Předmět 2: Bonfire Ascetic -->
+            <div class="weapon-card">
+                <div class="weapon-info">
+                    <h2>Askeze ohniště (Bonfire Ascetic)</h2>
+                    <div class="weapon-lore-wrapper">
+                        <div class="weapon-lore-inner">
+                            <p>Jeden z nejinovativnějších, ale zároveň nejnebezpečnějších herních předmětů, který se
+                                objevil pouze v Dark Souls 2. Vhozením Askeze do ohniště hráč nenávratně posune danou
+                                lokaci do obtížnosti "New Game +". Znovu tak oživí poražené bosse, obnoví poklady, ale
+                                všechny nepřátele učiní mnohonásobně silnějšími.</p>
+                            <p>Z hlediska příběhu jde o fantastickou aplikaci "prostorové a temporální anomálie", o
+                                které jsme mluvili výše. V univerzu Souls jsou Ohniště (Bonfires) a Plamen (Fire) úzce
+                                spjaty se samotným časem. Vhozením Askeze hráč v podstatě "zrychlí cyklus" nebo uměle
+                                zmanipuluje čas v jedné konkrétní oblasti. Zahrává si s chodem světa jen proto, aby
+                                získal více duší, čímž sám sebe odsuzuje k mnohem těžším překážkám. Je to riziko
+                                plynoucí z čiré lidské chamtivosti.</p>
+                            <p><em><i class="fa fa-quote-left"></i> Vhozením do ohniště posílíte
+                                    nejbližší plameny. Oheň vytvoří spojnici s ostatními plameny a ty začnou žhnout
+                                    nesmírnou silou. Pamatujte, co se stane, nelze vzít zpět. Buďte připraveni. <i
+                                        class="fa fa-quote-right"></i></em></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-visual">
+                    <img src="img/DS2/bonfire_ascetic.png" alt="Bonfire Ascetic">
+                </div>
+        </section>
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
