@@ -239,7 +239,7 @@ main {
 
 .main-hidden {
   opacity: 0 !important;
-  pointer-events: none;
+  pointer-events: none !important;
 }
 
 /* Citát */
