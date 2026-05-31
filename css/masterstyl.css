@@ -339,10 +339,6 @@ main {
   align-items: center;
 }
 
-.sidebar div:last-of-type a {
-  margin-top: 20px;
-}
-
 .tooltip {
   z-index: 500;
   position: absolute;
