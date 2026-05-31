@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="28.839495mm"
+   height="40.834606mm"
+   viewBox="0 0 28.839495 40.834606"
+   version="1.1"
+   id="svg1"
+   xml:space="preserve"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm" /><defs
+     id="defs1"><linearGradient
+       id="linearGradient2"
+       inkscape:collect="always"><stop
+         style="stop-color:#ffe600;stop-opacity:1;"
+         offset="0"
+         id="stop2" /><stop
+         style="stop-color:#d3d3d3;stop-opacity:1;"
+         offset="1"
+         id="stop3" /></linearGradient><linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2"
+       id="linearGradient3"
+       x1="32.39975"
+       y1="93.638992"
+       x2="43.101151"
+       y2="83.7658"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-80.870552,187.01315)" /></defs><g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(48.470807,-260.23486)"><path
+       style="fill:url(#linearGradient3)"
+       d="m -42.125972,300.71174 c -3.93289,-1.09148 -6.344832,-3.96526 -6.344832,-7.55975 0,-5.3456 5.728067,-9.09705 11.574603,-7.58048 0.75698,0.19636 1.43777,0.29558 1.51286,0.22049 0.0751,-0.0751 0.13654,-4.94788 0.13654,-10.82842 V 264.2717 l 0.7276,-0.70765 c 0.60679,-0.59015 1.68292,-0.94305 6.48099,-2.12532 6.116079,-1.50704 6.660489,-1.53754 7.763149,-0.43488 0.63033,0.63033 0.63867,0.7043 0.63867,5.66303 0,6.48008 0.3967,5.96826 -5.82083,7.51008 l -4.630209,1.1482 -0.13229,9.9056 c -0.0728,5.44808 -0.24163,10.14373 -0.37527,10.43477 -1.88231,4.0993 -6.95074,6.31735 -11.530981,5.04621 z"
+       id="path1-5"
+       inkscape:export-filename="note3.svg"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" /></g></svg>

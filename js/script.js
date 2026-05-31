@@ -1,130 +1,162 @@
 // cardsgrid
-const menuButtons = document.querySelectorAll('.menu-button');
+const menuButtons = document.querySelectorAll(".menu-button");
 
-menuButtons.forEach(button => {
-    button.addEventListener('click', function () {
-        const parentCard = this.closest('.menu-card');
-        document.querySelectorAll('.menu-card').forEach(card => {
-            if (card !== parentCard) card.classList.remove('is-open');
-        });
-        parentCard.classList.toggle('is-open');
+menuButtons.forEach((button) => {
+  button.addEventListener("click", function () {
+    const parentCard = this.closest(".menu-card");
+    document.querySelectorAll(".menu-card").forEach((card) => {
+      if (card !== parentCard) card.classList.remove("is-open");
     });
+    parentCard.classList.toggle("is-open");
+  });
 });
 
 // navbar
 const headerButton = document.getElementById("headerButton");
-const headerButtonIcon = headerButton.querySelector("i");
-const header = document.getElementById("header");
+const headerButtonIcon = headerButton ? headerButton.querySelector("i") : null;
 const row = document.getElementById("row");
 
-headerButton.addEventListener('click', function () {
-
-    if (window.innerWidth <= 1700 && window.innerWidth > 768) {
-        row.style.opacity = row.style.opacity === "1" ? "0" : "1";
-        row.style.pointerEvents = row.style.pointerEvents === "all" ? "none" : "all";
-        header.style.maxHeight = header.style.maxHeight === "500px" ? "100px" : "500px";
-    }
-
-    else if (window.innerWidth <= 768) {
-        row.classList.toggle('mobile-active');
-        if (row.classList.contains('mobile-active')) {
-            headerButtonIcon.className = "fa fa-times";
-            setTimeout(function () {
-                document.body.addEventListener('click', function () {
-                    row.classList.remove('mobile-active'); headerButtonIcon.className = "fa fa-bars";
-                }, { once: true });
-            }, 100);
-        }
-    };
-})
-
-window.addEventListener('resize', function () {
-    if (window.innerWidth > 1700) {
-        row.style.opacity = "1";
-        row.style.pointerEvents = "all";
-        header.style.maxHeight = "120px";
-        row.classList.remove('mobile-active');
+if (headerButton) {
+  headerButton.addEventListener("click", function () {
+    if (window.innerWidth <= 768) {
+      row.classList.toggle("mobile-active");
+      if (row.classList.contains("mobile-active")) {
+        headerButtonIcon.className = "fa fa-times";
+        setTimeout(function () {
+          document.body.addEventListener(
+            "click",
+            function () {
+              row.classList.remove("mobile-active");
+              headerButtonIcon.className = "fa fa-bars";
+            },
+            { once: true },
+          );
+        }, 100);
+      } else {
         headerButtonIcon.className = "fa fa-bars";
+      }
     }
-    else if (window.innerWidth <= 1700 && window.innerWidth > 768) {
-        row.style.opacity = "0";
-        row.style.pointerEvents = "none";
-        header.style.maxHeight = "100px";
-        row.classList.remove('mobile-active');
-        headerButtonIcon.className = "fa fa-bars";
-    }
-    else {
-        row.style.opacity = "";
-        row.style.pointerEvents = "";
-        header.style.maxHeight = "";
-    }
+  });
+}
+
+window.addEventListener("resize", function () {
+  if (window.innerWidth > 768) {
+    if (row) row.classList.remove("mobile-active");
+    if (headerButtonIcon) headerButtonIcon.className = "fa fa-bars";
+  }
 });
 
-window.dispatchEvent(new Event('resize'));
+window.dispatchEvent(new Event("resize"));
 
-// --- LOGIKA PRO MŘÍŽKU POSTAV (MODÁLNÍ OKNO) ---
-const characterCards = document.querySelectorAll('.char-card');
-const charModal = document.getElementById('character-modal');
-const modalImg = document.getElementById('modal-img');
-const modalTitle = document.getElementById('modal-title');
-const modalDesc = document.getElementById('modal-desc');
-const closeModalBtn = document.querySelector('.close-modal');
+// hidebutton
 
-if (characterCards.length > 0) { // Ochrana: Spustí se jen na stránkách, kde mřížka reálně je
+const header = document.querySelector("header");
+const main = document.querySelector("main");
+const mainHideButton = document.getElementById("mainhide");
+const backgroundImg = document.getElementById("background");
+const homeButton = document.querySelector("a");
+const sidebar = document.querySelector("nav");
 
-    characterCards.forEach(card => {
-        card.addEventListener('click', function () {
+mainHideButton.addEventListener("click", function () {
+  [sidebar, main, header, headerButton, homeButton, icon]
+    .filter(Boolean)
+    .forEach((el) => el.classList.toggle("main-hidden"));
+  backgroundImg.style.opacity =
+    backgroundImg.style.opacity === "1" ? ".15" : "1";
+  mainHideButton.className =
+    mainHideButton.className === "fa fa-eye-slash"
+      ? "fa fa-eye"
+      : "fa fa-eye-slash";
+  document.body.style.overflow =
+    document.body.style.overflow === "hidden" ? "auto" : "hidden";
+});
 
-            // 1. Získáme data ze specifické karty, na kterou se kliklo
-            const imgSrc = this.querySelector('.char-image').src;
-            const charName = this.querySelector('.char-hover-info h3').innerText;
-            const charLore = this.querySelector('.char-detail-text').innerHTML;
+// cards grid
+const characterCards = document.querySelectorAll(".char-card");
+const charModal = document.getElementById("character-modal");
+const modalImg = document.getElementById("modal-img");
+const modalTitle = document.getElementById("modal-title");
+const modalDesc = document.getElementById("modal-desc");
+const closeModalBtn = document.querySelector(".close-modal");
 
-            // 2. Naplníme prázdné modální okno těmito daty
-            modalImg.src = imgSrc;
-            modalTitle.innerText = charName;
-            modalDesc.innerHTML = charLore;
+if (characterCards.length > 0) {
 
-            // 3. Zobrazíme okno
-            charModal.classList.add('active');
+  characterCards.forEach((card) => {
+    card.addEventListener("click", function () {
+      const imgSrc = this.querySelector(".char-image").src;
+      const charName = this.querySelector(".char-hover-info h3").innerText;
+      const charLore = this.querySelector(".char-detail-text").innerHTML;
 
-            // Zablokujeme scrollování stránky v pozadí
-            document.body.style.overflow = "hidden";
-        });
+      modalImg.src = imgSrc;
+      modalTitle.innerText = charName;
+      modalDesc.innerHTML = charLore;
+
+      charModal.classList.add("active");
+
+      document.body.style.overflow = "hidden";
     });
+  });
 
-    // Funkce pro zavření okna
-    function closeCharModal() {
-        charModal.classList.remove('active');
-        document.body.style.overflow = "auto"; // Povolíme scrollování
+  function closeCharModal() {
+    charModal.classList.remove("active");
+    document.body.style.overflow = "auto";
+  }
+
+  closeModalBtn.addEventListener("click", closeCharModal);
+
+  charModal.addEventListener("click", function (e) {
+    if (e.target === charModal) {
+      closeCharModal();
     }
+  });
 
-    // Zavření kliknutím na křížek
-    closeModalBtn.addEventListener('click', closeCharModal);
-
-    // Zavření kliknutím kamkoliv do tmavého pozadí (mimo obsah okna)
-    charModal.addEventListener('click', function (e) {
-        if (e.target === charModal) { // Kontrola, zda jsme klikli na pozadí, ne na text/obrázek
-            closeCharModal();
-        }
-    });
-
-    // Bonus: Zavření pomocí klávesy ESC (učitel ocení)
-    document.addEventListener('keydown', function (e) {
-        if (e.key === "Escape" && charModal.classList.contains('active')) {
-            closeCharModal();
-        }
-    });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && charModal.classList.contains("active")) {
+      closeCharModal();
+    }
+  });
 }
 
-// --- LOGIKA PRO LOKACE (SCHOVÁNÍ TEXTU A ZOBRAZENÍ SCENÉRIE) ---
-const locationCards = document.querySelectorAll('.location-card');
+// lokace
+
+const locationCards = document.querySelectorAll(".location-card");
 
 if (locationCards.length > 0) {
-    locationCards.forEach(card => {
-        card.addEventListener('click', function () {
-            // Přepne třídu 'view-mode' při každém kliknutí
-            this.classList.toggle('view-mode');
-        });
+  locationCards.forEach((card) => {
+    card.addEventListener("click", function () {
+      this.classList.toggle("view-mode");
     });
+  });
 }
+
+const toggle = document.getElementById("music-toggle");
+const icon = document.getElementById("music-icon");
+const music = document.getElementById("bg-music");
+
+music.src = MUSIC_FILE;
+music.volume = 0.2;
+
+const musicEnabled = localStorage.getItem("music") === "on";
+
+if (musicEnabled) {
+  icon.src = OFF_ICON;
+
+  music.play().catch(() => {
+    localStorage.setItem("music", "off");
+    icon.src = OFF_ICON;
+  });
+} else {
+  icon.src = ON_ICON;
+}
+
+toggle.addEventListener("click", () => {
+  if (music.paused) {
+    music.play();
+    icon.src = OFF_ICON;
+    localStorage.setItem("music", "on");
+  } else {
+    music.pause();
+    icon.src = ON_ICON;
+    localStorage.setItem("music", "off");
+  }
+});

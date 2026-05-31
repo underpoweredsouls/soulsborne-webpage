@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Souls Univerzum | Dark Souls 3</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/masterstyl.css">
+    <link rel="icon" href="img//icon/favicon.ico">
+    <link rel="preload" href="font/CinzelDecorative-Medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="font/Cinzel-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="audio/DARKSOULS3.mp3" as="audio">
+    <style>
+        #background {
+            background-image: url(img/DS3/DS3.jpg);
+        }
+
+        :root {
+            --gradient: linear-gradient(90deg, rgb(255, 230, 0) 0%, rgb(211, 211, 211) 80%);
+        }
+
+        .quotewrap::before {
+            background-position: right top 25%;
+            background-image: url(img/DS3/quote.png);
+        }
+
+        .quotewrap:hover {
+            max-height: 700px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="background"></div>
+
+    <a href="index.html"><i class="fa fa-home"></i></a>
+
+    <div id="mainhide"><i class="fa fa-eye"></i></div>
+
+    <div id="music-toggle">
+        <img id="music-icon" alt="Music Toggle" height="28px">
+    </div>
+
+    <audio id="bg-music" loop></audio>
+
+    <div id="headerButton"><i class="fa fa-bars"></i></div>
+    <header>
+        <div class="row" id="row">
+            <!-- ds1 -->
+
+            <a class="group" id="ds1" href="darksouls1.html">
+                <div class="item prime mobile">
+                    <img src="img/Header/mobile/dark1mobile.png" alt=""><img src="img/Header/mobile/souls1mobile.png"
+                        alt="">
+                </div>
+
+                <div class="item prime">
+                    <img src="img/Header/ds1.png" alt="Dark Souls">
+                </div>
+
+                <div class="item main">
+                    <img src="img/Header/1.png" alt="1">
+                </div>
+            </a>
+            <!-- ds2 -->
+            <a class="group" id="ds2" href="darksouls2.html">
+                <div class="item prime mobile">
+                    <img src="img/Header/mobile/dark2mobile.png" alt=""><img src="img/Header/mobile/souls2mobile.png"
+                        alt="">
+                </div>
+
+                <div class="item prime">
+                    <img src="img/Header/ds2.png" alt="Dark Souls">
+                </div>
+
+                <div class="item main">
+                    <img src="img/Header/2.png" alt="2">
+                </div>
+            </a>
+            <!-- ds3 -->
+            <a class="group" id="ds3" href="darksouls3.html">
+                <div class="item prime mobile">
+                    <img src="img/Header/mobile/dark3mobile.png" alt=""><img src="img/Header/mobile/souls3mobile.png"
+                        alt="">
+                </div>
+
+                <div class="item prime">
+                    <img src="img/Header/ds3.png" alt="Dark Souls">
+                </div>
+
+                <div class="item main">
+                    <img src="img/Header/3.png" alt="3">
+                </div>
+            </a>
+        </div>
+    </header>
+
+    <nav class="sidebar" id="sidebar">
+        <div><a href="#content"><i class="fa fa-flag"></i><span class="tooltip">Hlavní
+                    Informace</span></a>
+        </div>
+        <div><a href="#Lothric"><i class="fa fa-flag"></i><span class="tooltip">O Lothricu</span></a>
+        </div>
+        <div><a href="#postavy"><i class="fa fa-flag"></i><span class="tooltip">Postavy</span></a></div>
+        <div><a href="#lokace"><i class="fa fa-flag"></i><span class="tooltip">Lokace</span></a></div>
+        <div><a href="#zbraně"><i class="fa fa-flag"></i><span class="tooltip">Zbraně a
+                    Předměty</span></a></div>
+    </nav>
+
+    <main>
+        <div class="quotewrap" id="quote">
+            <span class="quote">
+                <p><i class="fa fa-quote-left"></i> Ano, vskutu. Říká se mu Lothric, místo, kam se zbíhají dočasné země
+                    Pánů Popela. (...) <br>
+                    "Oheň pohasíná a Páni zůstávají bez trůnů."<br>
+                    Když je ohroženo Propojení Ohně, rozezní se zvon,
+                    zvedajíc Pány Popela z jejich hrobů. <br> <a href="">Aldricha, Svatého Hlubin</a>... <br> <a
+                        href="">Farronskou Legii nemrtvých, Strážce propasti</a>... <br> A <a href="">odlehlého pána
+                        Znesvěceného hlavního města, obra Yhorma</a>... <br>
+                    Jenže ve skutečnosti Páni své trůny opustí. A Povstalí z popela povstanou. Bezejmenní, prokletí
+                    nemrtví, nehodní ani toho, aby se stali popelem. A tak se stává, že Popel hledá žhavé uhlíky.
+                    <i class="fa fa-quote-right"></i><br>
+                    <hr style="margin-left:20px;"> <em><span class="author">Vypravěč, o osudu Popela.</span></em>
+                </p>
+            </span>
+        </div>
+
+        <!-- úvod -->
+        <section class="content-section" id="content">
+            <h1>Dark Souls iii: Konec epochy</h1>
+
+            <p>Když na jaře roku 2016 vyšlo <em>Dark Souls III</em>, Hidetaka Miyazaki už dávno nebyl oním neznámým
+                kodérem. Z pozice prezidenta celého studia FromSoftware vedl vývoj titulu, který měl od samého začátku
+                jeden jasný cíl – epicky a definitivně uzavřít celou sérii. Hra byla vyvíjena souběžně se závěrečnými
+                fázemi <em>Bloodborne</em>, z něhož si vypůjčila upravený grafický engine. Výsledkem byl zdaleka
+                nejrychlejší, nejdynamičtější a vizuálně nejpůsobivější díl celé trilogie.</p>
+
+            <p>Z hlediska vývoje se Miyazaki rozhodl neopakovat experimentální (a komunitou ostře debatovanou)
+                hratelnost druhého dílu, a místo toho vytvořil přímý, spirituální i mechanický milostný dopis původnímu
+                <em>Dark Souls 1</em>. Soubojový systém byl masivně zrychlen; nepřátelé se pohybovali dravě, bossové
+                dostali komplexní vícestupňové (multi-phase) útoky, a hráči byli nuceni reagovat spíše agresivními úhyby
+                než schováváním se za těžké štíty. K tomu byla představena nová mechanika "Weapon Arts" (Bojová umění
+                zbraní), která každé zbrani dodala unikátní, speciální chvaty odebírající nově přidanou magickou energii
+                (Focus Points).
+            </p>
+
+            <p>Reakce herního průmyslu byla absolutně extatická. Hra se stala nejrychleji prodávaným titulem v historii
+                vydavatelství Bandai Namco (přes 10 milionů kopií do roku 2020) a sbírala ocenění za hru roku. Byla
+                chválena pro dokonalý balanc zbraní, velkolepý soundtrack od Yuka Kitamury a nezapomenutelné souboje s
+                bossy. Někteří kritici hře sice vyčítali lineárnější level design (oproti bludišti prvního dílu) a
+                přílišné opírání se o "fan servis" (návrat starých lokací a postav), avšak z hlediska hratelnosti je
+                Dark Souls III dodnes považováno za mechanicky nejvyladěnější a nejčistší Soulsborne zážitek vůbec.</p>
+        </section>
+
+        <section class="cards-grid">
+            <!-- DS1 -->
+            <div id="DarkSoulsCard1" class="menu-card">
+                <div class="buttonHeader menu-button">
+                    <span>DARK SOULS i</span><i class="fa fa-chevron-down"></i>
+                </div>
+                <div class="select">
+                    <div><a href="darksouls1.html#content">Hlavní Informace</a></div>
+                    <div><a href="darksouls1.html#Lordran">O Lordranu</a></div>
+                    <div><a href="darksouls1.html#postavy">Postavy</a></div>
+                    <div><a href="darksouls1.html#lokace">Lokace</a></div>
+                    <div><a href="darksouls1.html#zbraně">Zbraně a Předměty</a></div>
+                </div>
+            </div>
+            <!-- DS3 -->
+            <div id="DarkSoulsCard2" class="menu-card">
+                <div class="buttonHeader menu-button">
+                    <span>DARK SOULS ii</span><i class="fa fa-chevron-down"></i>
+                </div>
+                <div class="select">
+                    <div><a href="darksouls2.html#content">Obecné informace</a></div>
+                    <div><a href="darksouls2.html#drangleic">O Drangleicu</a></div>
+                    <div><a href="darksouls2.html#postavy">Postavy</a></div>
+                    <div><a href="darksouls2.html#lokace">Postavy</a></div>
+                    <div><a href="darksouls2.html#zbraně">Démoni a Bossové</a></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" id="Lothric">
+            <h2>Lothric: Poslední vydechnutí světa</h2>
+
+            <p>Zatímco první díl pojednával o strachu ze změny a druhý díl o nevyhnutelnosti cyklu, třetí díl řeší
+                <em>vyčerpání</em>. Ocitáme se v království Lothric, na samotném sklonku věků. První plamen byl během
+                uplynulých tisíciletí rozdmýchán už tolikrát, že na světě nezbývá téměř nic, co by ještě mohlo hořet.
+                Plamen je tak slabý, že už nedokáže ani spálit ty, kteří se do něj vrhnou. Prostor a čas zkolabovaly do
+                sebe. Zbytky dávno padlých království a ruin z minulých epoch byly magicky přitaženy k sobě a navršeny
+                na sebe jako zoufalá, nesourodá deka na samém kraji propasti.
+            </p>
+
+            <p>Vy nehrajete za Vyvoleného Nemrtvého. Hrajete za <em>Nepopelavého (Ashen One)</em>. Jste bytost, která se
+                kdysi v minulosti pokusila upálit v plameni, ale byla tak slabá a bezvýznamná, že neposloužila ani jako
+                palivo a shořela na prach. Jste doslova vyhozený odpad. Až nyní, když všichni velcí hrdinové a Páni
+                popela (Lords of Cinder) zbaběle odmítli plamen znovu zapálit, svět ze zoufalství oživil vás – bezcenný
+                popel – abyste ty obrovské bohy a krále donutili splnit jejich povinnost.</p>
+
+            <p>Atmosféra hry je naprosto unikátní svou truchlivou velkolepostí. Obloha už není modrá ani noční, slunce
+                vypadá jako krvácející černá díra svanoucí ze světa poslední zbytky barev. Oheň, na kterém série vždy
+                stála, je zde zobrazen ne jako spása, ale jako nemoc. Hráč na své cestě nezažívá pocit záchrany, ale
+                podílí se na eutanázii světa, který už dávno měl zemřít přirozenou smrtí. Vyprávění Dark Souls 3 je
+                grandiózním, smutným a nevyhnutelným funerbálním pochodem za kdysi slavnou epochou, uzavírající jednu
+                celou generaci herní historie.</p>
+        </section>
+
+        <section class="content-section" style="width: auto;">
+            <h2>Postavy</h2>
+        </section>
+
+        <!-- postavy -->
+        <section class=" characters-grid" id="postavy">
+            <!-- Karta 1: Bezejmenný Král -->
+            <div class="char-card">
+                <img src="img/DS3/Nameless_King.jpg" alt="Bezejmenný Král" class="char-image"
+                    style="object-position: top">
+                <div class="char-hover-info">
+                    <h3>Bezejmenný Král</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+                <div class="char-detail-text dissappear">
+                    <p>Jedno z největších tajemství celé série odhaleno. Bezejmenný Král není nikdo jiný, než prvorozený
+                        syn samotného Lorda Gwyna, Bůh Války, o kterém se mluvilo už v prvním díle. Během války s
+                        Věčnými draky učinil nemyslitelné – uvědomil si hloupost celého konfliktu, spojil se s draky a
+                        zradil svého otce.</p>
+                    <p>Za tento čin mu Gwyn sebral božský status, zničil všechny jeho sochy, vymazal jeho jméno z análů
+                        historie a vyhnal ho. Nyní Bezejmenný král sídlí vysoko v bouřkových oblacích nad Archdragon
+                        Peak, kde se svým obřím ptačím drakem, Pánem Bouře (King of the Storm), tiše střeží odkaz
+                        prastarých nepřátel. Jde o pravděpodobně nejtěžšího bosse základní hry, jehož bleskové útoky a
+                        perfektní načasování vyžadují od hráče absolutní preciznost.</p>
+
+                    <div class="weapon-card modal-weapon">
+                        <div class="weapon-info">
+                            <h2>Kopí zabijáka draků (Dragonslayer Swordspear)</h2>
+                            <div class="weapon-lore-wrapper">
+                                <div class="weapon-lore-inner">
+                                    <p>Zbraň kombinující drtivou váhu kopí a sečné schopnosti meče. Umožňuje seslat z
+                                        nebes masivní bleskový sloup, přesně jak to dělá Bezejmenný král. Je to
+                                        prapůvodní zbraň, od které Gwynův rytíř Ornstein (boss v DS1) převzal svůj
+                                        bojový styl.</p>
+                                    <p><em><i class="fa fa-quote-left"></i> Zbraň Boha války, prvorozeného syna Gwynova.
+                                            Tento bleskem protkaný meč-kopí zabil mnoho draků, avšak později byl jeho
+                                            majitelem užíván k ochraně stejných bytostí, které kdysi lovil. <i
+                                                class="fa fa-quote-right"></i></em></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weapon-visual">
+                            <img src="img/DS3/Dragonslayer_Swordspear.png" alt="Dragonslayer Swordspear">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Karta 2: Midir -->
+            <div class="char-card">
+                <img src="img/DS3/midir.jpg" alt="Midir, Pojídač Temnoty" class="char-image">
+                <div class="char-hover-info">
+                    <h3>Midir, Pojídač Temnoty</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+                <div class="char-detail-text dissappear">
+                    <p>Přímý potomek Věčných draků. Když zničení Oolacile v prvním díle ukázalo hrůznou sílu Propasti,
+                        bohové z Anor Londa (konkrétně Gwyndolin) uzavřeli s mladým drakem Midirem dohodu. Byl vychován
+                        bohy a jeho úkolem bylo v Ringed City (městě pygmejů na okraji světa) doslova požírat
+                        rozšiřující se Temnotu, aby se nedostala na povrch.</p>
+                    <p>Midir tento úkol plnil celá tisíciletí. Propast ale nelze zničit. Masivní množství konzumované
+                        lidskosti a temnoty začalo draka sžírat zevnitř. Obrovské fialové krystaly temnoty mu prorostly
+                        kůží a on zešílel. Boj s ním (v DLC The Ringed City) představuje jeden z nejepičtějších a
+                        nejzdravějších (co se týče HP) dračích soubojů v herní historii, kde drak chrlí jak oheň, tak
+                        laserové paprsky čisté Propasti.</p>
+
+                    <div class="weapon-card modal-weapon">
+                        <div class="weapon-info">
+                            <h2>Roztřepená čepel (Frayed Blade)</h2>
+                            <div class="weapon-lore-wrapper">
+                                <div class="weapon-lore-inner">
+                                    <p>Unikátní katana ukovaná z Midirovy temné duše. Čepel zbraně je neustále obalena a
+                                        trhána temnotou Propasti. Vydává útoky připomínající temné blesky a má
+                                        neuvěřitelně křehkou odolnost (durability).</p>
+                                    <p><em><i class="fa fa-quote-left"></i> Dračí zbraň ukovaná ze zkažené duše Midira.
+                                            Kdysi nádherná katana je nyní roztřepena a zčernalá na místě, kde se do ní
+                                            zakousla Temnota. Propast nezná slitování ani s božskými sliby. <i
+                                                class="fa fa-quote-right"></i></em></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weapon-visual">
+                            <img src="img/DS3/frayed_blade.png" alt="Frayed Blade">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Karta 3: Princ Démonů -->
+            <div class="char-card">
+                <img src="img/DS3/demonprince.jpg" alt="Princ Démonů" class="char-image">
+                <div class="char-hover-info">
+                    <h3>Princ Démonů</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+                <div class="char-detail-text dissappear">
+                    <p>Poslední vládce kdysi mocné démonské rasy. Démoni se zrodili, když se Čarodějnice Izalith z
+                        prvního dílu pokusila replikovat První Plamen a stvořila Plamen Chaosu. Na konci světa v Dark
+                        Souls 3 však i samotný Chaos vyhasíná a plameny chladnou na popel. Celá rasa démonů vyhynula.
+                    </p>
+                    <p>Souboj se odehrává v ruinách slavné Svatyně Spojení Ohně (Firelink Shrine) z DS1, nyní pohřbené
+                        pod horami popela. Hráč nejprve bojuje se dvěma posledními umírajícími démony (Demon in Pain a
+                        Demon From Below). Když jeden z nich zemře, ten druhý v zoufalém pudu sebezáchovy absorbuje duši
+                        Plamene Chaosu a zmutuje do gigantického okřídleného Prince Démonů. Jeho zabitím hráč
+                        definitivně a navždy vyhladí celou démonskou rasu a uhasí Chaos.</p>
+
+                    <div class="weapon-card modal-weapon">
+                        <div class="weapon-info">
+                            <h2>Jizva démona (Demon's Scar)</h2>
+                            <div class="weapon-lore-wrapper">
+                                <div class="weapon-lore-inner">
+                                    <p>Zbraň, která je pouhou energií a nemá fyzickou čepel. Zahrnuje v sobě jak funkci
+                                        rychlého zahnutého meče z ohně, tak i plnohodnotného nástroje k vyvolávání
+                                        pyromancií.</p>
+                                    <p><em><i class="fa fa-quote-left"></i> Tato chaotická hmota, formovaná ze samotné
+                                            jizvy Prince Démonů, svítí žhnoucím plamenem. Je to zbraň a pyromantický
+                                            plamen v jednom – hmatatelný, zoufalý zbytek rasy zrozené z Chaosu, jež nyní
+                                            nalezla svůj konec. <i class="fa fa-quote-right"></i></em></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weapon-visual">
+                            <img src="img/DS3/demons_scar.webp" alt="Demon's Scar">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Karta 4: Oceiros -->
+            <div class="char-card">
+                <img src="img/DS3/oceiros.jpg" alt="Posedlý Král Oceiros" class="char-image"
+                    style="object-position: right">
+                <div class="char-hover-info">
+                    <h3>Posedlý Král Oceiros</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+                <div class="char-detail-text dissappear">
+                    <p>Původní král Lothricu, jehož touha po silném následníkovi trůnu ho přivedla k šílenství. Oceiros
+                        objevil starobylé poznatky Bezšupinatého Seatha a archivy z prvního dílu. Věřil, že k záchraně
+                        slábnoucí královské pokrevní linie musí provést genetickou fúzi s magií a s dračí krví.</p>
+                    <p>Jeho experimenty způsobily, že zmutoval do vyhublé, částečně dračí obludnosti, ztratil zrak a
+                        většinu rozumu. Boj s ním je jeden z nejvíce zneklidňujících v sérii. Oceiros si při souboji
+                        neustále chová v ruce neviditelné, domnělé dračí dítě (Ocelotta) a šeptá mu. V polovině boje,
+                        pohlcen vztekem a zvířecími instinkty, imaginární (nebo možná jen neviditelné) dítě rozmačká o
+                        zem a začne bojovat na všech čtyřech jako zuřivá bestie.</p>
+
+                    <div class="weapon-card modal-weapon">
+                        <div class="weapon-info">
+                            <h2>Meč měsíčního svitu (Moonlight Greatsword)</h2>
+                            <div class="weapon-lore-wrapper">
+                                <div class="weapon-lore-inner">
+                                    <p>Tato iterace legendárního meče je ukována z duše Oceirose, což dokazuje, jak moc
+                                        byl pohlcen učením Draka Seatha, v jehož magii nakonec našel svou zhoubu.</p>
+                                    <p><em><i class="fa fa-quote-left"></i> Zbraň objevující se v pověstech, spojená s
+                                            Bledým drakem. Oceiros pociťoval absolutní, nezvratnou oddanost k této
+                                            legendě, až sám začal hledat Měsíční svit. Ztratil při tom však svůj lidský
+                                            rozum i království. <i class="fa fa-quote-right"></i></em></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weapon-visual">
+                            <img src="img/DS3/moonlight_greatsword_3.webp" alt="Moonlight Greatsword DS3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Karta 5: Princ Lothric -->
+            <div class="char-card">
+                <img src="img/DS3/lothric.jpg" alt="Princ Lothric" class="char-image">
+                <div class="char-hover-info">
+                    <h3>Princ Lothric</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+                <div class="char-detail-text dissappear">
+                    <p>Celý život byl připravován na jedinou roli: stát se Pánem Popela, obětovat se a prodloužit Věk
+                        Ohně. Princ Lothric, mladší z bratrů, se však narodil fyzicky nemocný a slabý, pravděpodobně
+                        kvůli zvráceným eugenickým experimentům svého otce Oceirose. Fyzicky ani nemůže chodit.</p>
+                    <p>Pod vlivem tajemného učence došel k přesvědčení, že spojování Ohně je jen obrovský podvod starých
+                        bohů, který svět neustále drží v agónii, místo aby ho nechal v klidu zemřít. Když přišel jeho
+                        čas, Lothric odmítl na trůn usednout. Zamkl se ve své věži se svým starším bratrem Lorianem,
+                        zradil tak svůj osud i království, a rozhodl se raději z bezpečí postele sledovat, jak celý svět
+                        kolem něj vyhasíná. Cílem hráče je zabít ho a donést na trůn alespoň jeho popel.</p>
+
+                    <div class="weapon-card modal-weapon">
+                        <div class="weapon-info">
+                            <h2>Lothricův Svatý meč (Lothric's Holy Sword)</h2>
+                            <div class="weapon-lore-wrapper">
+                                <div class="weapon-lore-inner">
+                                    <p>Elegantní, lehký platinový meč s ostřím vyzařujícím svaté světlo, původně určený
+                                        pro budoucího krále. Hráči však zjišťují, že tento meč Lothric nikdy ve
+                                        skutečnosti nepozvedl k boji.</p>
+                                    <p><em><i class="fa fa-quote-left"></i> Princův meč z platinové slitiny obdařený
+                                            silou z královských modliteb. Mladý Lothric měl tento meč nosit do boje a
+                                            zpečetit svůj osud hrdiny, ale raději jej nechal zapadnout prachem a
+                                            odvrátil se od svého údělu. <i class="fa fa-quote-right"></i></em></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weapon-visual">
+                            <img src="img/DS3/lothric_sword.png" alt="Lothric's Holy Sword">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Karta 6: Princ Lorian -->
+            <div class="char-card">
+                <img src="img/DS3/lorian.jpg" alt="Princ Lorian" class="char-image">
+                <div class="char-hover-info">
+                    <h3>Princ Lorian</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+                <div class="char-detail-text dissappear">
+                    <p>Starší bratr Lothrica. Lorian se narodil zdravý a stal se slavným rytířem království. Sám dokonce
+                        zabil Démonického prince. Kvůli obrovské sourozenecké lásce se však Lorian rozhodl sdílet kletbu
+                        (nemoc) svého malého bratra dobrovolně.</p>
+                    <p>Tímto aktem ztratil schopnost chodit a oněměl. Souboj s bratry je mistrovským dílem herního
+                        designu. V první fázi bojujete jen s masivním Lorianem, který ačkoliv klečí a nemůže chodit,
+                        teleportuje se po aréně a drtí vás obrovským hořícím mečem. Když Loriana zabijete, Lothric se
+                        teleportuje na jeho záda, magií ho oživí a bojujete s oběma naráz. Lorian bezduše útočí jako
+                        poslušný golem, zatímco Lothric mu ze zad sesílá podpůrnou a smrtící magii, ukázka naprosté,
+                        tragické závislosti.</p>
+
+                    <div class="weapon-card modal-weapon">
+                        <div class="weapon-info">
+                            <h2>Meč Dvou princů (Twin Princes' Greatsword)</h2>
+                            <div class="weapon-lore-wrapper">
+                                <div class="weapon-lore-inner">
+                                    <p>Tajná zbraň, kterou lze získat u kováře pouze tím, že spojíte Lorianův masivní
+                                        ohnivý meč a Lothricův Svatý meč do jediné zbraně. Symbolizuje jejich
+                                        nerozlučné, i když prokleté spojenectví.</p>
+                                    <p><em><i class="fa fa-quote-left"></i> Meč ukutý fúzí dvou zbraní patřících
+                                            prokletým sourozencům. Zrodil se z jejich neodlučitelného spojení, avšak
+                                            toto bratrství přineslo jen zkázu jejich rodu a světu, na který odmítli
+                                            uvrhnout další světlo. <i class="fa fa-quote-right"></i></em></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weapon-visual">
+                            <img src="img/DS3/twin_princes_greatsword.png" alt="Twin Princes' Greatsword">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Karta 7: Pontiff Sulyvahn -->
+            <div class="char-card">
+                <img src="img/DS3/pontiff.jpg" alt="Pontiff Sulyvahn" class="char-image">
+                <div class="char-hover-info">
+                    <h3>Pontiff Sulyvahn</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+                <div class="char-detail-text dissappear">
+                    <p>Sulyvahn je pravděpodobně hlavním zákulisním hybatelem všeho špatného, co se v Dark Souls 3 děje.
+                        Narodil se v Malovaném světě, odkud uprchl. Zjistil, že bohové z Anor Londa (synové Gwyna)
+                        slábnou a rozhodl se převzít nad světem moc.</p>
+                    <p>Sám sebe prohlásil za "Papeže" (Pontiff) města Irithyll. Aby si udržel absolutní dominanci,
+                        otrávil Gwyndolina (posledního starého boha) a předhodil ho pohlcovači bohů Aldrichovi, kterého
+                        pak zamkl ve staré katedrále. Dále přesvědčil Prince Lothrica, aby nezapaloval Plamen, a své
+                        vlastní rytíře obdaroval magickými prsteny, které z nich udělaly poslušné a šílené zvířecí
+                        mutanty (Outrider Knights, Vordt). Sulyvahn ztělesňuje nezkrotnou lidskou ambici manipulovat
+                        druhými pro absolutní moc.</p>
+
+                    <div class="weapon-card modal-weapon">
+                        <div class="weapon-info">
+                            <h2>Velký meč soudu (Greatsword of Judgment)</h2>
+                            <div class="weapon-lore-wrapper">
+                                <div class="weapon-lore-inner">
+                                    <p>Sulyvahn v souboji ovládá dva unikátní meče – jeden temně magický a druhý ohnivý.
+                                        Tento fialově zářící meč reprezentuje temnou měsíční magii ukradenou
+                                        Gwyndolinovi v Anor Londu.</p>
+                                    <p><em><i class="fa fa-quote-left"></i> Velký obřadní meč Pontiffa Sulyvahna,
+                                            vyzařující magickou sílu temného měsíce. Ačkoliv byla jeho temná síla mnohem
+                                            hlubší než u běžné magie, Sulyvahn ji využíval právě proto, že rezonovala s
+                                            hloubkou jeho vlastní ctižádosti. <i class="fa fa-quote-right"></i></em></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weapon-visual">
+                            <img src="img/DS3/greatsword_of_judgment.png" alt="Greatsword of Judgment">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Karta 8: Aldrich, Svatý Hlubin -->
+            <div class="char-card">
+                <img src="img/DS3/aldrich.png" alt="Aldrich, Svatý Hlubin" class="char-image"
+                    style="object-position: right">
+                <div class="char-hover-info">
+                    <h3>Aldrich, Svatý Hlubin</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+                <div class="char-detail-text dissappear">
+                    <p>Bývalý klerik, který nalezl potěšení v pojídání lidského masa. Pohlcoval tolik lidí, že jeho
+                        vlastní tělo zkolabovalo do ohromné hromady černého hnijícího kalu a kostí. Přestože byl
+                        monstrem, jeho nashromážděná síla (z pozřených lidí) byla tak obrovská, že ho svět vybral, aby
+                        se obětoval a stal se Pánem popela, což také v minulosti učinil.</p>
+                    <p>Když byl však oživen, aby Ohniště zapálil podruhé, Aldrich to odmítl. Místo toho měl vizi, že
+                        přichází "Věk hlubokého moře" (Age of the Deep Sea). Spojil se s Papežem Sulyvahnem a nechal se
+                        zavřít do slavné katedrály v Anor Londu, kde dostal za úkol pomalu a bolestivě pohltit zaživa
+                        Gwyndolina (Gwynova syna). Když vstoupíte do boss-arény, to co vidíte (lidská polovina těla), už
+                        je jen bezvládná mrtvola Gwyndolina, ovládaná temným slizem Aldrichova skutečného těla plazícího
+                        se pod ním.</p>
+
+                    <div class="weapon-card modal-weapon">
+                        <div class="weapon-info">
+                            <h2>Životlovná Kosa (Lifehunt Scythe)</h2>
+                            <div class="weapon-lore-wrapper">
+                                <div class="weapon-lore-inner">
+                                    <p>Magické kouzlo (zázrak), při kterém hráč vyvolá dlouhou temnou kosu k útoku a
+                                        vyléčení svého HP. Nejde oAldrichovu vlastní magii; je to magie Priscilly
+                                        (postavy z DS1), kterou Aldrich získal tím, že snědl Gwyndolina, v jehož snech a
+                                        paměti byla Priscilla uložena.</p>
+                                    <p><em><i class="fa fa-quote-left"></i> Temný zázrak Aldricha, Požírače bohů.
+                                            Ukradený z umírající mysli pohlcovaného Gwyndolina. Aldrich zkonzumoval boha
+                                            zaživa a s ním i všechny vzpomínky na dávné časy, sny a lidi, které kdy onen
+                                            bůh miloval. <i class="fa fa-quote-right"></i></em></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weapon-visual">
+                            <img src="img/DS3/lifehunt_scythe.png" alt="Lifehunt Scythe Spell">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Karta 9: Obr Yhorm -->
+            <div class="char-card">
+                <img src="img/DS3/yhorm.png" alt="Obr Yhorm" class="char-image" style="object-position: center">
+                <div class="char-hover-info">
+                    <h3>Obr Yhorm</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+                <div class="char-detail-text dissappear">
+                    <p>Yhorm the Giant byl osamělý král Profanovaného hlavního města (Profaned Capital), mocný obr
+                        (příbuzný těm z DS2). I přes jeho nesmírnou sílu jím jeho vlastní lid hluboce opovrhoval kvůli
+                        jeho původu. Yhorm si navzdory tomu zachoval čest a vládl spravedlivě. Aby svým poddaným dokázal
+                        svou důvěru, předal jim zbraň jménem <i>Vládce bouří (Storm Ruler)</i> – jediný meč schopný ho
+                        bez námahy srazit na kolena.</p>
+                    <p>Když nezkrotitelný Profanovaný plamen začal pohlcovat jeho lid, Yhorm se v zoufalství obětoval
+                        Prvnímu plameni, stal se Pánem Popela a pokusil se tak svůj lid zachránit. Oběť však selhala a
+                        místo toho město shořelo. Zlomený a bez důvodu k životu, Yhorm se po oživení vrátil do trosek
+                        svého trůnního sálu a odmítl se na obětování podílet podruhé. Hráč je ten, kdo za pomoci
+                        legendárního meče a Yhormova dávného přítele, rytíře Siegwarda z Catariny, tohoto obra vysvobodí
+                        z jeho trápení.</p>
+
+                    <div class="weapon-card modal-weapon">
+                        <div class="weapon-info">
+                            <h2>Vládce bouří (Storm Ruler)</h2>
+                            <div class="weapon-lore-wrapper">
+                                <div class="weapon-lore-inner">
+                                    <p>Ikonická zbraň ze starých her od FromSoftware (objevila se už v <i>Demon's
+                                            Souls</i>). Hráč ji najde ležet přímo u Yhormova trůnu. Běžnými útoky
+                                        Yhormovi hráč neublíží téměř vůbec, ale nabití Vládce bouří vyvolá gigantické
+                                        větrné ostří, které obra srazí plynulým tahem k zemi.</p>
+                                    <p><em><i class="fa fa-quote-left"></i> Velký meč s rozbitou čepelí, který v sobě
+                                            skrývá sílu bouře. Yhorm the Giant rozdal dva takové meče – jeden těm, kteří
+                                            o něm pochybovali, a ten druhý svému nejdražšímu příteli, pro případ, že by
+                                            on sám někdy sešel z cesty. <i class="fa fa-quote-right"></i></em></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weapon-visual">
+                            <img src="img/DS3/storm_ruler.png" alt="Storm Ruler">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Karta 10: Strážci Propasti -->
+            <div class="char-card">
+                <img src="img/DS3/watchers.png" alt="Strážci Propasti" class="char-image">
+                <div class="char-hover-info">
+                    <h3>Strážci Propasti (Abyss Watchers)</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+                <div class="char-detail-text dissappear">
+                    <p>Elitní bojová jednotka (známá jako Farronova nemrtvá legie), která přísahala vlkům a krvi. Jsou
+                        to dědicové vůle slavného Artoriase z prvního dílu. Jejich jediným úkolem bylo vyhledávat
+                        jakýkoliv náznak Propasti (Abyss) a zničit ho, klidně za cenu srovnání celých království se
+                        zemí.</p>
+                    <p>Aby byli dost silní, spojili své krve v jednu jedinou "vlčí krev" a jako jednotka se upálili coby
+                        spojený Pán Popela. Po staletích byli znovu oživeni, avšak čekal je hrůzný osud. V jejich
+                        nepřítomnosti Propast nakazila kořeny pod jejich pevností. Jediným způsobem, jak zastavit šíření
+                        Propasti, bylo zastavit nakažené jedince, což ovšem znamenalo, že se nakazili všichni. Když
+                        vstoupíte do jejich arény, vidíte Strážce Propasti, jak neustále zabíjejí sami sebe v nekonečném
+                        kruhu zkázy a šílenství, oddaní svému slibu až za hrob.</p>
+
+                    <div class="weapon-card modal-weapon">
+                        <div class="weapon-info">
+                            <h2>Velký meč Farronu (Farron Greatsword)</h2>
+                            <div class="weapon-lore-wrapper">
+                                <div class="weapon-lore-inner">
+                                    <p>Mistrovsky vymyšlená zbraň tvořená obrovským mečem a zkrácenou dýkou v druhé
+                                        ruce. Dýka neslouží k útoku, ale používá se jako "kolík" zapíchnutý do země,
+                                        kolem kterého Strážce používá momentum k neuvěřitelným točitým útokům těsně při
+                                        zemi – styl podobný vlčímu lovu (a samotnému Artoriasovi).</p>
+                                    <p><em><i class="fa fa-quote-left"></i> Dýka spárovaná s těžkým mečem Farronovy
+                                            Nemrtvé legie. Rytíři bojovali nekonvenčním stylem připomínajícím zuřivého
+                                            vlka. Legie svěřila svou existenci krvi a nakonec byla právě vlastní
+                                            zkaženou krví i zničena. <i class="fa fa-quote-right"></i></em></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weapon-visual">
+                            <img src="img/DS3/farron_greatsword.png" alt="Farron Greatsword">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Karta 11: Iudex Gundyr -->
+            <div class="char-card">
+                <img src="img/DS3/gundyr.webp" alt="Iudex Gundyr" class="char-image" style="object-position: right">
+                <div class="char-hover-info">
+                    <h3>Iudex Gundyr</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+                <div class="char-detail-text dissappear">
+                    <p>Samotný první boss (tutoriál) Dark Souls 3, známý tím, že od prvních minut nevybíravě zkouší
+                        odolnost nových hráčů. Gundyr však není obyčejné monstrum. Kdysi to byl šampion – bytost
+                        naprosto stejná jako vy. Probouzel se z popela s úkolem propojit Plamen.</p>
+                    <p>Bohužel se však probudil <i>příliš pozdě</i>. Když dorazil do Svatyně Spojení Ohně, jeho ohniště
+                        už bylo vyhaslé a jeho Fire Keeperka (Strážkyně ohně) mrtvá. Uvědomil si, že selhal dřív, než
+                        jeho cesta vůbec začala. Rozhodl se tedy zůstat, nechat si zarazit stočený meč do hrudi a
+                        sloužit jako soudce (Iudex) dalším Nepopelavým. Bude spát tak dlouho, dokud nepřijde někdo, kdo
+                        mu meč z hrudi vytrhne a dokáže v boji, že je hoden zachránit to, co Gundyr už zachránit
+                        nedokázal. Polovinu jeho těla přitom zmutovala nákaza pramenící z čiré lidskosti uspané Kletbou
+                        (Pus of Man).</p>
+
+                    <div class="weapon-card modal-weapon">
+                        <div class="weapon-info">
+                            <h2>Gundyrova halapartna (Gundyr's Halberd)</h2>
+                            <div class="weapon-lore-wrapper">
+                                <div class="weapon-lore-inner">
+                                    <p>Masivní litinová halapartna, která nikdy neuhne, nereaguje na odražení a má
+                                        neuvěřitelný plošný dosah. Výborná do PVP (hráč proti hráči) a reprezentující
+                                        nezlomnou vůli starého šampiona.</p>
+                                    <p><em><i class="fa fa-quote-left"></i> Halapartna odlitá z jediné masy kovu, určená
+                                            pro starověkého Šampiona Gundyra. Zdá se, že tato zbraň nikdy nezažila
+                                            porážku, i přesto, že její pán dorazil ke svému údělu příliš pozdě a nakonec
+                                            se obětoval stát se pochvou pro meč budoucích vítězů. <i
+                                                class="fa fa-quote-right"></i></em></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weapon-visual">
+                            <img src="img/DS3/gundyrs_halberd.png" alt="Gundyr's Halberd">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Karta 12: Kovář Andre -->
+            <div class="char-card">
+                <img src="img/DS3/andre.jpg" alt="Kovář Andre" class="char-image">
+                <div class="char-hover-info">
+                    <h3>Kovář Andre (Andre of Astora)</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+                <div class="char-detail-text dissappear">
+                    <p>Jedno z nejdojemnějších setkání pro fanoušky prvního dílu. Když vstoupíte do Svatyně v DS3,
+                        najdete tam známého zarostlého svalnatého dědu s kladivem v ruce, jak rytmicky buší do kovadliny
+                        přesně jako před desítkami tisíc let v prvním Dark Souls.</p>
+                    <p>Andre není bůh ani velký hrdina, je to obyčejný Nemrtvý. Jak ale víme, Kletba Nemrtvých připraví
+                        člověka o rozum (Hollowing) pouze tehdy, když ztratí svůj životní účel (tzv. "Purpose"). Andre
+                        se celá milénia odmítal vzdát a zbláznit čistě proto, že nepřestal bušit do zbraní a pomáhat
+                        hrdinům. Je důkazem toho, že těžká, rutinní a neochvějná práce je nejsilnějším štítem proti
+                        šílenství chátrajícího světa.</p>
+
+                    <div class="weapon-card modal-weapon">
+                        <div class="weapon-info">
+                            <h2>Kovářovo kladivo (Blacksmith Hammer)</h2>
+                            <div class="weapon-lore-wrapper">
+                                <div class="weapon-lore-inner">
+                                    <p>Klasické pracovní kladivo. Není určeno do bitev, ale jeho těžká hlava může
+                                        zasadit velmi tvrdý úder komukoliv, kdo by se odvážil Andreho bezdůvodně
+                                        napadnout, což poznal nejednou začínající a příliš agresivní hráč.</p>
+                                    <p><em><i class="fa fa-quote-left"></i> Kladivo užívané starým kovářem ze Svatyně.
+                                            Je těžké, odřené a drží v sobě vzpomínky na tisíce ukovaných čepelí. Zbraň,
+                                            která ve skutečnosti není nástrojem smrti, ale tvoření a vytrvalosti, která
+                                            překlenula epochy. <i class="fa fa-quote-right"></i></em></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weapon-visual">
+                            <img src="img/DS3/blacksmith_hammer.png" alt="Blacksmith Hammer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Karta 13: Nerozbitelný Patches -->
+            <div class="char-card">
+                <img src="img/DS3/patches.jpg" alt="Nerozbitelný Patches" class="char-image">
+                <div class="char-hover-info">
+                    <h3>Nerozbitelný Patches (Unbreakable Patches)</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+                <div class="char-detail-text dissappear">
+                    <p>Běžný (running) vtip Hidetaky Miyazakiho. Plešatý lhář a oportunista Patches se objevuje snad ve
+                        všech "Souls" hrách (dokonce i jako pavouk v Bloodborne). Jeho modus operandi je vždy stejný:
+                        navede vás na poklad, pak vás skopne ze srázu a s úšklebkem začne rabovat vaši mrtvolu. Pokud
+                        pád přežijete, sype si popel na hlavu, vymlouvá se a začne vám prodávat ukradené cetky.</p>
+                    <p>Nicméně v DS3 v DLC The Ringed City, na samém konci času (kde nezbylo nic než popel a dva
+                        poslední lidé na zemi), se z Patchese stává postava se silným emocionálním nábojem. Ztrácí paměť
+                        (pod jménem Lapp) a vydává se najít památník hrdinů, aby si vzpomněl. Když to udělá, vykoná to
+                        poslední, co by od něj hráč čekal – znovu vás zkopne do propasti, ale tentokrát ne z
+                        chamtivosti, ale proto, aby vás s typicky ironickým vzkazem navedl na tajnou, bezpečnou cestu
+                        vpřed, pomohl vám a zpečetil tak svou legendu.</p>
+
+                    <div class="weapon-card modal-weapon">
+                        <div class="weapon-info">
+                            <h2>Zbroj rytíře z Katariny (Catarina Armor)</h2>
+                            <div class="weapon-lore-wrapper">
+                                <div class="weapon-lore-inner">
+                                    <p>Ikonická cibulovitá zbroj. Patches ji ve hře ukradne rytíři Siegwardovi z
+                                        Katariny, zavře ho nahého do studny a zbroj si oblékne, aby hráče obelstil. Jde
+                                        o ultimátní důkaz jeho šejdířské povahy.</p>
+                                    <p><em><i class="fa fa-quote-left"></i> Zbroj s obrovitým, cibulovitým designem,
+                                            proslavená rytíři z Katariny. Nositel této ukradené zbroje se nezdráhal
+                                            klesnout na absolutní dno, aby ošidil důvěřivého kolemjdoucího. Ale na konci
+                                            časů, nezůstal on nakonec tím posledním příčetným člověkem? <i
+                                                class="fa fa-quote-right"></i></em></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weapon-visual">
+                            <img src="img/DS3/catarina_armor.png" alt="Catarina Armor">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Karta 14: Ten z Popela -->
+            <div class="char-card">
+                <img src="img/DS3/ashen_one.png" alt="Ten z Popela" class="char-image" style="object-position: center">
+                <div class="char-hover-info">
+                    <h3>Ten z Popela (Ashen One)</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+                <div class="char-detail-text dissappear">
+                    <p>Naše hlavní postava. V DS1 jste byli prokletí hrdinové, v DS2 zlomení, zapomětliví hledači
+                        kletby. Ale v DS3 jste doslova odpad. Nepopelavý (Unkindled Ash) je nemrtvý, který byl neshledán
+                        hodným ani toho, aby se stal Pánem popela. Jeho duše byla slabá, v ohni uhořel na prach a po
+                        celá tisíciletí ležel na hřbitově Svatyně (Cemetery of Ash).</p>
+                    <p>Vybrání tohoto "odpadu" pro záchranu světa je projevem absolutního zoufalství a agónie Prvního
+                        plamene. Když mocní bohové i hrdinové opustili své trůny, plamen musel použít zbytkový prach.
+                        Celé poselství vaší postavy ale stojí na naději: i ten nejmenší prach popela dokáže shromáždit
+                        sílu králů a postavit se největším bestiím, a nakonec se rozhodnout, jak celou tuto obrovskou,
+                        tisíciletí trvající lživou šarádu bohů ukončit.</p>
+
+                    <div class="weapon-card modal-weapon">
+                        <div class="weapon-info">
+                            <h2>Zkroucený meč (Coiled Sword)</h2>
+                            <div class="weapon-lore-wrapper">
+                                <div class="weapon-lore-inner">
+                                    <p>Tento meč nelze klasicky nosit v ruce po většinu hry. Je to onen zakroucený meč
+                                        zarostlý do popela a kostí uvnitř každého Ohniště. Na konci hry můžete jeho
+                                        zlomek užívat jako nekonečný nástroj pro teleportaci.</p>
+                                    <p><em><i class="fa fa-quote-left"></i> Odlitek svinutého meče u ohniště, který
+                                            prožhavil popel nespočetných hrdinů. Slouží jako připomínka, že dokonce i
+                                            vyhořelý popel lze oživit žhnoucí jiskrou a účel může být nalezen tam, kde
+                                            už naděje vyhasla. <i class="fa fa-quote-right"></i></em></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weapon-visual">
+                            <img src="img/DS3/coiled_sword.png" alt="Coiled Sword">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Karta 15: Duše Plamene -->
+            <div class="char-card">
+                <img src="img/DS3/SoC.jpg" alt="Duše Plamene" class="char-image" style="object-position: right">
+                <div class="char-hover-info">
+                    <h3>Duše Plamene (Soul of Cinder)</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+                <div class="char-detail-text dissappear">
+                    <p>Finální boss základní hry. Soul of Cinder není konkrétní postavou (jako Gwyn), ale naprosto
+                        mistrovským amalgámem, <i>agregátem</i> všech duší a jedinců, kteří kdy v minulosti První plamen
+                        zažehli a spojili se s ním (včetně samotných hráčů z prvního a druhého dílu).</p>
+                    <p>Tento ohořelý rytíř střežící pohasínající jiskřičku plamene je zosobněním herní historie. V první
+                        fázi dynamicky mění své formy – útočí jako rytíř s mečem, mág s holemi, hbitý bojovník se
+                        zakřiveným mečem (scimitar) nebo pyromant. Reflektuje tak všechny oblíbené "buildy", které kdy
+                        hráči v sérii vytvořili. Když ho porazíte, nezahyne. Začne hrát smutná piánová hudba z DS1,
+                        narovná se, vytasí masivní velký meč a začne útočit ikonickými blesky samotného Gwyna. Je to
+                        poslední zoufalá obrana Prvního Plamene, manifestující to úplně první (Gwyna) i to poslední
+                        (vás).</p>
+
+                    <div class="weapon-card modal-weapon">
+                        <div class="weapon-info">
+                            <h2>Meč Spojení Ohně (Firelink Greatsword)</h2>
+                            <div class="weapon-lore-wrapper">
+                                <div class="weapon-lore-inner">
+                                    <p>Zbraň ukovaná z esence samotného Plamene. Má tvar spletených kovových tyčí
+                                        kopírující Zkroucený meč, a její speciální útok sešle křížový pruh čirého ohně
+                                        přesně jako finální boss.</p>
+                                    <p><em><i class="fa fa-quote-left"></i> Velký meč sálající energií samotných Pánů
+                                            Popela. V rukou této schránky je zbraň schopna na sebe brát stovky podob,
+                                            reflektujíc tak tisíce a miliony mrtvých, kteří kdysi prolili krev ve víře v
+                                            nekonečnost Ohně. <i class="fa fa-quote-right"></i></em></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weapon-visual">
+                            <img src="img/DS3/firelink_greatsword.png" alt="Firelink Greatsword">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Karta 16: Gael -->
+            <div class="char-card" style="grid-column: if(
+    media(max-width: 1355px): auto;
+    media(max-width: 1825px): 1/3; 
+    media(min-width: 2285px): auto);grid-row: if(
+    media(max-width: 1355px): auto;
+    media(max-width: 1825px): 6/6; 
+    media(min-width: 2285px): auto)">
+                <img src="img/DS3/gael.jpg" alt="Gael, Otrocký Rytíř" class="char-image">
+                <div class="char-hover-info">
+                    <h3>Gael, Otrocký Rytíř</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+                <div class="char-detail-text dissappear">
+                    <p>Závěrečný boss úplně posledního DLC a skutečný a definitivní závěr celé série Dark Souls. Slave
+                        Knight Gael není bůh, král ani lord. Je to ten nejposlednější, nejstarší a nejobyčejnější pěšák.
+                        Válečný otrok z Věku Bohů, posílaný do nejhorších válek a nucený umírat a vstávat z mrtvých po
+                        celou existenci světa.</p>
+                    <p>Jeho úkolem bylo najít pro malířku temný pigment z krve Temné Duše (Dark Soul), ze které by mohla
+                        namalovat nový, chladný a klidný svět. Gael cestoval až na samotný konec času a prostoru.
+                        Zjistil ale, že krev trpasličích králů v The Ringed City už dávno vyschla. V zoufalství se
+                        obětoval, všechny trpaslíky sežral, aby nechal Temnou duši rozhořet ve své vlastní krevní
+                        oběhové soustavě. Sám tím ale zmutoval, narostl do gigantických rozměrů a po stovkách let čekání
+                        ztratil rozum.</p>
+                    <p>Závěrečný souboj se odehrává v pustině tvořené prachem ze zničených galaxií. Dvě
+                        nejbezvýznamnější bytosti, prach s prachem – Gael (Otrok) a Vy (Nepopelavý) – bojují o absolutně
+                        Všechno: o krev Temné Duše. Když Gaela zabijete, odnesete jeho krev malé holčičce a ta konečně
+                        vytvoří plátno pro nový svět.</p>
+
+                    <div class="weapon-card modal-weapon">
+                        <div class="weapon-info">
+                            <h2>Gaelův Velký meč (Gael's Greatsword)</h2>
+                            <div class="weapon-lore-wrapper">
+                                <div class="weapon-lore-inner">
+                                    <p>Tento oškubaný, rozlámaný a krví zalitý popravčí meč sloužil Gaelovi po celou
+                                        věčnost, nepoznamenán ničím jiným, než neustálým štípáním a zabíjením po
+                                        miliontém znovuzrození.</p>
+                                    <p><em><i class="fa fa-quote-left"></i> Velký meč popravčího užívaný otrokem Gaelem.
+                                            Na počátku se jevil jako těžkopádná zbraň k vykonávání poprav, ale staletí
+                                            bojů a čepel obalená sraženou černou krví jej přetavily do zbraně plné
+                                            syrové, děsivé zvířeckosti. <i class="fa fa-quote-right"></i></em></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weapon-visual">
+                            <img src="img/DS3/gaels_greatsword.png" alt="Gael's Greatsword">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Karta 17: Fire Keeper -->
+            <div class="char-card" style="grid-column: if(
+    media(max-width: 900px): auto;
+    media(max-width: 1355px): 1/3; 
+    media(max-width: 2250px): 2/4; 
+    media(min-width: 2250px): auto); 
+    grid-row: if(
+    media(max-width: 1355px): auto;
+    media(max-width: 1825px): 6/6; 
+    media(min-width: 2285px): auto)">
+                <img src="img/DS3/firekeeper.jpg" alt="Strážkyně ohně" class="char-image" style="object-position: top">
+                <div class="char-hover-info">
+                    <h3>Strážkyně ohně</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+                <div class="char-detail-text dissappear">
+                    <p>Ztělesnění absolutní oddanosti a obětování. Strážkyně ohně ve Svatyni Spojení Ohně existuje pouze
+                        proto, aby sloužila Nepopelavému a přeměňovala nasbírané duše v jeho sílu. Aby nemohly vidět
+                        zkaženost světa a pokušení Temnoty, jsou všechny Strážkyně při převzetí svého úřadu rituálně
+                        oslepeny a nosí přes oči zdobenou masku či korunu.</p>
+                    <p>Vztah hráče a Strážkyně tvoří emocionální jádro hry. Zpočátku je to jen poslušná loutka systému
+                        vytvořeného bohy. Pokud jí ale hráč v průběhu hry přinese zakázané Oči, které najde v Opuštěných
+                        hrobech, získá schopnost vidět. Spatří svět, ve kterém plamen vyhasne. I když ji to k smrti
+                        vyděsí a považuje to za největší zradu svého údělu, slíbí vám věrnost. Pokud se na konci
+                        rozhodnete nechat Oheň vyhasnout, bude to právě ona, kdo jej vezme do dlaní, nechá ho zhasnout a
+                        v naprosté tmě se vás zeptá: <em>"Slyšíš můj hlas, Nepopelavý?"</em></p>
+
+                    <div class="weapon-card modal-weapon">
+                        <div class="weapon-info">
+                            <h2>Duše Strážkyně ohně (Fire Keeper Soul)</h2>
+                            <div class="weapon-lore-wrapper">
+                                <div class="weapon-lore-inner">
+                                    <p>Hráč tento temný, zjizvený pozůstatek najde na vrcholku věže nad Svatyní, mezi
+                                        hromadou mrtvol předchozích Strážkyň. Předání této duše vaší živé Strážkyni jí
+                                        umožní vyléčit vaši Temnou pečeť (Dark Sigil).</p>
+                                    <p><em><i class="fa fa-quote-left"></i> Duše Strážkyně ohně, která se navrátila ze
+                                            Zpropadené propasti. Její nitro se hemží lidskostí. Říká se, že Strážkyně
+                                            ohně jsou schránkami pro miliony duší, a tato temná přitažlivost z nich činí
+                                            cíl těch nejhorších možných kleteb. <i class="fa fa-quote-right"></i></em>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weapon-visual">
+                            <img src="img/DS3/fire_keeper_soul.png" alt="Fire Keeper Soul">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <div id="character-modal" class="char-modal">
+            <div class="char-modal-content">
+                <span class="close-modal"><i class="fa fa-times"></i></span>
+
+                <div class="modal-left">
+                    <img id="modal-img" src="" alt="Character Detail">
+                </div>
+                <div class="modal-right">
+                    <h2 id="modal-title"></h2>
+                    <div id="modal-desc">
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <section class="content-section" style="width: auto; margin-bottom: 0;">
+            <h2>Země na sklonku věků</h2>
+        </section>
+
+        <section class="locations-list" id="lokace">
+
+            <!-- Lokace 1: Untended Graves -->
+            <div class="location-card">
+                <div class="location-bg" style="background-image: url('img/DS3/graves.jpg');"></div>
+                <div class="location-content">
+                    <h2>Opuštěné hroby (Untended Graves)</h2>
+                    <span class="view-hint"><i class="fa fa-eye"></i> Kliknutím skryjete text a prohlédnete si
+                        scenérii</span>
+                    <div class="location-lore-wrapper">
+                        <div class="location-lore-inner">
+                            <p>Tato skrytá lokace je jedním z nejděsivějších a nejvíce filozofických momentů ve hře. Po
+                                poražení bosse v magické iluzi projdete falešnou stěnou a ocitnete se na místě, které
+                                velmi dobře znáte. Jde o Svatyni Spojení Ohně (Firelink Shrine) a přilehlý hřbitov. Není
+                                zde ale žádné slunce, žádné světlo. Celý svět je pohlcen absolutní, černočernou tmou.
+                            </p>
+                            <p>Nejde o pouhou iluzi. Opuštěné hroby jsou vizí toho, co se stane, když První plamen
+                                skutečně vyhasne. Právě zde se před věky probudil Šampion Gundyr, dorazil ke Svatyni
+                                pozdě, našel plamen vyhaslý a svou Strážkyni ohně (Fire Keeper) mrtvou. Hráč se zde
+                                pohybuje v hrobovém tichu. Když uvnitř temné Svatyně najdete oči mrtvé Strážkyně a
+                                později je donesete té "vaší" ve světlé Svatyni, umožní jí to poprvé spatřit děsivou
+                                pravdu – že svět bez ohně sice zčerná, ale v dálce se nakonec objeví drobné jiskřičky
+                                nového, přirozeného světla.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lokace 2: Farron Keep -->
+            <div class="location-card">
+                <div class="location-bg" style="background-image: url('img/DS3/farronkeep.webp');"></div>
+                <div class="location-content">
+                    <h2>Pevnost Farron (Farron Keep)</h2>
+                    <span class="view-hint"><i class="fa fa-eye"></i> Kliknutím skryjete text a prohlédnete si
+                        scenérii</span>
+                    <div class="location-lore-wrapper">
+                        <div class="location-lore-inner">
+                            <p>Tradiční "jedovatá bažina", která nechybí v žádné hře od Hidetaky Miyazakiho. Farronova
+                                pevnost však není jen prázdným hvozdem plným slizu. Pozorný průzkum odhalí obří houby a
+                                tlející mrtvoly, které zřetelně odkazují na to, že tato jedovatá bažina je ve
+                                skutečnosti dávno shnilou Zahradou Tmavých kořenů (Darkroot Garden) z prvního dílu a
+                                zničeným městem Oolacile.</p>
+                            <p>Nad bažinou se tyčí pevnost Nemrtvé legie, Strážců propasti. Jejich úkolem bylo izolovat
+                                a zničit jakoukoliv hrozbu Temnoty. Z ironie osudu se však Propast začala šířit přímo
+                                pod jejich nohama v této bažině. Pevnost padla, stromy zčernaly a les zamořil jed.
+                                Bažina je dnes domovem jen pro monstra a obří, primitivní kříže, na kterých Legie
+                                křižovala nakažené jedince, než sama podlehla šílenství.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lokace 3: Cathedral of the Deep -->
+            <div class="location-card">
+                <div class="location-bg" style="background-image: url('img/DS3/cathedral.avif');"></div>
+                <div class="location-content">
+                    <h2>Katedrála Hlubin (Cathedral of the Deep)</h2>
+                    <span class="view-hint"><i class="fa fa-eye"></i> Kliknutím skryjete text a prohlédnete si
+                        scenérii</span>
+                    <div class="location-lore-wrapper">
+                        <div class="location-lore-inner">
+                            <p>Tato obrovská, majestátní stavba sloužila kdysi Cestě Bílého (Way of White) z DS1 jako
+                                svaté místo. Vše se změnilo s příchodem klerika Aldricha. Aldrich začal pojídat lidské
+                                maso a založil kult Hlubin (The Deep). Hlubina není Propast (Abyss); zatímco Propast je
+                                divoká, emocionální černá temnota, Hlubina představuje stagnující, klidný, ale nesmírně
+                                odporný oceán mrtvých usazenin.</p>
+                            <p>Katedrála je vizuálně nádherná, ale skrývá nevýslovný hnus. Chodby hlídají obrovští
+                                deformovaní obři, zatímco Diakoni (Deacons) v červených rouchách střeží hrobku svého
+                                mistra. V samotných základech Katedrály se převalují masy hnijícího černého kalu a
+                                slizu, z něhož se rodí zrůdy. Katedrála zosobňuje zkaženost organizovaného náboženství v
+                                Lordranu, které se od uctívání světla odvrátilo k uctívání temného moře hříchů.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lokace 4: Irithyll of the Boreal Valley -->
+            <div class="location-card">
+                <div class="location-bg" style="background-image: url('img/DS3/irithyll.webp');"></div>
+                <div class="location-content">
+                    <h2>Irithyll z Mrazivého údolí (Irithyll of the Boreal Valley)</h2>
+                    <span class="view-hint"><i class="fa fa-eye"></i> Kliknutím skryjete text a prohlédnete si
+                        scenérii</span>
+                    <div class="location-lore-wrapper">
+                        <div class="location-lore-inner">
+                            <p>Výstup z temných, klaustrofobických Katakomb Carthusu je odměněn jedním z nejúžasnějších
+                                vizuálních momentů v historii her. Před vámi se pod svitem obrovského stříbrného měsíce
+                                rozprostře gotické, zamrzlé město Irithyll. Vše se zdá být čisté, nádherné a pohádkové,
+                                pokryté třpytícím se mrazem a polární září.</p>
+                            <p>Jako vždy v Soulsborne hrách, krása je pouhou maskou zla. Město je sídlem despotického
+                                Pontiffa Sulyvahna. Ulice jsou tiché, hlídají je vysocí, duchům podobní Pontiffovi
+                                rytíři s mrazivými meči, doprovázeni neviditelnými otroky, kterým byly vyloupnuty oči.
+                                Irithyll je perlou architektury, ale uvnitř je město naprosto mrtvé, proměněné v
+                                chladnou past na ty, kteří by se chtěli postavit Sulyvahnově diktatuře.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lokace 5: Anor Londo -->
+            <div class="location-card">
+                <div class="location-bg" style="background-image: url('img/DS3/anorlondo3.webp');"></div>
+                <div class="location-content">
+                    <h2>Anor Londo</h2>
+                    <span class="view-hint"><i class="fa fa-eye"></i> Kliknutím skryjete text a prohlédnete si
+                        scenérii</span>
+                    <div class="location-lore-wrapper">
+                        <div class="location-lore-inner">
+                            <p>Když se hráč po stovkách schodů nad Irithyllem vyveze obřím výtahem a na obrazovce se
+                                objeví nápis "Anor Londo", srdce každého veterána z prvního dílu zaplesá. Místo, kde
+                                jste kdysi bojovali s Ornsteinem a Smoughem. Nostalgie však během několika vteřin
+                                ustoupí čirému hororu.</p>
+                            <p>Město Bohů je znesvěcené. Mramorové schody jsou pokryté černým, páchnoucím kalem z
+                                Aldrichova těla. Obří kovář, dobrý přítel z prvního dílu, leží ve své svatyni mrtvý.
+                                Samotná hlavní katedrála, dříve prozářená sluncem, se utápí v mrazivé noci, zatímco
+                                Aldrich v jejím nitru zaživa požírá Gwyndolina, posledního zdejšího boha. Anor Londo v
+                                DS3 je geniálním vyjádřením rčení "nikdy se nemůžeš vrátit domů". Zářivý mýtus padl a
+                                zbyla jen hnijící realita.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lokace 6: Lothric Castle -->
+            <div class="location-card">
+                <div class="location-bg" style="background-image: url('img/DS3/lothric_castle.jpg');"></div>
+                <div class="location-content">
+                    <h2>Hrad Lothric</h2>
+                    <span class="view-hint"><i class="fa fa-eye"></i> Kliknutím skryjete text a prohlédnete si
+                        scenérii</span>
+                    <div class="location-lore-wrapper">
+                        <div class="location-lore-inner">
+                            <p>Středobod kolabujícího světa. Jak se blížíte k finále, slunce na obloze se mění v temné
+                                Znamení (Darksign) krvácející do mraků a z nebe padají saze. Hrad Lothric stojí na
+                                naprostém geografickém i dějinném vrcholu, kam se srocují zbytky přeživších a kde sídlí
+                                Princ Lothric, který se zřekl své povinnosti.</p>
+                            <p>Atmosféra je apokalyptická. Hradby nehlídají jen loajální Lothričtí rytíři, ale také
+                                mrtví vyverni. Tito draci však nejsou majestátními tvory oblohy; z jejich obrovských
+                                mrtvol vyhřezává zčernalá, pulzující masa zvaná "Pus of Man" (Hnis lidstva) – obří
+                                slizcí hadi, manifestace utlačované, divoké Propasti, která proráží na povrch ve světě,
+                                v němž plamen ztrácí sílu. Hrad je pevností popření, místem, kde se král a princ zavřeli
+                                před koncem, který nevyhnutelně přišel zevnitř.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lokace 7: Profaned Capital -->
+            <div class="location-card">
+                <div class="location-bg" style="background-image: url('img/DS3/profaned_capital.jpg');"></div>
+                <div class="location-content">
+                    <h2>Znesvěcené hlavní město (Profaned Capital)</h2>
+                    <span class="view-hint"><i class="fa fa-eye"></i> Kliknutím skryjete text a prohlédnete si
+                        scenérii</span>
+                    <div class="location-lore-wrapper">
+                        <div class="location-lore-inner">
+                            <p>Hluboko v podzemí, pod Irithyllem, leží monumentální trosky Znesvěceného (Profanovaného)
+                                hlavního města. Město, jemuž kdysi spravedlivě vládl Obr Yhorm. Zkáza tohoto místa je
+                                přičítána zrodu Profanovaného plamene – ohně, který nikdy nezhasne a vznikl z
+                                chamtivosti hříchu. Tento oheň pravděpodobně souvisí se samotnou Propastí či zmutovaným
+                                Chaosem z DS2.</p>
+                            <p>Nejvíce zneklidňujícím prvkem města je fakt, že když Profanovaný plamen explodoval,
+                                spálil výhradně a pouze lidské maso. Architektura, zlato i klenoty zůstaly nepoškozeny.
+                                Dnes se mezi poklady a popálenými sochami potulují pouze Chrliče (Gargoyles) a
+                                Monstróznosti Hříchu (Monstrosities of Sin) – groteskní kříženci hrochů a stovek
+                                lidských rukou trčících z jejich obličejů. Je to zlatá hrobka, památník lidské touhy
+                                hrát si s mocemi mimo jejich kontrolu.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lokace 8: Painted World of Ariandel -->
+            <div class="location-card">
+                <div class="location-bg" style="background-image: url('img/DS3/ariandel.jpg');"></div>
+                <div class="location-content">
+                    <h2>Malovaný svět Ariandelu (Painted World of Ariandel)</h2>
+                    <span class="view-hint"><i class="fa fa-eye"></i> Kliknutím skryjete text a prohlédnete si
+                        scenérii</span>
+                    <div class="location-lore-wrapper">
+                        <div class="location-lore-inner">
+                            <p>Lokace prvního DLC. Podobně jako Ariamis v prvním díle, jde o zasněžený mikrosvět skrytý
+                                v kouzelném obraze, sloužící jako útočiště pro zbloudilé duše (Forlorn). Obraz však
+                                podléhá vlastním zákonům: jakmile zestárne a začne hnít, je třeba jej obětovat očistnému
+                                ohni, a z popela namalovat svět nový.</p>
+                            <p>Sestra Friede a Otec Ariandel však proces zastavili. Rozhodli se odmítnout oheň a raději
+                                žít v hnilobě, protože se báli změny a ztráty domova. Svět se tak propadá do slizu a
+                                nakažených, zmutovaných obřích much, zatímco ptačí obyvatelé s pláčem prosí o plamen.
+                                Ariandel slouží jako mistrovská alegorie (zrcadlo) celého univerza Dark Souls – ukazuje,
+                                že uměle prodlužovat život a odmítat smrt je horší osud, než shořet a uvolnit místo
+                                něčemu novému.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lokace 9: Ringed City -->
+            <div class="location-card">
+                <div class="location-bg" style="background-image: url('img/DS3/ringedcity.webp');"></div>
+                <div class="location-content">
+                    <h2>Prstenčité město (The Ringed City)</h2>
+                    <span class="view-hint"><i class="fa fa-eye"></i> Kliknutím skryjete text a prohlédnete si
+                        scenérii</span>
+                    <div class="location-lore-wrapper">
+                        <div class="location-lore-inner">
+                            <p>Závěrečná lokace posledního DLC a absolutní konec celého univerza Dark Souls. Prstenčité
+                                město vybudoval Lord Gwyn na samém okraji světa a daroval ho Trpasličím králům (Pygmy
+                                Lords). Zdánlivě to byl dar z vděčnosti. Ve skutečnosti šlo o překrásnou zlatou klec
+                                navrženou tak, aby uzamkla lidstvo (Pygmeje) a jejich Temnou duši co nejdále od Anor
+                                Londa a zabránila jim expandovat.</p>
+                            <p>Město je doslova prstencem chránícím tajemství Lidskosti před zbytkem vesmíru, neustále
+                                se propadajícím do nekonečného bahna Propasti. Až na samotném konci, když hráč dotykem
+                                rozbije magické vejce Princezny Filianore, iluze času se zhroutí. Město zmizí. Hráč je
+                                vržen na samotný konec času, do popelavé, sluncem spálené pustiny mrtvé planety.
+                                Prstenčité město je finální odhalením lží bohů – dokonalá, dechberoucí past, na jejímž
+                                dně už nezbylo nic než vyhaslý popel a krev.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Předmět 1: Ember -->
+        <div class="weapon-card" id="zbraně">
+            <div class="weapon-info">
+                <h2>Žhavý uhlík (Ember)</h2>
+                <div class="weapon-lore-wrapper">
+                    <div class="weapon-lore-inner">
+                        <p>Tento předmět nahrazuje mechaniku Lidskosti (Humanity) z DS1. Hráč v Dark Souls 3 (coby
+                            Nepopelavý) už nedisponuje plnohodnotným lidským životem. Zmáčknutím Žhavého uhlíku v dlani
+                            hráč absorbuje zbytkové teplo a stane se "Rozdmýchaným" (Embered). Jeho šaty začnou doutnat,
+                            získá 30 % zdraví navíc a odemkne se mu online multiplayer.</p>
+                        <p>Je to mechanika založená na čiré nostalgii a zoufalství. Tyto uhlíky jsou to jediné, co zbylo
+                            ze slavných hrdinů minulosti. Bezcenný prach (hráč) se tak doslova ohřívá o cizí slávu, aby
+                            získal alespoň střípek pocitu, jaké to bylo cítit v žilách První Plamen.</p>
+                        <p><em><i class="fa fa-quote-left"></i> Žádný Nepopelavý si nedokáže navždy udržet plamen, ale
+                                přesto po něm všichni lační. Vstřebáním tohoto uhlíku získáte sílu Pánů a odemknete
+                                možnost přivolat na pomoc jiné bytosti napříč roztříštěným světem. <i
+                                    class="fa fa-quote-right"></i></em></p>
+                    </div>
+                </div>
+            </div>
+            <div class="weapon-visual">
+                <img src="img/DS3/ember.png" alt="Ember">
+            </div>
+        </div>
+
+        <!-- Předmět 2: Dark Sigil -->
+        <div class="weapon-card">
+            <div class="weapon-info">
+                <h2>Temná pečeť (Dark Sigil)</h2>
+                <div class="weapon-lore-wrapper">
+                    <div class="weapon-lore-inner">
+                        <p>Tento zlověstný, nehmotný klíčový předmět získáte zdarma od poutníka Yoela z Londoru výměnou
+                            za "probuzení vaší skryté síly". S každou Temnou pečetí v inventáři se při smrti začnete
+                            fyzicky měnit – vaše kůže začne zelenat a vysychat (Hollowing), což se u běžné smrti v DS3
+                            neděje.</p>
+                        <p>Z příběhového hlediska jde o jízdenku k nejtemnějšímu (nebo možná nejvíce lidskému) konci hry
+                            zvanému <i>Usurpace Plamene (Usurpation of Fire)</i>. Pokud nasbíráte 8 těchto pečetí,
+                            stanete se Pánem Nemrtvých (Lord of Hollows). Místo propojení nebo uhašení ohně do něj
+                            zasáhnete a jeho sílu ukradnete čistě pro lidskou rasu, čímž svrhnete tisíciletou diktaturu
+                            bohů.</p>
+                        <p><em><i class="fa fa-quote-left"></i> Z temného znamení, které se zjevilo na těle nemrtvého,
+                                stéká temnota samotného lidství. Tato temnota nikdy nevyschne; neustále pomalu odkapává,
+                                unikajíc prasklinami smrtelného masa. <i class="fa fa-quote-right"></i></em></p>
+                    </div>
+                </div>
+            </div>
+            <div class="weapon-visual">
+                <img src="img/DS3/dark_sigil.png" alt="Dark Sigil">
+            </div>
+        </div>
+
+        <!-- Předmět 3: Eyes of a Fire Keeper -->
+        <div class="weapon-card">
+            <div class="weapon-info">
+                <h2>Oči Strážkyně ohně (Eyes of a Fire Keeper)</h2>
+                <div class="weapon-lore-wrapper">
+                    <div class="weapon-lore-inner">
+                        <p>Světloplachý artefakt, ukrytý v naprosté temnotě za iluzorní stěnou Opuštěných hrobů
+                            (Untended Graves). Patřily pravděpodobně první Strážkyni ohně v historii, která odmítla
+                            oslepení a místo toho pohlédla do budoucnosti, čímž spatřila zánik a vyhasnutí všeho
+                            známého.</p>
+                        <p>Jejich předání Strážkyni vyvolává hluboký morální konflikt. Znalost budoucnosti Strážkyni
+                            děsí a prosí vás, ať ji zabijete, pokud by snad někdy zaváhala ve své povinnosti. Zároveň ji
+                            ale představa, že by trápení celého světa konečně skončilo a plamen by navždy zhasl,
+                            naplňuje paradoxní nadějí.</p>
+                        <p><em><i class="fa fa-quote-left"></i> Pár temných, slepých očí. Je to zapovězená věc,
+                                ohavnost, kterou Strážkyně ohně nesmí nikdy vlastnit. Ukazují totiž to jediné, co je pro
+                                udržení Plamene tabu – vizi světa bez ohně. <i class="fa fa-quote-right"></i></em></p>
+                    </div>
+                </div>
+            </div>
+            <div class="weapon-visual">
+                <img src="img/DS3/eyes_of_a_fire_keeper.png" alt="Eyes of a Fire Keeper">
+            </div>
+        </div>
+
+        <!-- Zbraň 1: Fume Ultra Greatsword -->
+        <div class="weapon-card">
+            <div class="weapon-info">
+                <h2>Ultra velký meč Výparu (Fume Ultra Greatsword)</h2>
+                <div class="weapon-lore-wrapper">
+                    <div class="weapon-lore-inner">
+                        <p>Vynikající důkaz provázanosti trilogie. Tento naprosto monstrózní kus černého kamene byl
+                            poprvé představen v <i>Dark Souls 2</i>, kde jej třímal slavný Rytíř Výparu (Raime). V Dark
+                            Souls 3 tuto zbraň naleznete v Doutnajícím jezeře (Smouldering Lake), kde s ní úřaduje
+                            Knight Slayer Tsorig.</p>
+                        <p>Přítomnost této zbraně ukazuje, jak se artefakty z padlých, prehistorických epoch předávají z
+                            generace na generaci. Co bylo kdysi osobní zbraní padlého hrdiny hájícího dceru Temnoty, je
+                            dnes krví zbroceným nástrojem šíleného zabijáka rytířů, který s ním drtí kohokoliv, kdo mu
+                            zkříží cestu. Dodnes patří k nejtěžším a nejvíce zničujícím mečům ve hře.</p>
+                        <p><em><i class="fa fa-quote-left"></i> Tento zčernalý monument je spíše než mečem gigantickým
+                                kamenným kyjem, sálajícím starodávným teplem. Kdysi patřil zrádci, který se obětoval
+                                Temnotě kdesi v dávno zapomenuté železné věži. <i class="fa fa-quote-right"></i></em>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="weapon-visual">
+                <img src="img/DS2/FUGS.png" alt="Fume Ultra Greatsword">
+            </div>
+        </div>
+
+        <!-- Zbraň 2: Ledo's Great Hammer -->
+        <div class="weapon-card">
+            <div class="weapon-info">
+                <h2>Ledovo Obrovské Kladivo (Ledo's Great Hammer)</h2>
+                <div class="weapon-lore-wrapper">
+                    <div class="weapon-lore-inner">
+                        <p>Nejtěžší zbraň v celé hře, nalezená ve finálním DLC The Ringed City. Stříbrní rytíři z Anor
+                            Londa obvykle bojovali oštěpy a meči s absolutní elegancí. Rytíř Ledo byl však obávaným
+                            excentrikem a vyděděncem. Místo ladnosti volil naprosto devastující hrubou sílu a spřátelil
+                            se se starodávnými soudci a obry.</p>
+                        <p>Jeho speciální útok (Weapon Art) tuto brutalitu nádherně podtrhuje. Hráč roztočí kladivo po
+                            zemi, čímž na jeho hlavici nabalí gigantické kusy skal a kamení. Kladivo se stane ještě
+                            těžším, a dalším těžkým útokem se tyto kameny explozivně roztříští o lebku nepřítele. Jde o
+                            zbraň pro opravdové mistry atributu Síly.</p>
+                        <p><em><i class="fa fa-quote-left"></i> Velké kladivo, které třímal Stříbrný rytíř Ledo, známý
+                                podivín, který preferoval potulování po okrajích světa a přátelství s obry. Tato masivní
+                                zbraň je nejlepším důkazem jeho drtivé a nekompromisní nátury. <i
+                                    class="fa fa-quote-right"></i></em></p>
+                    </div>
+                </div>
+            </div>
+            <div class="weapon-visual">
+                <img src="img/DS3/ledos_great_hammer.png" alt="Ledo's Great Hammer">
+            </div>
+        </div>
+
+        <!-- Prsten 1: Pontiff's Right Eye -->
+        <div class="weapon-card">
+            <div class="weapon-info">
+                <h2>Pravé oko Papeže (Pontiff's Right Eye)</h2>
+                <div class="weapon-lore-wrapper">
+                    <div class="weapon-lore-inner">
+                        <p>Důkaz neuvěřitelné krutosti a machiavellismu Papeže Sulyvahna z Irithyllu. Hráč tento prsten
+                            získá po poražení jednoho z bestiálních obřích pavouků (Sulyvahn's Beast) v Irithyllu.
+                            Mechanicky je to vynikající předmět, který zvyšuje útočnou sílu hráče tím více, čím více po
+                            sobě jdoucích úderů zasadí.</p>
+                        <p>Příběhově je to však past. Sulyvahn dával tyto prsteny svým nejvěrnějším elitním rytířům
+                            (Vordt, Dancer). Magie prstenu je nutila bojovat neustále agresivněji a bezhlavěji, až
+                            ztratili svůj lidský rozum a začali bojovat na všech čtyřech jako zdivočelé bestie. Sulyvahn
+                            je tímto prstenem záměrně nechal zmutovat v monstra a zpečetil tak jistotu, že se ze svých
+                            výprav nikdy nevrátí zpět jako lidé.</p>
+                        <p><em><i class="fa fa-quote-left"></i> Zírá přímo do tvé duše. Tento začarovaný prsten
+                                podněcuje nositele k záchvatům nepříčetného berserkovského šílenství, které ho brzy
+                                navždy připraví o rozum. Přesně jak Papež plánoval. <i
+                                    class="fa fa-quote-right"></i></em></p>
+                    </div>
+                </div>
+            </div>
+            <div class="weapon-visual">
+                <img src="img/DS3/pontiffs_right_eye.png" alt="Pontiff's Right Eye">
+            </div>
+        </div>
+
+        <!-- Prsten 2: Pontiff's Left Eye -->
+        <div class="weapon-card">
+            <div class="weapon-info">
+                <h2>Levé oko Papeže (Pontiff's Left Eye)</h2>
+                <div class="weapon-lore-wrapper">
+                    <div class="weapon-lore-inner">
+                        <p>Druhá polovina Sulyvahnova prokletého daru. Získáte ji transpozicí duše z Vordta z Boreálního
+                            Údolí (bosse, který dříve býval ušlechtilým rytířem, ale prsten ho proměnil v obřího, ledově
+                            dýchajícího psa).</p>
+                        <p>Tento prsten odměňuje zvířeckost. Pokud nositel začne zběsile mlátit do nepřítele bez
+                            přestávky (jako zvíře), prsten začne vysávat nepřítelovu životní sílu a hráče léčit. Tyto
+                            dva prsteny v dokonalé synergii vysvětlují, proč všichni rytíři z Irithyllu útočí v naprosto
+                            nekonečných, frenetických a děsivých sériích úderů, které tak trestají defenzivně hrající
+                            hráče.</p>
+                        <p><em><i class="fa fa-quote-left"></i> Rytíři odeslaní na expedici obdrželi toto Oko od Papeže
+                                Sulyvahna, jen aby se z nich stala šílená, nezkrotitelná zvířata bez možnosti návratu.
+                                Vždyť černým, prázdným očím Sulyvahnovy bestie se nic nevyrovná. <i
+                                    class="fa fa-quote-right"></i></em></p>
+                    </div>
+                </div>
+            </div>
+            <div class="weapon-visual">
+                <img src="img/DS3/pontiffs_left_eye.png" alt="Pontiff's Left Eye">
+            </div>
+        </div>
+
+        <!-- Kouzlo: Soul Stream -->
+        <div class="weapon-card">
+            <div class="weapon-info">
+                <h2>Proud duše (Soul Stream)</h2>
+                <div class="weapon-lore-wrapper">
+                    <div class="weapon-lore-inner">
+                        <p>Jedno z vizuálně nejefektnějších kouzel ve hře. Umožňuje sesilatelům pálit masivní,
+                            kontinuální laserový paprsek ničivé energie. Najdete ho v tajné komnatě v Grand Archives
+                            (Hlavních Archivech) za iluzorní stěnou, z mrtvoly mága.</p>
+                        <p>Odkaz tohoto kouzla leží mimo Lothric. Přinesl jej sem "První z učenců", tajemný mentor,
+                            který pravděpodobně přesvědčil prince Lothrica, ať nezapaluje plamen. Silně se spekuluje, že
+                            tento Učenec nebyl nikdo jiný, než Aldia z <i>Dark Souls 2</i> (Učenec Prvního hříchu), nebo
+                            minimálně někdo z jeho následovníků. Předává tak štafetu nedůvěry k ohni až do úplného konce
+                            časů.</p>
+                        <p><em><i class="fa fa-quote-left"></i> Kouzlo předané Prvním z učenců, když arcivévoda budoval
+                                Archivy. Tento Učenec pochyboval o propojování Plamene a tvrdilo se o něm, že je
+                                soukromým mentorem samotného královského prince. <i class="fa fa-quote-right"></i></em>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="weapon-visual">
+                <img src="img/DS3/soul_stream.png" alt="Soul Stream Spell">
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const MUSIC_FILE = "audio/DARKSOULS3.mp3";
+        const ON_ICON = "audio/note3.svg";
+        const OFF_ICON = "audio/note-slash3.svg";
+    </script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

@@ -1,26 +1,20 @@
 <!DOCTYPE html>
 <html lang="cs">
-
-<!-- https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:nth-child -->
-
-<!-- úkoly:
--->
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soulsborne Univerzum | Dark Souls Trilogie</title>
+    <title>Dark Souls Univerzum | Dark Souls Trilogie</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/masterstyl.css">
     <link rel="icon" href="img//icon/favicon.ico">
     <link rel="preload" href="font/CinzelDecorative-Medium.woff2" as="font" type="font/woff2" crossorigin>
     <style>
         #background {
-            background-image: url(img/DarkSouls/open-graph-dark-souls-trilogy.jpg);
+            background-image: url(img/Trilogy/trilogybg2.jpg);
         }
 
         :root {
-            /* --gradient: linear-gradient(90deg, rgba(138, 12, 25, 1) 0%, rgba(211, 211, 211, 1) 100%); */
+            --gradient: linear-gradient(90deg, rgb(174, 174, 174) 0%, rgb(255, 255, 255) 100%);
         }
     </style>
 </head>
@@ -31,88 +25,363 @@
     <a href="index.html"><i class="fa fa-home"></i></a>
 
     <div id="headerButton"><i class="fa fa-bars"></i></div>
-    <header id="header">
+
+    <div id="mainhide"><i class="fa fa-eye"></i></div>
+    
+    <header>
         <div class="row" id="row">
-            <!-- Souls -->
-            <div class="group" id="souls">
-                <div class="darkSouls item prime" style="--item-width:100%;">
-                    <a href="darksoulstrilogy.html"><img src="img/DarkSouls/darkSouls.png" alt="Dark"></a>
+            <!-- ds1 -->
+
+            <a class="group" id="ds1" href="darksouls1.html">
+                <div class="item prime mobile">
+                    <img src="img/Header/mobile/dark1mobile.png" alt=""><img src="img/Header/mobile/souls1mobile.png"
+                        alt="">
                 </div>
-                <div class="item prime" id="item">
-                    <a href="demonsouls.html"><img src="img/DeS/demons.png" alt="Demon's"></a>
-                </div>
-                <div class="item main">
-                    <a href="demonsouls.html"><img src="img/DeS/souls.png" alt="Souls"></a>
-                </div>
-            </div>
-            <!-- Borne -->
-            <div class="group" id="BB">
+
                 <div class="item prime">
-                    <a href="bloodborne.html"><img src="img/BB/blood.png" alt="Blood"></a>
+                    <img src="img/Header/ds1.png" alt="Dark Souls">
                 </div>
+
                 <div class="item main">
-                    <a href="bloodborne.html"><img src="img/BB/borne.png" alt="borne"></a>
+                    <img src="img/Header/1.png" alt="1">
                 </div>
-            </div>
-            <!-- Kiro -->
-            <div class="group" id="SSDT">
-                <div class="item prime" style="--item-width:var(--item-width);">
-                    <a href="sekiro.html"><img src="img/SSDT/se.png" alt="Se"></a>
+            </a>
+            <!-- ds2 -->
+            <a class="group" id="ds2" href="darksouls2.html">
+                <div class="item prime mobile">
+                    <img src="img/Header/mobile/dark2mobile.png" alt=""><img src="img/Header/mobile/souls2mobile.png"
+                        alt="">
                 </div>
+
+                <div class="item prime">
+                    <img src="img/Header/ds2.png" alt="Dark Souls">
+                </div>
+
                 <div class="item main">
-                    <a href="sekiro.html"><img src="img/SSDT/kiro.png" alt="kiro"></a>
+                    <img src="img/Header/2.png" alt="2">
                 </div>
-            </div>
-            <!-- Ring -->
-            <div id="ER" class="group">
-                <div class="er item prime">
-                    <a href="eldenring.html"><img src="img/ER/elden.png" alt="Elden"></a>
+            </a>
+            <!-- ds3 -->
+            <a class="group" id="ds3" href="darksouls3.html">
+                <div class="item prime mobile">
+                    <img src="img/Header/mobile/dark3mobile.png" alt=""><img src="img/Header/mobile/souls3mobile.png"
+                        alt="">
                 </div>
+
+                <div class="item prime">
+                    <img src="img/Header/ds3.png" alt="Dark Souls">
+                </div>
+
                 <div class="item main">
-                    <a href="eldenring.html"><img src="img/ER/ring.png" alt="Ring"></a>
+                    <img src="img/Header/3.png" alt="3">
                 </div>
-            </div>
+            </a>
         </div>
     </header>
 
-    <main>
-        <nav class="sidebar" id="sidebar">
-            <div><a href="#"><i class="fa fa-flag"></i><span class="tooltip" id="cast1">example</span></a></div>
-            <div><a href="#"><i class="fa fa-flag"></i><span class="tooltip" id="cast2">example</span></a></div>
-            <div><a href="#"><i class="fa fa-flag"></i><span class="tooltip" id="cast3">example</span></a></div>
-            <div><a href="#"><i class="fa fa-flag"></i><span class="tooltip" id="cast4">example</span></a></div>
-            <div><a href="#"><i class="fa fa-flag"></i><span class="tooltip" id="cast5">example</span></a></div>
-            <div><a href="#"><i class="fa fa-flag"></i><span class="tooltip" id="cast6">example6</span></a></div>
-        </nav>
+    <nav class="sidebar" id="sidebar">
+        <div><a href="#content"><i class="fa fa-flag"></i><span class="tooltip">Hlavní Informace</span></a></div>
+        <div><a href="#difficulty"><i class="fa fa-flag"></i><span class="tooltip">Filozofie Obtížnosti</span></a></div>
+        <div><a href="#mechanics"><i class="fa fa-flag"></i><span class="tooltip">Časté Mechaniky</span></a></div>
+        <div><a href="#games"><i class="fa fa-flag"></i><span class="tooltip">Hry</span></a></div>
+    </nav>
 
+    <main>
         <!-- úvod -->
         <section class="content-section" id="content">
-            <h1>Legendární Trilogie</h1>
-            <p>Vítejte v ultimátním průvodci světy, které stvořil Hidetaka Miyazaki v čele japonského studia
-                FromSoftware. Pojem
-                "Soulsborne" vznikl spojením názvů sérií <a href=""><em>Souls</em></a> a hry <a
-                    href=""><em>Bloodborne</em></a>, a dnes reprezentuje
-                specifický žánr akčních RPG, který definoval uplynulou dekádu herního průmyslu.</p>
+            <h1>Dark Souls: Architekti zoufalství</h1>
 
-            <p>Žánr začal roku 2009, kdy FromSoftware, nově s Hidetakou Miyazakim v popředí, vydal <a
-                    href=""><em>Demon's Souls</em></a> exklusivně na konzoli Playstation 3. Toto bylo nejdříve negativně
-                setkáno v Japonsku, i od Sony. Jako vynahrazení se ale zanedlouho po publikování v Evropě a Americe hra
-                stala hitem, což vedlo k vytvoření bez-otázky-legendární Dark Souls trilogii.</p>
+            <p>Než se japonské studio FromSoftware stalo celosvětovým fenoménem, platilo spíše za okrajového vývojáře. V
+                90. letech a na přelomu tisíciletí se studio proslavilo hardcore sérií s mechy <em>Armored Core</em> a
+                nemilosrdným dungeon crawlerem z pohledu první osoby, <em>King's Field</em>. Právě z <em>King's
+                    Field</em> si pozdější Souls hry vypůjčily svou nekompromisní obtížnost, temnou fantasy atmosféru a
+                labyrintový design úrovní, ve kterém se hráč musel zorientovat zcela bez mapy.</p>
+
+            <p>Zlom nastal v roce 2004, kdy do studia nastoupil Hidetaka Miyazaki – tehdy jen řadový kodér na nejnižší
+                pozici, který ve třiceti letech opustil dobře placenou práci, aby mohl dělat videohry. Miyazaki se brzy
+                doslechl o krachujícím, interním fantasy projektu, který se vedení chystalo zrušit. Rozhodl se ho
+                převzít s tím, že i když jeho nápady selžou, nikomu to nebude vadit, protože projekt je už tak považován
+                za mrtvý. Z tohoto "mrtvého" projektu se vyklubalo <em>Demon's Souls</em> (2009). Přestože hra na
+                veletrzích naprosto propadla a lidé z ní odcházeli frustrovaní, Miyazakiho vize si postupně našla
+                kultovní publikum. Tento nečekaný úspěch mu dal zelenou k vytvoření duchovního nástupce – <em>Dark
+                    Souls</em> – a zrodila se legenda.</p>
         </section>
-        <section class="cards-grid">
+
+        <!-- obtížnost -->
+        <section class="content-section" id="difficulty">
+            <h2>Křivka učení a Respekt k hráči</h2>
+
+            <p>Nejčastěji skloňovaným slovem ve spojení s Dark Souls trilogií je "obtížnost". Jde však o termín, který
+                je často špatně chápán. Hry od FromSoftware nejsou navrženy tak, aby byly nefér. Miyazakiho filozofií je
+                poskytnout hráči hluboký pocit zadostiučinění z překonání zdánlivě nepřekonatelné překážky. Smrt zde
+                není tradičním trestem, kvůli kterému byste museli načítat uloženou hru; smrt je zde regulérní herní
+                mechanikou a hlavním nástrojem učení.</p>
+
+            <p>Zatímco mechanická dovednost (rychlé reflexy, přesné načasování úhybů a odražení útoků štítem) je
+                důležitá, klíčem k úspěchu v Dark Souls je především <em>znalost</em>. Žádný reflex vás nezachrání,
+                pokud vběhnete do úzké chodby plné pastí a schovaných nepřátel. Hra vás učí trpělivosti. Nutí vás
+                zpomalit, zkoumat prostředí, pamatovat si vzorce útoků bossů a všímat si zkratek. Postava, za kterou
+                hrajete, sílí díky vybavení a statistikám, ale tím, kdo skutečně leveluje a zlepšuje se, je hráč
+                samotný.</p>
+        </section>
+
+        <section class="weapon-list" id="mechanics">
+
+            <!-- Mechanika 1: Ohniště -->
+            <div class="weapon-card">
+                <div class="weapon-info">
+                    <h2>Ohniště (Bonfires)</h2>
+                    <div class="weapon-lore-wrapper">
+                        <div class="weapon-lore-inner">
+                            <p>Jediný bezpečný bod v neúprosném světě a dokonalý příklad herního designu postaveného na
+                                riziku a odměně. Ohniště slouží jako záchytné body (checkpoints), kde si hráč může
+                                vyléčit zranění, doplnit lektvary a vylepšit svou postavu.</p>
+                            <p>Tento odpočinek však přináší krutou daň: usednutím k ohni se okamžitě oživí většina
+                                nepřátel, které hráč doposud pracně porazil. Hráč se tak neustále nachází v tenzi – má
+                                se po těžkém boji vrátit zpět k bezpečí ohně a riskovat, že cestu bude muset absolvovat
+                                znovu, nebo se vydá hlouběji do neznáma s minimem zdraví v naději, že brzy narazí na
+                                ohniště nové?</p>
+                            <p><i class="fa fa-quote-left"></i><em> Duše bezejmenných nemrtvých slouží jako palivo pro
+                                    tyto plameny. V dobách nejhlubšího
+                                    zoufalství je žár ohniště to jediné, co drží mysl člověka pohromadě před pádem do
+                                    šílenství.</em><i class="fa fa-quote-right"></i></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-visual">
+                    <img src="img/Trilogy/bonfire.png" alt="Bonfire">
+                </div>
+            </div>
+
+            <!-- Mechanika 2: Duše a Skvrny krve -->
+            <div class="weapon-card">
+                <div class="weapon-info">
+                    <h2>Duše a Skvrny krve (Souls & Bloodstains)</h2>
+                    <div class="weapon-lore-wrapper">
+                        <div class="weapon-lore-inner">
+                            <p>Celá herní ekonomika stojí na jediném univerzálním platidle: duších. Získáváte je
+                                porážením nepřátel a platíte jimi naprosto za vše. Slouží k nákupu zbraní u obchodníků,
+                                kovářům k vylepšení výzbroje, ale především se používají k levelování vaší postavy.
+                                Tento systém vás nutí dělat těžká rozhodnutí – koupíte si lepší zbroj, nebo zvýšíte svou
+                                sílu?</p>
+                            <p>Pokud zemřete, všechny nesené duše upustíte na místě své smrti ve formě zářící Zelené
+                                skvrny krve. Máte přesně jeden pokus se k tomuto místu probojovat zpět a duše sebrat.
+                                Pokud zemřete dříve, než skvrnu zvednete, vaše pracně nasbírané duše nenávratně mizí v
+                                prázdnotě. Tyto červené a zelené skvrny zároveň slouží k vidění posledních okamžiků
+                                jiných hráčů (v online režimu), což funguje jako varování před skrytými pastmi.</p>
+                            <p><i class="fa fa-quote-left"></i><em> Ztráta duší je ztrátou samotné podstaty. Mnoho
+                                    hrdinů ztratilo naději, když viděli
+                                    své životní dílo navždy rozplynuté v jediné fatální chybě.</em><i
+                                    class="fa fa-quote-right"></i></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-visual">
+                    <img src="img/Trilogy/soul.png" alt="Souls and Bloodstain">
+                </div>
+            </div>
+
+            <!-- Mechanika 3: Butelka pro Estus -->
+            <div class="weapon-card">
+                <div class="weapon-info">
+                    <h2>Butelka pro Estus (Estus Flask)</h2>
+                    <div class="weapon-lore-wrapper">
+                        <div class="weapon-lore-inner">
+                            <p>Mistrovský lékárenský systém, který radikálně změnil akční RPG. Na rozdíl od starších
+                                her, kde jste si mohli do inventáře nasbírat 99 léčivých lektvarů a "usmažit" každého
+                                bosse jejich bezhlavým spamováním, Estus nabízí tvrdý limit. Začínáte s pouhými několika
+                                doušky, které se doplní pouze při odpočinku u Ohniště.</p>
+                            <p>Tato limitace znamená, že každé poškození od obyčejného řadového nepřítele vás bolí. Nutí
+                                to hráče učit se hrát čistě, neplýtvat zásobami a taktizovat. Během průchodu hrou
+                                sbíráte vzácné úlomky kostí (Bone Shards) a úlomky butelek (Estus Shards), kterými si
+                                množství a sílu léčivého elixíru trvale vylepšujete.</p>
+                            <p><i class="fa fa-quote-left"></i><em> Zelená skleněná butelka neznámého původu. Nemrtví si
+                                    velmi cení těchto nádob. I když
+                                    lektvar samotný neuhasí žízeň, jeho hřejivý oheň dokáže zacelit rány a oklamat
+                                    smrt.</em><i class="fa fa-quote-right"></i></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-visual">
+                    <img src="img/Trilogy/estus.png" alt="Estus Flask">
+                </div>
+            </div>
+
+            <!-- Mechanika 4: Kouzla (Sorceries) -->
+            <div class="weapon-card">
+                <div class="weapon-info">
+                    <h2>Kouzla (Sorceries)</h2>
+                    <div class="weapon-lore-wrapper">
+                        <div class="weapon-lore-inner">
+                            <p>Jeden z hlavních magických směrů trilogie. Kouzla se obvykle soustředí na ofenzivní magii
+                                a manipulaci s modře zářící energií duší, ať už formou naváděných šípů, magických mečů
+                                nebo krystalických oštěpů. Výkon těchto kouzel se opírá o atribut <em>Inteligence</em>.
+                            </p>
+                            <p>Aby mohl hráč magii seslat, musí být vybaven specifickým nástrojem, nejčastěji magickou
+                                holí (Staff) či katalyzátorem. V kontextu světa představují kouzla chladné, logické a
+                                akademické umění, vynalezené ve velkých učených akademiích (jako je Vinheim) nebo
+                                samotným Bezšupinatým Seathem, drakem, který logiku povýšil nad přírodu.</p>
+                            <p><i class="fa fa-quote-left"></i><em> Čarodějnictví je disciplína rozumu a bádání.
+                                    Krystalizace duše nevyžaduje víru,
+                                    vyžaduje absolutní soustředění a chladný kalkul, který mnohé přivedl až na okraj
+                                    příčetnosti.</em><i class="fa fa-quote-right"></i></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-visual">
+                    <img src="img/Trilogy/sorcery.png" alt="Sorcery Catalyst">
+                </div>
+            </div>
+
+            <!-- Mechanika 5: Zázraky (Miracles) -->
+            <div class="weapon-card">
+                <div class="weapon-info">
+                    <h2>Zázraky (Miracles)</h2>
+                    <div class="weapon-lore-wrapper">
+                        <div class="weapon-lore-inner">
+                            <p>Opozitum čarodějnictví. Zázraky jsou postavené na atributu <em>Víra (Faith)</em> a
+                                poskytují vynikající defenzivní podporu, plošné léčení, ale také ofenzivní kouzla
+                                založená na blescích – síle, kterou disponoval Pán Slunce Gwyn při lovu na draky.</p>
+                            <p>K seslání zázraku nestačí inteligence. Hráč k nim využívá posvátné Talismany nebo Zvonce
+                                (Chimes). Každý zázrak je de facto epickou básní nebo prastarým příběhem o bozích.
+                                Klerik, který zázrak sesílá, nečerpá magii ze sebe, ale přeříkáváním těchto dávných
+                                textů žádá o pomoc vyšší bytosti a čerpá z moci zapomenutých mýtů.</p>
+                            <p><i class="fa fa-quote-left"></i><em> Zázrak není vytvořen kouzelníkem. Je propůjčen z
+                                    příběhů bohů. Přeříkáním posvátných
+                                    slov klerici manifestují záblesk starobylé slávy v tomto hnijícím světě.</em><i
+                                    class="fa fa-quote-right"></i></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-visual">
+                    <img src="img/Trilogy/miracle.png" alt="Miracle Talisman">
+                </div>
+            </div>
+
+            <!-- Mechanika 6: Pyromancie (Pyromancies) -->
+            <div class="weapon-card">
+                <div class="weapon-info">
+                    <h2>Pyromancie (Pyromancies)</h2>
+                    <div class="weapon-lore-wrapper">
+                        <div class="weapon-lore-inner">
+                            <p>Prapůvodní a nejagresivnější magická forma, manipulující s ohněm, jedem a žíravinami. Na
+                                rozdíl od kouzel a zázraků, pyromancie dlouho nevyžadovala žádné specifické statistiky
+                                (v DS1), ale spoléhala výhradně na vylepšování samotného nástroje – Plamene Pyromancie
+                                (Pyromancy Flame) skrytého v dlani uživatele.</p>
+                            <p>Pyromancie je považována za plebejské a primitivní umění. Praktikují jej vyděděnci,
+                                šamani z jedovatých bažin a divoši. Její původ sahá až k Čarodějnici Izalith a ke
+                                zrození ohnivého Chaosu. Není to akademická disciplína ani modlitba, ale syrové
+                                ovládnutí spalujícího instinktu, který má každý živý tvor v sobě.</p>
+                            <p><i class="fa fa-quote-left"></i><em> Pyromancie je spalující strach a touha. Ohnivý
+                                    plamen
+                                    v ruce šamana je prodloužením
+                                    jeho vlastního těla, schopným zničit nepřátele i svého nositele, ztratí-li k plameni
+                                    respekt.</em><i class="fa fa-quote-right"></i></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-visual">
+                    <img src="img/Trilogy/pyromancy.png" alt="Pyromancy Flame">
+                </div>
+            </div>
+
+            <!-- Mechanika 7: Temné čáry (Hexes / Dark Magic) -->
+            <div class="weapon-card">
+                <div class="weapon-info">
+                    <h2>Temné čáry (Hexes)</h2>
+                    <div class="weapon-lore-wrapper">
+                        <div class="weapon-lore-inner">
+                            <p>Nejvíce opovrhovaná a tabuizovaná forma magie, která se postupně prokousala skrze všechny
+                                tři díly (v DS2 získala dokonce svou vlastní kategorii "Hexes"). Temné čáry spojují
+                                atributy Inteligence i Víry, protože k ovládnutí temnoty potřebujete jak znalosti, tak
+                                slepé odhodlání.</p>
+                            <p>Zatímco klasická magie manipuluje s duší, temné čáry manipulují s Lidskostí a samotnou
+                                Propastí (The Abyss). Tato kouzla se často fyzicky podobají těžkým kapkám černého slizu,
+                                nebo sají energii a život z nepřátel. Sesílají se pomocí specifických temných holí nebo
+                                zvonců a často vyžadují od sesílatele oběť (například pohlcení části jeho vlastních
+                                nasbíraných duší výměnou za extrémní sílu).</p>
+                            <p><i class="fa fa-quote-left"></i><em> Obrátit se k temnotě znamená nahlédnout do lidské
+                                    přirozenosti. Čáry nebyly dány
+                                    bohy, vznikly z tíhy existence a hluboké, neukojitelné touhy, která spí v hrudi
+                                    každého člověka.</em><i class="fa fa-quote-right"></i></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-visual">
+                    <img src="img/Trilogy/hex.png" alt="Hex Magic">
+                </div>
+            </div>
+
+            <!-- Mechanika 8: Prsteny -->
+            <div class="weapon-card">
+                <div class="weapon-info">
+                    <h2>Prsteny (Rings)</h2>
+                    <div class="weapon-lore-wrapper">
+                        <div class="weapon-lore-inner">
+                            <p>Prsteny nahrazují tradiční systémy pasivních dovedností z jiných her. V trilogii Dark
+                                Souls si hráč vybírá svůj vývoj pouze skrz navyšování základních čísel (Síla, Vitalita,
+                                Obratnost). Opravdové změny herního stylu – zrychlení regenerace výdrže, neslyšné kroky,
+                                silnější magii, nebo schopnost unést extrémně těžkou zbroj – řeší právě šperky nasazené
+                                na prstech hrdiny.</p>
+                            <p>S postupem série se počet slotů pro prsteny rozšířil ze dvou (v DS1) až na čtyři (v DS3),
+                                což umožnilo vznik stovek naprosto unikátních hráčských "buildů". Každý prsten nese
+                                kousek bohatého loru, připomínající staré krále, vrahy, bohy či bestie, jejichž esence
+                                do prstenu kdysi vsákla.</p>
+                            <p><i class="fa fa-quote-left"></i><em> Drobný kovový kroužek nabitý mystickou silou.
+                                    Některé
+                                    byly kovány zkouškou ohně, jiné
+                                    požehnány bohy, avšak všechny po svých padlých majitelích lačně touží najít nový
+                                    prst, který by mohly obepnout.</em><i class="fa fa-quote-right"></i></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-visual">
+                    <img src="img/Trilogy/ring.png" alt="Magic Rings">
+                </div>
+            </div>
+
+            <!-- Mechanika 9: Asynchronní multiplayer -->
+            <div class="weapon-card">
+                <div class="weapon-info">
+                    <h2>Znamení přivolání a Vzkazy (Soapstones & Messages)</h2>
+                    <div class="weapon-lore-wrapper">
+                        <div class="weapon-lore-inner">
+                            <p>Trilogie vynalezla zcela nový systém prožívání multiplayeru. Komunikace hráčů napříč
+                                světem neprobíhá přes textový chat, ale zanecháváním křídových vzkazů poskládaných z
+                                předem daných slov. Tyto svítící zprávy na zemi mohou varovat před přepadem, upozornit
+                                na falešnou zeď, nebo vás naopak trollovat a navést vás ke skoku do propasti.</p>
+                            <p>Podobně funguje tzv. Znamení přivolání (Summon Sign). Hráči mohou napsat na zem svou
+                                značku a nabídnout tak v reálném čase pomoc jinému hráči jako zářící, průhledný Fantom.
+                                Tento designový prvek mistrně zapadá do příběhu: čas a prostor v Lordranu jsou
+                                roztříštěné, různé světy se navzájem prolínají, a osamělí hrdinové se mohou napříč časem
+                                na malou chvíli potkat, pomoci si zneškodnit gigantickou zrůdu a zase nenávratně zmizet
+                                zpět do své vlastní reality.</p>
+                            <p><i class="fa fa-quote-left"></i><em> V průběhu věků jsou struktury světů propletené. I
+                                    když jsme rozděleni propastí času,
+                                    můžeme po sobě zanechat stopy. Zprávy od jiných cestovatelů mohou být tvojí
+                                    spásou... nebo zhoubou.</em><i class="fa fa-quote-right"></i></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-visual">
+                    <img src="img/Trilogy/multiplayer.png" alt="Summon Sign">
+                </div>
+            </div>
+
+        </section>
+
+        <section class="cards-grid" id="games">
             <!-- DS1 -->
             <div id="DarkSoulsCard1" class="menu-card">
                 <div class="buttonHeader menu-button">
                     <span>DARK SOULS i</span><i class="fa fa-chevron-down"></i>
                 </div>
                 <div class="select">
-                    <div><a href="darksouls1.html#">Obecné informace</a></div>
-                    <div><a href="darksouls1.html#">Lordran a Lore</a></div>
-                    <div><a href="darksouls1.html#">Příběh</a></div>
+                    <div><a href="darksouls1.html#">Hlavní Informace</a></div>
+                    <div><a href="darksouls1.html#">O Lordranu</a></div>
                     <div><a href="darksouls1.html#">Postavy</a></div>
-                    <div><a href="darksouls1.html#">Démoni a Bossové</a></div>
-                    <div><a href="darksouls1.html#">Klíčové předměty</a></div>
-                    <div><a href="darksouls1.html#">Zbroj a zbraně</a></div>
+                    <div><a href="darksouls1.html#">Lokace</a></div>
+                    <div><a href="darksouls1.html#">Zbraně a Předměty</a></div>
                 </div>
             </div>
             <!-- DS2 -->
@@ -121,13 +390,11 @@
                     <span>DARK SOULS ii</span><i class="fa fa-chevron-down"></i>
                 </div>
                 <div class="select">
-                    <div><a href="darksouls2.html#">Obecné informace</a></div>
-                    <div><a href="darksouls2.html#">Drangleic a Lore</a></div>
-                    <div><a href="darksouls2.html#">Příběh</a></div>
-                    <div><a href="darksouls2.html#">Postavy</a></div>
-                    <div><a href="darksouls2.html#">Démoni a Bossové</a></div>
-                    <div><a href="darksouls2.html#">Klíčové předměty</a></div>
-                    <div><a href="darksouls2.html#">Zbroj a zbraně</a></div>
+                    <div><a href="darksouls2.html#content">Hlavní Informace</a></div>
+                    <div><a href="darksouls2.html#drangleic">O Drangleicu</a></div>
+                    <div><a href="darksouls2.html#postavy">Postavy</a></div>
+                    <div><a href="darksouls2.html#lokace">Lokace</a></div>
+                    <div><a href="darksouls2.html#zbraně">Zbraně a Předměty</a></div>
                 </div>
             </div>
             <!-- DS3 -->
@@ -137,147 +404,15 @@
                 </div>
                 <div class="select">
                     <div><a href="darksouls3.html#">Obecné informace</a></div>
-                    <div><a href="darksouls3.html#">Lothric a Lore</a></div>
-                    <div><a href="darksouls3.html#">Příběh</a></div>
+                    <div><a href="darksouls3.html#">O Lothricu</a></div>
+                    <div><a href="darksouls3.html#">Postavy</a></div>
                     <div><a href="darksouls3.html#">Postavy</a></div>
                     <div><a href="darksouls3.html#">Démoni a Bossové</a></div>
-                    <div><a href="darksouls3.html#">Klíčové předměty</a></div>
-                    <div><a href="darksouls3.html#">Zbroj a zbraně</a></div>
                 </div>
             </div>
         </section>
 
-        <!-- filozofie hratelnosti -->
-        <section class="content-section">
-            <h2>Filozofie Herního Designu a "Neodpouštějící Obtížnost"</h2>
-
-            <p>Často diskutovaným prvkem Souls her je jejich pověstná obtížnost. Nejde však o prvoplánovou snahu
-                hráče
-                frustrovat, ale o pečlivě navržený systém, kde smrt slouží jako nástroj učení. Každý krok do neznáma
-                vyžaduje respekt k hernímu prostředí.</p>
-
-            <p>Suspendisse potenti. Nullam ac tortor leo. Curabitur sed lectus vehicula, rutrum metus ac, malesuada
-                diam.
-                Phasellus consectetur odio a vulputate tempus. Mauris eleifend bibendum justo, at fermentum felis.
-                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In hac
-                habitasse platea dictumst. Quisque iaculis dolor nec nunc tincidunt, non dapibus augue venenatis.
-            </p>
-
-        </section>
-        <!-- 1. MŘÍŽKA POSTAV -->
-        <section class="characters-grid">
-
-            <!-- Karta postavy 1 -->
-            <div class="char-card">
-                <img src="img/header/DarkS/raime.jpg" alt="Solaire" class="char-image">
-
-                <!-- Tento div vyjede zespodu při najetí myší -->
-                <div class="char-hover-info">
-                    <h3>Solaire of Astora</h3>
-                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
-                </div>
-
-                <!-- Skrytý detailní text (JS si ho odsud vytáhne při kliknutí) -->
-                <div class="char-detail-text dissappear">
-                    <p>Solaire je rytíř slunce, který dobrovolně přišel do Lordranu, aby nalezl své vlastní slunce. Na
-                        rozdíl od většiny ostatních nemrtvých si udržuje neochvějný optimismus.</p>
-                    <p>Je to pravděpodobně nejoblíbenější NPC celé série, známý svým ikonickým gestem "Praise the Sun!".
-                        Lze ho vyvolat na pomoc u mnoha klíčových bossů.</p>
-                </div>
-            </div>
-            <div class="char-card">
-                <!-- Zde doplňte cestu k obrázku postavy -->
-                <img src="img/header/DarkS/raime.jpg" alt="Solaire" class="char-image">
-
-                <!-- Tento div vyjede zespodu při najetí myší -->
-                <div class="char-hover-info">
-                    <h3>Solaire of Astora</h3>
-                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
-                </div>
-
-                <!-- Skrytý detailní text (JS si ho odsud vytáhne při kliknutí) -->
-                <div class="char-detail-text dissappear">
-                    <p>Solaire je rytíř slunce, který dobrovolně přišel do Lordranu, aby nalezl své vlastní slunce. Na
-                        rozdíl od většiny ostatních nemrtvých si udržuje neochvějný optimismus.</p>
-                    <p>Je to pravděpodobně nejoblíbenější NPC celé série, známý svým ikonickým gestem "Praise the Sun!".
-                        Lze ho vyvolat na pomoc u mnoha klíčových bossů.</p>
-                </div>
-            </div>
-            <div class="char-card">
-                <!-- Zde doplňte cestu k obrázku postavy -->
-                <img src="img/header/DarkS/raime.jpg" alt="Solaire" class="char-image">
-
-                <!-- Tento div vyjede zespodu při najetí myší -->
-                <div class="char-hover-info">
-                    <h3>Solaire of Astora</h3>
-                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
-                </div>
-
-                <!-- Skrytý detailní text (JS si ho odsud vytáhne při kliknutí) -->
-                <div class="char-detail-text dissappear">
-                    <p>Solaire je rytíř slunce, který dobrovolně přišel do Lordranu, aby nalezl své vlastní slunce. Na
-                        rozdíl od většiny ostatních nemrtvých si udržuje neochvějný optimismus.</p>
-                    <p>Je to pravděpodobně nejoblíbenější NPC celé série, známý svým ikonickým gestem "Praise the Sun!".
-                        Lze ho vyvolat na pomoc u mnoha klíčových bossů.</p>
-                </div>
-            </div>
-            <div class="char-card">
-                <!-- Zde doplňte cestu k obrázku postavy -->
-                <img src="img/header/DarkS/raime.jpg" alt="Solaire" class="char-image">
-
-                <!-- Tento div vyjede zespodu při najetí myší -->
-                <div class="char-hover-info">
-                    <h3>Solaire of Astora</h3>
-                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
-                </div>
-
-                <!-- Skrytý detailní text (JS si ho odsud vytáhne při kliknutí) -->
-                <div class="char-detail-text dissappear">
-                    <p>Solaire je rytíř slunce, který dobrovolně přišel do Lordranu, aby nalezl své vlastní slunce. Na
-                        rozdíl od většiny ostatních nemrtvých si udržuje neochvějný optimismus.</p>
-                    <p>Je to pravděpodobně nejoblíbenější NPC celé série, známý svým ikonickým gestem "Praise the Sun!".
-                        Lze ho vyvolat na pomoc u mnoha klíčových bossů.</p>
-                </div>
-            </div>
-            <div class="char-card">
-                <!-- Zde doplňte cestu k obrázku postavy -->
-                <img src="img/header/DarkS/raime.jpg" alt="Solaire" class="char-image">
-
-                <!-- Tento div vyjede zespodu při najetí myší -->
-                <div class="char-hover-info">
-                    <h3>Solaire of Astora</h3>
-                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
-                </div>
-
-                <!-- Skrytý detailní text (JS si ho odsud vytáhne při kliknutí) -->
-                <div class="char-detail-text dissappear">
-                    <p>Solaire je rytíř slunce, který dobrovolně přišel do Lordranu, aby nalezl své vlastní slunce. Na
-                        rozdíl od většiny ostatních nemrtvých si udržuje neochvějný optimismus.</p>
-                    <p>Je to pravděpodobně nejoblíbenější NPC celé série, známý svým ikonickým gestem "Praise the Sun!".
-                        Lze ho vyvolat na pomoc u mnoha klíčových bossů.</p>
-                </div>
-            </div>
-        </section> <!-- Konec mřížky -->
-
-        <div id="character-modal" class="char-modal">
-            <div class="char-modal-content">
-                <span class="close-modal"><i class="fa fa-times"></i></span>
-
-                <!-- Sem JS doplní obrázek a text podle toho, na koho se klikne -->
-                <div class="modal-left">
-                    <img id="modal-img" src="" alt="Character Detail">
-                </div>
-                <div class="modal-right">
-                    <h2 id="modal-title">Jméno Postavy</h2>
-                    <div id="modal-desc">
-                        <!-- Zde se objeví detailní text -->
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
     </main>
-    <!-- 2. GLOBÁLNÍ MODÁLNÍ OKNO (Umístěte mimo section, např. nad <script>) -->
 
     <script src="js/script.js"></script>
 

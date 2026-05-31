@@ -9,12 +9,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soulsborne Univerzum | Dark Souls Trilogie</title>
+    <title>Dark Souls Univerzum | Dark Souls 1</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/masterstyl.css">
     <link rel="icon" href="img//icon/favicon.ico">
     <link rel="preload" href="font/CinzelDecorative-Medium.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="font/Cinzel-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="audio/DARKSOULS1.mp3" as="audio">
     <style>
         #background {
             background-image: url(img/DS1/gwynbg.jpeg);
@@ -26,13 +27,7 @@
 
         .quotewrap::before {
             background-position: right top 25%;
-            background-image: url(/img/DS2/aldiaquote.jpg);
-        }
-
-        h1,
-        h2,
-        h3 {
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+            background-image: url(img/DS1/quote.png);
         }
     </style>
 </head>
@@ -43,72 +38,88 @@
     <a href="index.html"><i class="fa fa-home"></i></a>
 
     <div id="headerButton"><i class="fa fa-bars"></i></div>
-    <header id="header">
+
+    <div id="mainhide"><i class="fa fa-eye"></i></div>
+
+    <div id="music-toggle">
+        <img id="music-icon" alt="Music Toggle" height="28px">
+    </div>
+
+    <audio id="bg-music" loop></audio>
+
+    <header>
         <div class="row" id="row">
-            <!-- Souls -->
-            <div class="group" id="souls">
-                <div class="darkSouls item prime" style="--item-width:100%;">
-                    <a href="darksoulstrilogy.html"><img src="img/DarkSouls/darkSouls.png" alt="Dark"></a>
+            <!-- ds1 -->
+
+            <a class="group" id="ds1" href="darksouls1.html">
+                <div class="item prime mobile">
+                    <img src="img/Header/mobile/dark1mobile.png" alt=""><img src="img/Header/mobile/souls1mobile.png"
+                        alt="">
                 </div>
-                <div class="item prime" id="item">
-                    <a href="demonsouls.html"><img src="img/DeS/demons.png" alt="Demon's"></a>
-                </div>
-                <div class="item main">
-                    <a href="demonsouls.html"><img src="img/DeS/souls.png" alt="Souls"></a>
-                </div>
-            </div>
-            <!-- Borne -->
-            <div class="group" id="BB">
+
                 <div class="item prime">
-                    <a href="bloodborne.html"><img src="img/BB/blood.png" alt="Blood"></a>
+                    <img src="img/Header/ds1.png" alt="Dark Souls">
                 </div>
+
                 <div class="item main">
-                    <a href="bloodborne.html"><img src="img/BB/borne.png" alt="borne"></a>
+                    <img src="img/Header/1.png" alt="1">
                 </div>
-            </div>
-            <!-- Kiro -->
-            <div class="group" id="SSDT">
-                <div class="item prime" style="--item-width:var(--item-width);">
-                    <a href="sekiro.html"><img src="img/SSDT/se.png" alt="Se"></a>
+            </a>
+            <!-- ds2 -->
+            <a class="group" id="ds2" href="darksouls2.html">
+                <div class="item prime mobile">
+                    <img src="img/Header/mobile/dark2mobile.png" alt=""><img src="img/Header/mobile/souls2mobile.png"
+                        alt="">
                 </div>
+
+                <div class="item prime">
+                    <img src="img/Header/ds2.png" alt="Dark Souls">
+                </div>
+
                 <div class="item main">
-                    <a href="sekiro.html"><img src="img/SSDT/kiro.png" alt="kiro"></a>
+                    <img src="img/Header/2.png" alt="2">
                 </div>
-            </div>
-            <!-- Ring -->
-            <div id="ER" class="group">
-                <div class="er item prime">
-                    <a href="eldenring.html"><img src="img/ER/elden.png" alt="Elden"></a>
+            </a>
+            <!-- ds3 -->
+            <a class="group" id="ds3" href="darksouls3.html">
+                <div class="item prime mobile">
+                    <img src="img/Header/mobile/dark3mobile.png" alt=""><img src="img/Header/mobile/souls3mobile.png"
+                        alt="">
                 </div>
+
+                <div class="item prime">
+                    <img src="img/Header/ds3.png" alt="Dark Souls">
+                </div>
+
                 <div class="item main">
-                    <a href="eldenring.html"><img src="img/ER/ring.png" alt="Ring"></a>
+                    <img src="img/Header/3.png" alt="3">
                 </div>
-            </div>
+            </a>
         </div>
     </header>
 
+    <nav class="sidebar" id="sidebar">
+        <div><a href="#content"><i class="fa fa-flag"></i><span class="tooltip">Hlavní Informace</span></a>
+        </div>
+        <div><a href="#Lordran"><i class="fa fa-flag"></i><span class="tooltip">O Lordranu</span></a>
+        </div>
+        <div><a href="#postavy"><i class="fa fa-flag"></i><span class="tooltip">Postavy</span></a></div>
+        <div><a href="#lokace"><i class="fa fa-flag"></i><span class="tooltip">Lokace</span></a></div>
+        <div><a href="#zbraně"><i class="fa fa-flag"></i><span class="tooltip">Zbraně</span></a></div>
+    </nav>
 
     <main>
         <div class="quotewrap" id="quote">
             <span class="quote">
                 <p><i class="fa fa-quote-left"></i> (...) Avšak, brzy plameny dohoří a zůstane jen Temnota. Už i teď
                     zbývají jen
-                    doutnající uhlíky v popeli a lid již světlo nespatřívá, nýbrž jen nekonečnou noc. <i
+                    doutnající uhlíky v popeli a lid se již světla nespatřívá, nýbrž jen nekonečných nocí. <i
                         class="fa fa-quote-right"></i><br>
                     <hr style="margin-left:20px;"> <em><span class="author">Vypravěč, o slábnutí Prvního
                             Ohně</span></em>
                 </p>
             </span>
         </div>
-        <nav class="sidebar" id="sidebar">
-            <div><a href="# "><i class="fa fa-flag"></i><span class="tooltip" id="cast1">Hlavní Informace</span></a>
-            </div>
-            <div><a href="#drangleic"><i class="fa fa-flag"></i><span class="tooltip" id="cast2">O Drangleicu</span></a>
-            </div>
-            <div><a href="#postavy"><i class="fa fa-flag"></i><span class="tooltip" id="cast3">Postavy</span></a></div>
-            <div><a href="#lokace"><i class="fa fa-flag"></i><span class="tooltip" id="cast4">Lokace</span></a></div>
-            <div><a href="#zbraně"><i class="fa fa-flag"></i><span class="tooltip" id="cast5">Zbraně</span></a></div>
-        </nav>
 
         <!-- úvod -->
         <section class="content-section" id="content">
@@ -146,6 +157,7 @@
                     Game of all
                     Time Award'</em> [ "Cena pro Ultimátní Hru Všech Dob" ] na Golden Joystick Awards roku 2021.</p>
         </section>
+
         <section class="cards-grid">
             <!-- DS2 -->
             <div id="DarkSoulsCard2" class="menu-card">
@@ -166,16 +178,16 @@
                     <span>DARK SOULS iii</span><i class="fa fa-chevron-down"></i>
                 </div>
                 <div class="select">
-                    <div><a href="darksouls3.html#">Obecné informace</a></div>
-                    <div><a href="darksouls3.html#">O Lothricu</a></div>
-                    <div><a href="darksouls3.html#">Postavy</a></div>
-                    <div><a href="darksouls3.html#">Postavy</a></div>
-                    <div><a href="darksouls3.html#">Démoni a Bossové</a></div>
+                    <div><a href="darksouls3.html#content">Obecné informace</a></div>
+                    <div><a href="darksouls3.html#Lothric">O Lothricu</a></div>
+                    <div><a href="darksouls3.html#postavy">Postavy</a></div>
+                    <div><a href="darksouls3.html#lokace">Postavy</a></div>
+                    <div><a href="darksouls3.html#zbraně">Démoni a Bossové</a></div>
                 </div>
             </div>
         </section>
 
-        <section class="content-section">
+        <section class="content-section" id="Lordran">
             <h2>Lordran: Architektura zmaru a Skrytá pravda</h2>
 
             <p>Z uměleckého hlediska je prvotní <em>Dark Souls</em> často analyzováno ne jako tradiční RPG, ale spíše
@@ -199,7 +211,7 @@
                 leží která mrtvola, jaký má na sobě prsten nebo jaká socha stojí v pozadí arény. Nic ve hře není
                 umístěno náhodně.</p>
 
-            <p>Tematicky se příběh zaobírá nevyhnutelností entropie a strachem z konce. Lord Gwyn, Pán slunečního svitu,
+            <p>Tematicky se příběh zaobírá nevyhnutelností entropie a strachem z konce. Gwyn, Pán slunečního svitu,
                 se natolik děsil příchodu Věku Temnoty (který je přirozeným věkem lidí), že obětoval vlastní duši, aby
                 uměle prodloužil Věk Ohně. Dopustil se "Prvního hříchu" a porušil zákony přírody. Celé slavné proroctví
                 o Vyvoleném Nemrtvém, za kterého hrajete, je ve skutečnosti jen propagandistická lež starých bohů. Mají
@@ -209,10 +221,9 @@
         </section>
 
         <section class="content-section" style="width: auto;">
-            <h2>Postavy</h2>
+            <h2>Nutný Kontext a Postavy</h2>
         </section>
 
-        <!-- Historická lokace / Éra -->
         <section class="locations-list">
 
             <div class="location-card">
@@ -250,7 +261,7 @@
 
         </section>
 
-        <!-- 1. MŘÍŽKA POSTAV -->
+        <!-- postavy -->
         <section class=" characters-grid" id="postavy">
             <!-- Karta 1: Gwyn -->
             <div class="char-card">
@@ -277,15 +288,15 @@
                                     <p>Zbraň ukovaná z Gwynovy duše. Kdysi tento masivní meč vyzařoval oslepující sílu
                                         blesků, s níž Gwyn trhal drakům křídla. Dnes z něj zbylo jen zčernalé, ohořelé
                                         torzo.</p>
-                                    <p style="color: #ff8400;"><i><i class="fa fa-quote-left"></i> Velký meč zrozený z
+                                    <p><em><i class="fa fa-quote-left"></i> Velký meč zrozený z
                                             duše Gwyna, Pána Popela. Sám Pán i jeho mocný meč jsou ale již dlouho
                                             znetvořeni plamenem, pro který obětoval svou vlastní existenci. <i
-                                                class="fa fa-quote-right"></i></i></p>
+                                                class="fa fa-quote-right"></i></em></p>
                                 </div>
                             </div>
                         </div>
                         <div class="weapon-visual">
-                            <img src="img/DS1/great_lord_greatsword.png" alt="Great Lord Greatsword">
+                            <img src="img/DS1/great-lord-greatsword.png" alt="Great Lord Greatsword">
                         </div>
                     </div>
                 </div>
@@ -352,15 +363,15 @@
                                     <p>Magická zbraň utkaná z čistého krystalického světla, kterou hráč získá pouze
                                         odetnutím ocasu samotného Seatha. Je ztělesněním jeho prastaré, zvrácené magie.
                                     </p>
-                                    <p style="color: #ff8400;"><i><i class="fa fa-quote-left"></i> Tato zbraň, vytržená
+                                    <p><em><i class="fa fa-quote-left"></i> Tato zbraň, vytržená
                                             z ocasu Bezšupinatého Seatha, dědice krystalů, je protkána nesmírnou a
                                             mrazivou lunární mocí. Málokdo však dokáže tuto sílu ovládnout, aniž by sám
-                                            propadl šílenství. <i class="fa fa-quote-right"></i></i></p>
+                                            propadl šílenství. <i class="fa fa-quote-right"></i></em></p>
                                 </div>
                             </div>
                         </div>
                         <div class="weapon-visual">
-                            <img src="img/DS1/moonlight_ds1.png" alt="Moonlight Greatsword DS1">
+                            <img src="img/DS1/moonlight_greatsword_1.png" alt="Moonlight Greatsword DS1">
                         </div>
                     </div>
                 </div>
@@ -390,15 +401,15 @@
                                 <div class="weapon-lore-inner">
                                     <p>Zbraň samotného kapitána Ornsteina, infuzovaná prastarou silou blesku, která
                                         dokázala drásat neprůrazné šupiny draků.</p>
-                                    <p style="color: #ff8400;"><i><i class="fa fa-quote-left"></i> Křížové kopí, jenž
+                                    <p><em><i class="fa fa-quote-left"></i> Křížové kopí, jenž
                                             svíral Drakobijec Ornstein. Říká se, že s tímto kopím, obdařeným bleskem a
                                             hnaným neuvěřitelnou silou, dokázal rozpůlit balvan velikosti domu vejpůl.
-                                            <i class="fa fa-quote-right"></i></i></p>
+                                            <i class="fa fa-quote-right"></i></em></p>
                                 </div>
                             </div>
                         </div>
                         <div class="weapon-visual">
-                            <img src="img/DS1/dragonslayer_spear.png" alt="Dragonslayer Spear">
+                            <img src="img/DS1/Dragonslayer_Spear.webp" alt="Dragonslayer Spear">
                         </div>
                     </div>
                 </div>
@@ -428,15 +439,15 @@
                                 <div class="weapon-lore-inner">
                                     <p>Prapůvodní a nejbrutálnější forma pyromancie, odkazující na prastaré umění
                                         Izalithských čarodějnic, kdy oheň ještě nebyl oddělen od chaosu.</p>
-                                    <p style="color: #ff8400;"><i><i class="fa fa-quote-left"></i> Dávné kouzlo, které
+                                    <p><em><i class="fa fa-quote-left"></i> Dávné kouzlo, které
                                             se už dávno vymklo kontrole. Umění ovládat oheň má své hranice, ale
                                             Čarodějnice Izalith a její dcery kdysi s plameny tančily. Dokud je tytéž
-                                            plameny samy nestrávily. <i class="fa fa-quote-right"></i></i></p>
+                                            plameny samy nestrávily. <i class="fa fa-quote-right"></i></em></p>
                                 </div>
                             </div>
                         </div>
                         <div class="weapon-visual">
-                            <img src="img/DS1/firestorm.png" alt="Firestorm">
+                            <img src="img/DS1/fire_storm.png" alt="Firestorm">
                         </div>
                     </div>
                 </div>
@@ -465,15 +476,15 @@
                                 <div class="weapon-lore-inner">
                                     <p>Tato Duše Pánů nedává sílu do zbraně. Je to pokřivený artefakt nutný k naplnění
                                         Nádoby Pánů, důkaz padlého rodu Izalith.</p>
-                                    <p style="color: #ff8400;"><i><i class="fa fa-quote-left"></i> Čarodějnice Izalith
+                                    <p><em><i class="fa fa-quote-left"></i> Čarodějnice Izalith
                                             se pokusila replikovat První plamen skrze samotnou Duši Života, avšak
                                             neuspěla. Vznikla tak odporná ohyzdnost plná života a stvořitelka všech
-                                            démonů – Lůžko Chaosu. <i class="fa fa-quote-right"></i></i></p>
+                                            démonů – Lůžko Chaosu. <i class="fa fa-quote-right"></i></em></p>
                                 </div>
                             </div>
                         </div>
                         <div class="weapon-visual">
-                            <img src="img/DS1/lord_soul_chaos.png" alt="Lord Soul">
+                            <img src="img/DS1/lordsoul.png" alt="Lord Soul">
                         </div>
                     </div>
                 </div>
@@ -503,16 +514,16 @@
                                 <div class="weapon-lore-inner">
                                     <p>Zakřivený meč tvořený pavoučí tkání, vytvořený z duše samotné Quelaag. Při
                                         seknutí čepel vzplane ohněm Chaosu.</p>
-                                    <p style="color: #ff8400;"><i><i class="fa fa-quote-left"></i> Démonický meč, jenž
+                                    <p><em><i class="fa fa-quote-left"></i> Démonický meč, jenž
                                             se zrodil z duše Quelaag. Jeho čepel je obklopena plameny Chaosu.
                                             Zvláštností této zbraně je, že její zničující síla roste úměrně s množstvím
                                             Lidskosti, kterou její nositel vlastní. <i
-                                                class="fa fa-quote-right"></i></i></p>
+                                                class="fa fa-quote-right"></i></em></p>
                                 </div>
                             </div>
                         </div>
                         <div class="weapon-visual">
-                            <img src="img/DS1/furysword.png" alt="Quelaags Furysword">
+                            <img src="img/DS1/quelaag-s-fury-sword.png" alt="Quelaags Furysword">
                         </div>
                     </div>
                 </div>
@@ -529,7 +540,8 @@
                     <p>První z mrtvých (First of the Dead). Nito je jedním ze čtyř původních vlastníků Duší Pánů – v
                         plameni objevil Duši Smrti. Je to masivní, neforemná entita stvořená z tisíců navzájem
                         propletených koster spojených temnou magií a chuchvalci prastaré špíny.</p>
-                    <p>Během války proti drakům Nito uvolnil toxické miasma nákazy a smrti, které oslabilo kamenné obry.
+                    <p>Během války proti drakům Nito uvolnil toxické miasma nákazy a smrti, které oslabilo kamenné
+                        draky.
                         Po válce se stáhl hluboko do podzemí Lordranu, do černočerné Hrobky obrů (Tomb of the Giants).
                         Neúčastní se politikaření bohů ani pletich s ohněm. Pouze tiše dříme v temnotě jako manifestace
                         nevyhnutelného konce veškerého života, kde chladně spravuje samotný koncept smrti.</p>
@@ -542,15 +554,15 @@
                                     <p>Obrovský, hrubý zakřivený meč tvořený kostmi zemřelých, který způsobuje rychlou a
                                         smrtelnou otravu (Toxic). Hráč ho může získat pouze, pokud složí přísahu
                                         samotnému Nitovi.</p>
-                                    <p style="color: #ff8400;"><i><i class="fa fa-quote-left"></i> Meč, kterým se
+                                    <p><em><i class="fa fa-quote-left"></i> Meč, kterým se
                                             prokazují Služebníci Pána Hrobu Nita. Vyřezán z kostí padlých a nasáklý
                                             strašlivým jedem miasmatu, které kdysi zahubilo nejednoho Prastarého draka.
-                                            <i class="fa fa-quote-right"></i></i></p>
+                                            <i class="fa fa-quote-right"></i></em></p>
                                 </div>
                             </div>
                         </div>
                         <div class="weapon-visual">
-                            <img src="img/DS1/gravelord_sword.png" alt="Gravelord Sword">
+                            <img src="img/DS1/gravelordsword.png" alt="Gravelord Sword">
                         </div>
                     </div>
                 </div>
@@ -588,46 +600,7 @@
                             </div>
                         </div>
                         <div class="weapon-visual">
-                            <img src="img/DS1/bequeathed_lord_soul.png" alt="Bequeathed Lord Soul Shard">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Karta 10: Předvěkoví Hadi Frampt a Kaathe -->
-            <div class="char-card">
-                <img src="img/DS1/frampt.jpg" alt="Předvěkoví Hadi Frampt a Kaathe" class="char-image">
-                <div class="char-hover-info">
-                    <h3>Předvěkoví Hadi</h3>
-                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
-                </div>
-                <div class="char-detail-text dissappear">
-                    <p>Prastaré, zubaté entity, které existovaly pravděpodobně ještě před Věkem Ohně. Kingseeker Frampt
-                        a Darkstalker Kaathe reprezentují dva protichůdné konce hry, avšak oba využívají hráče jen jako
-                        loutku pro své nevyzpytatelné záměry.</p>
-                    <p>Frampt tvrdí, že byl přítelem Gwyna a snaží se vás přesvědčit, abyste splnili "svůj osud"
-                        Vyvoleného nemrtvého a upálili se v plameni pro zachování Věku Ohně. Kaathe se naopak ukrývá v
-                        Propasti a odhaluje vám lži bohů – prozradí vám, že vaším skutečným osudem jakožto potomka
-                        Pygmeje je oheň nechat vyhasnout a stát se Temným Pánem (Dark Lord). Koho z nich poslechnete,
-                        určí osud celého světa, ačkoliv ani jednomu nelze plně důvěřovat.</p>
-
-                    <div class="weapon-card modal-weapon">
-                        <div class="weapon-info">
-                            <h2>Nádoba Pánů (Lordvessel)</h2>
-                            <div class="weapon-lore-wrapper">
-                                <div class="weapon-lore-inner">
-                                    <p>Klíčový artefakt, o který mají oba hadi enormní zájem. Slouží jako oltář, do
-                                        kterého musí hrdina shromáždit duše Pánů k odemknutí cesty ke Gwynovi. Ať už
-                                        Nádobu umístíte s kýmkoliv, zpečetíte tím svou příslušnost k jeho straně.</p>
-                                    <p><em><i class="fa fa-quote-left"></i> Posvátná Nádoba Pánů, předaná hrdinovi iluzí
-                                            v Anor Londu. Má moc propojit již navštívená ohniště, ale její pravý účel je
-                                            uchovat Duše Pánů pro odemknutí brány do samotné Pece. <i
-                                                class="fa fa-quote-right"></i></em></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="weapon-visual">
-                            <img src="img/DS1/lordvessel.png" alt="Lordvessel">
+                            <img src="img/DS1/lordsoul.png" alt="Bequeathed Lord Soul Shard">
                         </div>
                     </div>
                 </div>
@@ -666,7 +639,7 @@
                             </div>
                         </div>
                         <div class="weapon-visual">
-                            <img src="img/DS1/abyss_greatsword.png" alt="Abyss Greatsword">
+                            <img src="img/DS1/abyss.greatsword.webp" alt="Abyss Greatsword">
                         </div>
                     </div>
                 </div>
@@ -674,7 +647,7 @@
 
             <!-- Karta 12: Vlk Sif -->
             <div class="char-card">
-                <img src="img/DS1/sif.jpg" alt="Velký Šedý Vlk Sif" class="char-image">
+                <img src="img/DS1/sif.webp" alt="Velký Šedý Vlk Sif" class="char-image">
                 <div class="char-hover-info">
                     <h3>Velký Šedý Vlk Sif</h3>
                     <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
@@ -705,7 +678,7 @@
                             </div>
                         </div>
                         <div class="weapon-visual">
-                            <img src="img/DS1/covenant_of_artorias.png" alt="Covenant of Artorias">
+                            <img src="img/DS1/Covenant_of_Artorias.webp" alt="Covenant of Artorias">
                         </div>
                     </div>
                 </div>
@@ -744,7 +717,7 @@
                             </div>
                         </div>
                         <div class="weapon-visual">
-                            <img src="img/DS1/manus_catalyst.png" alt="Manus Catalyst">
+                            <img src="img/DS1/manus-catalyst.png" alt="Manus Catalyst">
                         </div>
                     </div>
                 </div>
@@ -752,7 +725,7 @@
 
             <!-- Karta 14: Vyvolený Nemrtvý -->
             <div class="char-card">
-                <img src="img/DS1/chosen_undead.jpg" alt="Vyvolený Nemrtvý" class="char-image"
+                <img src="img/DS1/chosenundead.jpg" alt="Vyvolený Nemrtvý" class="char-image"
                     style="object-position: center">
                 <div class="char-hover-info">
                     <h3>Vyvolený Nemrtvý</h3>
@@ -763,8 +736,9 @@
                         (Undead Asylum). "Vyvolený Nemrtvý" je pojem z proroctví, které říká, že jeden nemrtvý jednoho
                         dne unikne z cely, rozezní Zvony probuzení a získá sílu Pánů.</p>
                     <p>Kouzlo tohoto narativu však spočívá ve skutečnosti, že vy ve skutečnosti nejste vůbec výjimeční.
-                        Neexistuje žádný předem vyvolený osud. Každý hráč, každé NPC (jako Solaire, Siegmeyer nebo
-                        Logan), všichni jsou stejnými kandidáty. Vyvoleným se nestáváte díky proroctví, ale jen a pouze
+                        Neexistuje žádný předem vyvolený osud. Každý hráč, každé NPC (jako Solaire,
+                        Logan, a ostatní), všichni jsou stejnými kandidáty. Vyvoleným se nestáváte díky
+                        proroctví, ale jen a pouze
                         díky své vlastní nezlomné vůli (a tedy vůli hráče) hru nikdy nevzdat, neodložit ovladač a
                         nedovolit svému avataru propadnout do stavu bezduchého "Hollow".</p>
 
@@ -784,15 +758,51 @@
                             </div>
                         </div>
                         <div class="weapon-visual">
-                            <img src="img/DS1/darksign.png" alt="Darksign">
+                            <img src="img/DS1/Darksign.webp" alt="Darksign">
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="char-card">
+                <img src="img/DS1/frampt.jpg" alt="Předvěkoví Hadi Frampt a Kaathe" class="char-image">
+                <div class="char-hover-info">
+                    <h3>Předvěkoví Hadi</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+                <div class="char-detail-text dissappear">
+                    <p>Prastaré, zubaté entity, které existovaly pravděpodobně ještě před Věkem Ohně. Kingseeker Frampt
+                        a Darkstalker Kaathe reprezentují dva protichůdné konce hry, avšak oba využívají hráče jen jako
+                        loutku pro své nevyzpytatelné záměry.</p>
+                    <p>Frampt tvrdí, že byl přítelem Gwyna a snaží se vás přesvědčit, abyste splnili "svůj osud"
+                        Vyvoleného nemrtvého a upálili se v plameni pro zachování Věku Ohně. Kaathe se naopak ukrývá v
+                        Propasti a odhaluje vám lži bohů – prozradí vám, že vaším skutečným osudem jakožto potomka
+                        Pygmeje je oheň nechat vyhasnout a stát se Temným Pánem (Dark Lord). Koho z nich poslechnete,
+                        určí osud celého světa, ačkoliv ani jednomu nelze plně důvěřovat.</p>
 
+                    <div class="weapon-card modal-weapon">
+                        <div class="weapon-info">
+                            <h2>Nádoba Pánů (Lordvessel)</h2>
+                            <div class="weapon-lore-wrapper">
+                                <div class="weapon-lore-inner">
+                                    <p>Klíčový artefakt, o který mají oba hadi enormní zájem. Slouží jako oltář, do
+                                        kterého musí hrdina shromáždit duše Pánů k odemknutí cesty ke Gwynovi. Ať už
+                                        Nádobu umístíte s kýmkoliv, zpečetíte tím svou příslušnost k jeho straně.</p>
+                                    <p><em><i class="fa fa-quote-left"></i> Posvátná Nádoba Pánů, předaná hrdinovi iluzí
+                                            v Anor Londu. Má moc propojit již navštívená ohniště, ale její pravý účel je
+                                            uchovat Duše Pánů pro odemknutí brány do samotné Pece. <i
+                                                class="fa fa-quote-right"></i></em></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weapon-visual">
+                            <img src="img/DS1/lordvessel.png" alt="Lordvessel">
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- Karta 15: Solaire -->
             <div class="char-card">
-                <img src="img/DS1/solaire.jpg" alt="Solaire z Astory" class="char-image">
+                <img src="img/DS1/solaire.png" alt="Solaire z Astory" class="char-image">
                 <div class="char-hover-info">
                     <h3>Solaire z Astory</h3>
                     <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
@@ -824,7 +834,56 @@
                             </div>
                         </div>
                         <div class="weapon-visual">
-                            <img src="img/DS1/sunlight_medal.png" alt="Sunlight Medal">
+                            <img src="img/DS1/sunlight_medal.webp" alt="Sunlight Medal">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Karta 16: Big Hat Logan -->
+            <div class="char-card" style="grid-column: if(
+    media(max-width: 900px): auto;
+    media(max-width: 1825px): 2/3; 
+    media(min-width: 2285px): auto)">
+                <img src="img/DS1/logan.jpg" alt="Logan Velký Klobouk" class="char-image" style="object-position: top">
+                <div class="char-hover-info">
+                    <h3>"Velký Klobouk" Logan</h3>
+                    <span class="click-hint">Klikni pro rozbor <i class="fa fa-search-plus"></i></span>
+                </div>
+                <div class="char-detail-text dissappear">
+                    <p>Logan je pravděpodobně nejslavnějším žijícím čarodějem, který kdy studoval v prestižní Dračí
+                        škole ve Vinheimu (Vinheim Dragon School). Tento přes sto let starý nemrtvý génius vynalezl
+                        ikonická kouzla jako Kopí duše (Soul Spear). Svou přezdívku získal díky gigantickému klobouku,
+                        který nosí záměrně stažený hluboko do tváře. Nedělá to z módních důvodů – klobouk ho izoluje od
+                        okolních pohledů a hluku světa, což mu umožňuje ponořit se do absolutního tranzu a soustředit se
+                        výhradně na svůj výzkum.</p>
+                    <p>Do Lordranu necestoval kvůli proroctví o Vyvoleném, ale hnala ho čirá, až fanatická touha po
+                        vědění. Jeho ultimátním cílem byly Vévodovy archivy (Duke's Archives), legendární knihovna
+                        Bezšupinatého Seatha. Když Logan do archivů skutečně pronikne, je fascinován krystalickou magií.
+                        Lidská mysl však nedokáže bez následků pojmout božské vědění draka. Logan postupně propadá
+                        šílenství, přestává poznávat spojence, v amoku ze sebe strhává veškeré oblečení (kromě svého
+                        klobouku) a nakonec umírá jako nepříčetná schránka, pohlcená stejnou mánií jako kdysi samotný
+                        Seath.</p>
+
+                    <div class="weapon-card modal-weapon">
+                        <div class="weapon-info">
+                            <h2>Krystalizovaná Hůl z Cínu(Tin Crystallization Catalyst)</h2>
+                            <div class="weapon-lore-wrapper">
+                                <div class="weapon-lore-inner">
+                                    <p>Zbraň, kterou po sobě zcela šílený Logan zanechal ve věži Vévodových archivů. Jde
+                                        o vrcholný čarodějný nástroj, který drasticky zvyšuje poškození magií, ale za
+                                        obrovskou cenu: snižuje počet použití všech kouzel na polovinu. Přesně to odráží
+                                        Loganovo propadnutí bezohledné síle krystalů na úkor vlastní příčetnosti.</p>
+                                    <p><em><i class="fa fa-quote-left"></i> Katalyzátor vytvořený Loganem Velkým
+                                            kloboukem během jeho pádu do šílenství. Krystaly Bezšupinatého Seatha
+                                            propojily čarodějnictví s alchymií. Tento nástroj sice nabízí nesmírnou,
+                                            ničivou moc, ale vybírá si krutou daň na samotné mysli svého uživatele. <i
+                                                class="fa fa-quote-right"></i></em></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weapon-visual">
+                            <img src="img/DS1/crystallization_catalyst.png" alt="Tin Crystallization Catalyst">
                         </div>
                     </div>
                 </div>
@@ -835,32 +894,27 @@
             <div class="char-modal-content">
                 <span class="close-modal"><i class="fa fa-times"></i></span>
 
-                <!-- Sem JS doplní obrázek a text podle toho, na koho se klikne -->
                 <div class="modal-left">
                     <img id="modal-img" src="" alt="Character Detail">
                 </div>
                 <div class="modal-right">
                     <h2 id="modal-title"></h2>
                     <div id="modal-desc">
-                        <!-- Zde se objeví detailní text -->
                     </div>
                 </div>
             </div>
         </div>
         </div>
 
-        <!-- Nadpis sekce lokací -->
         <section class="content-section" style="width: auto; margin-bottom: 0;" id="lokace">
-            <h2>Ztracené kouty Drangleicu</h2>
+            <h2>Ztracené kouty Lordranu</h2>
         </section>
 
-        <!-- Seznam lokací -->
         <section class="locations-list">
 
-            <!-- Lokace: Majula -->
             <!-- Lokace 1: Undead Asylum -->
             <div class="location-card">
-                <div class="location-bg" style="background-image: url('img/DS1/undead_asylum_bg.jpg');"></div>
+                <div class="location-bg" style="background-image: url('img/DS1/asylum.jpg');"></div>
 
                 <div class="location-content">
                     <h2>Útočiště Nemrtvých (Undead Asylum)</h2>
@@ -889,7 +943,7 @@
 
             <!-- Lokace 2: Firelink Shrine -->
             <div class="location-card">
-                <div class="location-bg" style="background-image: url('img/DS1/firelink_shrine_bg.jpg');"></div>
+                <div class="location-bg" style="background-image: url('img/DS1/firelink_shrine.webp');"></div>
 
                 <div class="location-content">
                     <h2>Svatyně Spojení Ohně (Firelink Shrine)</h2>
@@ -917,7 +971,7 @@
 
             <!-- Lokace 3: Sen's Fortress -->
             <div class="location-card">
-                <div class="location-bg" style="background-image: url('img/DS1/sens_fortress_bg.jpg');"></div>
+                <div class="location-bg" style="background-image: url('img/DS1/sens_fortress.jpg');"></div>
 
                 <div class="location-content">
                     <h2>Senova Pevnost (Sen's Fortress)</h2>
@@ -944,7 +998,7 @@
 
             <!-- Lokace 4: Anor Londo -->
             <div class="location-card">
-                <div class="location-bg" style="background-image: url('img/DS1/anor_londo_bg.jpg');"></div>
+                <div class="location-bg" style="background-image: url('img/DS1/Anorlondo.png');"></div>
 
                 <div class="location-content">
                     <h2>Anor Londo, Město Bohů</h2>
@@ -972,7 +1026,7 @@
 
             <!-- Lokace 5: Darkroot Garden -->
             <div class="location-card">
-                <div class="location-bg" style="background-image: url('img/DS1/darkroot_garden_bg.jpg');"></div>
+                <div class="location-bg" style="background-image: url('img/DS1/darkroot.jpg');"></div>
 
                 <div class="location-content">
                     <h2>Zahrada Tmavých Kořenů (Darkroot Garden)</h2>
@@ -998,7 +1052,7 @@
 
             <!-- Lokace 6: Oolacile Township -->
             <div class="location-card">
-                <div class="location-bg" style="background-image: url('img/DS1/oolacile_township_bg.jpg');"></div>
+                <div class="location-bg" style="background-image: url('img/DS1/Oolacile_township.webp');"></div>
 
                 <div class="location-content">
                     <h2>Město Oolacile (Oolacile Township)</h2>
@@ -1027,7 +1081,7 @@
 
             <!-- Lokace 7: Chasm of the Abyss -->
             <div class="location-card">
-                <div class="location-bg" style="background-image: url('img/DS1/chasm_of_the_abyss_bg.jpg');"></div>
+                <div class="location-bg" style="background-image: url('img/DS1/chasm.jpg');"></div>
 
                 <div class="location-content">
                     <h2>Propast Temnoty (Chasm of the Abyss)</h2>
@@ -1055,7 +1109,7 @@
 
             <!-- Lokace 8: Kiln of the First Flame -->
             <div class="location-card">
-                <div class="location-bg" style="background-image: url('img/DS1/kiln_of_the_first_flame_bg.jpg');">
+                <div class="location-bg" style="background-image: url('img/DS1/Kiln.webp');">
                 </div>
 
                 <div class="location-content">
@@ -1089,165 +1143,154 @@
             <h2>Zbraně a předměty, které stojí za zmínku</h2>
         </section>
 
-        <section class="weapon-list">
-            <div class="weapon-card">
-                <div class="weapon-info">
-                    <h2>Meč tavírny (Smelter Sword)</h2>
-                    <div class="weapon-lore-wrapper">
-                        <div class="weapon-lore-inner">
-                            <p>Jedna z vizuálně nejvýraznějších zbraní ve hře. Vznikla ze Zvrácené duše Démonské tavírny
-                                (Smelter Demon), mocného golema ze Železné bašty, jehož tělo ožilo, když se do něj
-                                přelila roztavená láva z hlubin země.</p>
-                            <p>Tento kolosální meč způsobuje masivní poškození ohněm. Při těžkém útoku navíc čepel
-                                vzplane ničivým výbuchem, který sice ničí odolnost samotné zbraně, ale dokáže zpopelnit
-                                cokoliv v dosahu.</p>
-                            <p><em><i class="fa fa-quote-left"></i> Starý Železný Král využíval
-                                    neuvěřitelných mas železa k vybudování svého ohnivého panství. Tento meč patřil
-                                    démonické bytosti z nitra země, která na oplátku zničila jeho samotného. <i
-                                        class="fa fa-quote-right"></i></em></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="weapon-visual">
-                    <img src="img/DS2/smelter_sword.png" alt="Smelter Sword">
-                </div>
-            </div>
-
-            <!-- Zbraň 2: Santier's Spear -->
-            <div class="weapon-card">
-                <div class="weapon-info">
-                    <h2>Santierovo kopí (Santier's Spear)</h2>
-                    <div class="weapon-lore-wrapper">
-                        <div class="weapon-lore-inner">
-                            <p>Jedna z nejunikátnějších mechanik v celé Soulsborne historii. Santierovo kopí zpočátku
-                                vypadá jako obrovská halapartna s masivním kamenem naraženým na čepeli. Hýbe se
-                                těžkopádně a ubírá málo života.</p>
-                            <p>Pokud však hráč tuto zbraň úmyslně používá tak dlouho, dokud nesníží její odolnost
-                                (durability) na absolutní nulu, kámen na špičce praskne. Zbraň se nezničí, ale naopak se
-                                odhalí její pravá čepel! Od té chvíle získá nekonečnou odolnost a jeden z nejrychlejších
-                                a nejsmrtelnějších pohybových setů v celé hře (kombinuje pohyby kopí, meče a
-                                halapartny).</p>
-                            <p><em><i class="fa fa-quote-left"></i> Halapartna pojmenovaná po
-                                    Santierovi, obávaném válečníkovi z předvoje. Na její špičku byla naražena obrovská
-                                    socha, jež zbrani dodává masivní váhu. Nikdo dnes už netuší, zdali to mělo sloužit
-                                    jako vylepšení, nebo jako trest pro toho, kdo ji nosil. <i
-                                        class="fa fa-quote-right"></i></em></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="weapon-visual">
-                    <img src="img/DS2/santier_spear.png" alt="Santier's Spear">
-                </div>
-            </div>
-
-            <div class="weapon-card">
-                <div class="weapon-info">
-                    <h2>Yorghovo kopí (Yorgh's Spear)</h2>
-                    <div class="weapon-lore-wrapper">
-                        <div class="weapon-lore-inner">
-                            <p>Tato ohromná zbraň (z DLC Crown of the Sunken King) vypráví příběh o lidské aroganci. Sir
-                                Yorgh, vůdce elitních Drakokrevných rytířů, vtrhl do podzemního svatého města Shulva.
-                                Toto město uctívalo dřímajícího draka Sinha. Yorgh, hnaný touhou po dračí krvi,
-                                dřímající bestii tímto samotným kopím probodl.</p>
-                            <p>Místo moci však nalezl jen zkázu. Rána neprobodla drakovo srdce, ale uvolnila obrovský
-                                oblak smrtelného jedu, který se v drakovi hromadil po staletí. Jed okamžitě vyhubil celé
-                                město Shulva i samotného Yorgha, jehož mrtvola a kopí zůstaly zapíchnuté v hrudi draka
-                                jako trpká připomínka jeho chamtivosti. Mechanicky jde o naprostý unikát – zbraň plynule
-                                kombinuje pohyby kopí, halapartny a obouručního meče.</p>
-                            <p><em><i class="fa fa-quote-left"></i> Kopí Sira Yorgha, který jím
-                                    probodl dřímajícího draka Sinha. Drak ale na oplátku ze sebe vyvrhl zkázu a potopil
-                                    celé město do smrtícího miasmatu. <i class="fa fa-quote-right"></i></em></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="weapon-visual">
-                    <img src="img/DS2/yorghs_spear.png" alt="Yorgh's Spear">
-                </div>
-            </div>
-
-            <!-- Zbraň 4: Moonlight Greatsword -->
-            <div class="weapon-card">
-                <div class="weapon-info">
-                    <h2>Velký meč Měsíčního svitu (Moonlight Greatsword)</h2>
-                    <div class="weapon-lore-wrapper">
-                        <div class="weapon-lore-inner">
-                            <p>Nejikoničtější zbraň celého studia FromSoftware. V kontextu Dark Souls 2 má však úžasný
-                                příběhový přesah. Lze jej vytvořit pouze z duše "Bledého draka", kterou získáte
-                                poražením obřího pavouka (Duke's Dear Freja) v režimu New Game+.</p>
-                            <p>Toto je důkaz onoho neúprosného Cyklu. Bledý drak není nikdo jiný než Seath the Scaleless
-                                z prvního Dark Souls. I když byl Seath dávno zabit, jeho esence (duše) přežila tisíce
-                                let a ovlivnila vévodu z Tseldory k podobně zvráceným experimentům. Krásným detailem hry
-                                je NPC bojovník Benhart z Juga, který třímá meč, o němž si myslí, že je to tento
-                                legendární Měsíční meč. Ve skutečnosti má jen obyčejnou, falešnou kopii, ale díky jeho
-                                neochvějné víře ve zbraň s ní dokáže bojovat jako skutečný mistr.</p>
-                            <p><em><i class="fa fa-quote-left"></i> Čepel tohoto velkého meče
-                                    září jako třpytivé paprsky měsíce. Starší verze této zbraně nesla jméno po velké
-                                    bílé bytosti, která z ní byla zrozena. <i class="fa fa-quote-right"></i></em></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="weapon-visual">
-                    <img src="img/DS2/moonlight_greatsword.png" alt="Moonlight Greatsword">
-                </div>
-            </div>
-
-            <!-- Předmět 1: Human Effigy -->
-            <div class="weapon-card">
-                <div class="weapon-info">
-                    <h2>Lidská podobizna (Human Effigy)</h2>
-                    <div class="weapon-lore-wrapper">
-                        <div class="weapon-lore-inner">
-                            <p>Zatímco v prvním díle hráči sbírali "Lidskost" (černé víly temné duše), Dark Souls 2
-                                přichází s Podobiznou. Jde o figurku upletenou ze starého proutí a temnoty. Hráč ji
-                                nemačká ani nepohlcuje; hra jasně uvádí, že se do ní hrdina "zadívá", aby si připomněl,
-                                kým vlastně je.</p>
-                            <p>Tento drobný herní detail mistrovsky podporuje ústřední téma ztráty paměti a demence.
-                                Kletba Nemrtvých v Drangleicu vám nebere jen tělo, bere vám vaši identitu. Panenka
-                                slouží jako psychologická kotva. Když do ní Nositel Klenby pohlédne, uvidí v jejím
-                                prázdném obličeji odraz svých vlastních rysů, což ho na chvíli ukotví v realitě a vrátí
-                                mu jeho lidskou podobu i plné zdraví.</p>
-                            <p><em><i class="fa fa-quote-left"></i> Teplá, měkká podobizna
-                                    připomínající stín. Pohlédni do ní pečlivě a začne na sebe brát lidský tvar. Záleží
-                                    jen na tvé vlastní mysli, čí tvář se v ní nakonec objeví. <i
-                                        class="fa fa-quote-right"></i></em></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="weapon-visual">
-                    <img src="img/DS2/human_effigy.png" alt="Human Effigy">
-                </div>
-            </div>
-
-            <!-- Předmět 2: Bonfire Ascetic -->
-            <div class="weapon-card">
-                <div class="weapon-info">
-                    <h2>Askeze ohniště (Bonfire Ascetic)</h2>
-                    <div class="weapon-lore-wrapper">
-                        <div class="weapon-lore-inner">
-                            <p>Jeden z nejinovativnějších, ale zároveň nejnebezpečnějších herních předmětů, který se
-                                objevil pouze v Dark Souls 2. Vhozením Askeze do ohniště hráč nenávratně posune danou
-                                lokaci do obtížnosti "New Game +". Znovu tak oživí poražené bosse, obnoví poklady, ale
-                                všechny nepřátele učiní mnohonásobně silnějšími.</p>
-                            <p>Z hlediska příběhu jde o fantastickou aplikaci "prostorové a temporální anomálie", o
-                                které jsme mluvili výše. V univerzu Souls jsou Ohniště (Bonfires) a Plamen (Fire) úzce
-                                spjaty se samotným časem. Vhozením Askeze hráč v podstatě "zrychlí cyklus" nebo uměle
-                                zmanipuluje čas v jedné konkrétní oblasti. Zahrává si s chodem světa jen proto, aby
-                                získal více duší, čímž sám sebe odsuzuje k mnohem těžším překážkám. Je to riziko
-                                plynoucí z čiré lidské chamtivosti.</p>
-                            <p><em><i class="fa fa-quote-left"></i> Vhozením do ohniště posílíte
-                                    nejbližší plameny. Oheň vytvoří spojnici s ostatními plameny a ty začnou žhnout
-                                    nesmírnou silou. Pamatujte, co se stane, nelze vzít zpět. Buďte připraveni. <i
-                                        class="fa fa-quote-right"></i></em></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="weapon-visual">
-                    <img src="img/DS2/bonfire_ascetic.png" alt="Bonfire Ascetic">
-                </div>
+        <section class="content-section" style="width: auto; margin-bottom: 0;">
+            <h2>Arzenál Lordranu</h2>
         </section>
+
+        <section class="weapon-list">
+
+            <!-- Předmět 1: Elite Knight Set -->
+            <div class="weapon-card">
+                <div class="weapon-info">
+                    <h2>Zbroj elitního rytíře (Elite Knight Set)</h2>
+                    <div class="weapon-lore-wrapper">
+                        <div class="weapon-lore-inner">
+                            <p>Tato zbroj je bezpochyby tou nejznámější siluetou v celé historii Dark Souls – byla tváří
+                                obalu hry i propagačních materiálů. Najdete ji pohozenou v Zahradě tmavých kořenů,
+                                střeženou kamennými obry, což ukazuje na osud mnoha hrdinů z domoviny Astory. Vydali se
+                                do Lordranu s vysokými ideály, jen aby zemřeli dříve, než vůbec dorazili ke Zvonům
+                                probuzení.</p>
+                            <p>Zbroj dokonale reprezentuje estetiku hry. Je praktická, těžká a odolná. Její majitel,
+                                pravděpodobně šlechtic, na sobě nese potrhaný, modrý plášť a zbroj poškrábanou bezpočtem
+                                bitev. Původně patřila Oscarovi z Astory (rytíři z Útočiště), a stala se nekorunovaným
+                                vizuálním standardem, kterým se definuje "Vyvolený Nemrtvý".</p>
+                            <p><em><i class="fa fa-quote-left"></i> Zbroj bezejmenného rytíře, snad elitního člena řádu
+                                    z Astory. Její opotřebování vypráví příběh o mnoha těžkých bitvách. Ačkoliv byla
+                                    ukována z tvrdého kovu, nakonec ani ona nedokázala svého majitele uchránit před
+                                    prokletím Nemrtvých. <i class="fa fa-quote-right"></i></em></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-visual">
+                    <img src="img/DS1/Elite_Knight_Helm.webp" alt="Elite Knight Set">
+                </div>
+            </div>
+
+            <!-- Zbraň 2: Velka's Rapier -->
+            <div class="weapon-card">
+                <div class="weapon-info">
+                    <h2>Rapír Velky (Velka's Rapier)</h2>
+                    <div class="weapon-lore-wrapper">
+                        <div class="weapon-lore-inner">
+                            <p>Zbraň patřící kultu Velky, Bohyně hříchu a noci. Tato tajemná postava se v Lordranu nikdy
+                                fyzicky neobjeví, a přesto je její vliv cítit na každém kroku. Velka byla obávaná
+                                dokonce i samotnými bohy, protože jako jediná měla právo a moc soudit a trestat jejich
+                                přečiny.</p>
+                            <p>Její rapír najdete ukrytý ve vymalovaném světě Ariamisu, mrazivém vězení pro všechno,
+                                čeho se bohové báli. Zbraň se chová velmi neobvykle – přestože jde o rapír určený k
+                                bodání, jeho čepel nezpůsobuje téměř žádné fyzické poranění. Naopak, slouží jako
+                                hromosvod pro okultní (temnou) magii, což z něj činilo dokonalý nástroj pro popravu
+                                božských bytostí a jejich ochránců.</p>
+                            <p><em><i class="fa fa-quote-left"></i> Zvláštní rapír užívaný pardonalisty, služebníky
+                                    Velky, Bohyně hříchu. Je protkán okultní mocí. Jeho čepel neslouží k prostému
+                                    probodnutí masa; je navržena tak, aby pronikla až k samotné duši a ztrestala ty,
+                                    kteří se provinili proti božským zákonům. <i class="fa fa-quote-right"></i></em></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-visual">
+                    <img src="img/DS1/velkas_rapier.png" alt="Velka's Rapier">
+                </div>
+            </div>
+
+            <!-- Zbraň 3: Dragon Tooth -->
+            <div class="weapon-card">
+                <div class="weapon-info">
+                    <h2>Zub draka (Dragon Tooth)</h2>
+                    <div class="weapon-lore-wrapper">
+                        <div class="weapon-lore-inner">
+                            <p>Nejde vlastně o vykovanou zbraň, ale doslova o vyrvaný, masivní zub Věčného draka. Tuto
+                                hrozivou zbraň třímal Skála Havel (Havel the Rock), vojevůdce a věrný přítel Lorda
+                                Gwyna, který na bitevním poli naháněl hrůzu svou kamennou zbrojí a nesmiřitelnou
+                                nenávistí k drakům i mágům (obzvláště k Seathovi).</p>
+                            <p>Tato zbraň demonstruje hrubou, prapůvodní sílu úsvitu věků. Nelze ji poškodit, zlomit ani
+                                otupit ohněm či rzí, a nositeli navíc poskytuje pasivní magickou odolnost. Úder Zubu
+                                draka nezpůsobuje řezné rány; cokoliv se mu připlete do cesty, je jednoduše slisováno do
+                                země pod nezměrnou drtivou váhou samotné nesmrtelnosti.</p>
+                            <p><em><i class="fa fa-quote-left"></i> Ohromná zbraň vytržená z čelisti Prastarého draka,
+                                    ponechaná bez jakýchkoliv úprav. Patřila Skále Havlovi. Tato zbraň v sobě stále
+                                    ukrývá nesmírnou moc dračích předků a uděluje držiteli vysokou odolnost proti magii
+                                    i plamenům. <i class="fa fa-quote-right"></i></em></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-visual">
+                    <img src="img/DS1/dragon_tooth.png" alt="Dragon Tooth">
+                </div>
+            </div>
+
+            <!-- Zbraň/Předmět 4: Dark Hand -->
+            <div class="weapon-card">
+                <div class="weapon-info">
+                    <h2>Temná pěst (Dark Hand)</h2>
+                    <div class="weapon-lore-wrapper">
+                        <div class="weapon-lore-inner">
+                            <p>Jeden z nejděsivějších a narativně nejdůležitějších artefaktů ve hře. Využívají ho Temní
+                                přízraci (Darkwraiths) v ruinách Nového Londa, bývalí rytíři, kteří zešíleli po tom, co
+                                je had Kaathe naučil zvrácenému umění manipulace s Prázdnotou.</p>
+                            <p>Temná pěst má dvě naprosto rozdílné funkce. Při použití jako štít vyvolá éterický disk,
+                                který dokáže pohltit téměř jakékoliv fyzické či magické poškození. Její skutečná hrůza
+                                však tkví v jejím útočném postoji. Silným útokem se nositel přisaje na obličej oběti a
+                                hrubou silou Propasti z ní vysaje její Lidskost (Humanity). Tento předmět doslova
+                                ztělesňuje podstatu prázdnoty – černé díry, která se touží naplnit cizí duší.</p>
+                            <p><em><i class="fa fa-quote-left"></i> Zbraň Temných přízraků. Otevírá temnou trhlinu,
+                                    která vyvolá nezničitelný štít z prázdnoty. Je to umění předané samotným Prapůvodním
+                                    Hadem, které umožňuje vytrhnout oběti Lidskost přímo z jejího těla. <i
+                                        class="fa fa-quote-right"></i></em></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-visual">
+                    <img src="img/DS1/Dark_Hand.webp" alt="Dark Hand">
+                </div>
+            </div>
+
+            <!-- Zbraň 5: Avelyn -->
+            <div class="weapon-card">
+                <div class="weapon-info">
+                    <h2>Avelyn</h2>
+                    <div class="weapon-lore-wrapper">
+                        <div class="weapon-lore-inner">
+                            <p>Tato mistrovská mechanická zbraň leží ukrytá na samém vrcholku tajných polic ve
+                                Vévodových archivech. Na první pohled se jeví jen jako obyčejná kuše, její mechanismus
+                                je však na poměry Lordranu neuvěřitelně pokročilý, připomínající spíše renesanční
+                                vynálezy (podobně jako hudební nástroje, po kterých je zbraň navržena).</p>
+                            <p>Díky důmyslnému pákovému systému dokáže Avelyn vystřelit tři smrtící šipky ve zlomku
+                                vteřiny, jako primitivní kulomet. Těžkost jejího nalezení i její dokonalé inženýrství
+                                podtrhuje fakt, že Vévodovy archivy nebyly jen doménou krystalické magie, ale také
+                                místem schraňování těch největších technologických vynálezů světa před tím, než jejich
+                                strážce (Seatha) zcela pohltilo šílenství.</p>
+                            <p><em><i class="fa fa-quote-left"></i> Extrémně vzácná opakovací kuše, mistrovské dílo
+                                    zhotovené neznámým řemeslníkem. Mechanismus pro rychlou střelbu dělá tuto zbraň
+                                    velice komplexní. Byla nalezena ve Vévodových archivech, a pravděpodobně ukryta
+                                    někým, kdo si cenil její estetické, téměř až hudební krásy. <i
+                                        class="fa fa-quote-right"></i></em></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-visual">
+                    <img src="img/DS1/avelyn.png" alt="Avelyn Crossbow">
+                </div>
+            </div>
+
         </section>
     </main>
 
+    <script>
+        const MUSIC_FILE = "audio/DARKSOULS1.mp3";
+        const ON_ICON = "audio/note1.svg";
+        const OFF_ICON = "audio/note-slash1.svg";
+    </script>
     <script src="js/script.js"></script>
 
 </body>

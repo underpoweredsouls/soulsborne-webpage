@@ -1,14 +1,3 @@
-/* prettier-ignore */
-/* .characters-grid .char-card:last-of-type {
-  grid-column: if(
-    media(max-width: 900px): auto;
-    media(max-width: 1355px): 1/3;
-    media(max-width: 1825px): 2/3; 
-    media(max-width: 2285px): 2/4; 
-    media(min-width: 2285px): auto; 
-  );
-} */
-
 /* Proměnné, základní nastavení */
 @font-face {
   font-family: CinzelDecorative;
@@ -36,7 +25,7 @@
 
 ::-webkit-scrollbar {
   background-color: #0c0b0b;
-  margin: 0;
+  display: none;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -56,6 +45,7 @@ h3 {
   text-align: center;
   font-weight: normal;
   font-family: CinzelDecorative;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 a {
@@ -65,12 +55,7 @@ a {
 }
 
 a:hover {
-  color: rgb(255, 224, 140) !important;
-}
-
-/* JS třídy */
-.dissappear {
-  display: none;
+  color: rgb(255, 224, 140);
 }
 
 /* Pozadí */
@@ -78,11 +63,12 @@ a:hover {
   height: 100vh;
   width: 100%;
   background-size: cover;
-  background-position: center center;
+  background-position: center;
   position: fixed;
   top: 0;
   opacity: 0.15;
   z-index: -20;
+  transition: opacity 1s var(--transition) 0.25s;
 }
 
 /* Globální */
@@ -93,6 +79,8 @@ h3,
 .fa.fa-times,
 .fa.fa-home,
 .fa.fa-bars,
+.fa.fa-eye,
+.fa.fa-eye-slash,
 .author,
 .close-modal,
 .weapon-lore-inner > p:last-of-type,
@@ -102,6 +90,16 @@ h3,
   -webkit-background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
+}
+
+.fa.fa-eye,
+.fa.fa-eye-slash {
+  position: fixed;
+  font-size: 32px;
+  z-index: 100;
+  bottom: 40px;
+  right: 30px;
+  cursor: pointer;
 }
 
 .fa.fa-home {
@@ -116,23 +114,29 @@ h3,
 .fa.fa-times {
   position: fixed;
   z-index: 100;
-  right: 0;
-  top: 0;
-  margin-right: 35px;
-  margin-top: 35px;
+  right: 35px;
+  top: 35px;
   font-size: 32px;
-  transition: all 0.8s var(--transition);
+  transition: color 0.8s var(--transition);
   cursor: pointer;
-  display: none;
-}
-
-.fa.fa-times {
   display: none;
 }
 
 .fa.fa-bars:hover,
 .fa.fa-times:hover {
   color: rgb(255, 224, 140);
+}
+
+#music-toggle{
+  position: fixed;
+  z-index: 100;
+  bottom: 35px;
+  right: 80px;
+  cursor: pointer;
+}
+
+#music-toggle img{
+  transition: opacity 1s var(--transition);
 }
 
 /* Header */
@@ -143,7 +147,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 5;
-  transition: all 1s var(--transition);
+  transition: opacity 1s var(--transition);
   max-height: 120px;
 }
 
@@ -158,19 +162,37 @@ header:has(.group:hover) {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  transition: opacity 0.5s var(--transition);
+  opacity: 1;
+}
+
+.row:has(#ds1:hover) .group:not(#ds1),
+.row:has(#ds2:hover) .group:not(#ds2),
+.row:has(#ds3:hover) .group:not(#ds3) {
   opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 1s ease,
+    transform 1s ease 0.5s;
+}
+
+#ds3:hover {
+  transform: translateX(-100px);
+}
+
+#ds1:hover {
+  transform: translateX(100px);
 }
 
 .group {
+  align-items: center;
+  justify-content: center;
   display: flex;
-  gap: 0;
-  cursor: pointer;
-  transition: gap 0.8s var(--transition);
-}
-
-.group:hover {
-  gap: 5px;
+  overflow: hidden;
+  max-width: var(--item-width);
+  opacity: 1;
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
 }
 
 .item {
@@ -192,36 +214,32 @@ header:has(.group:hover) {
   max-width: 0;
   opacity: 0;
   transition:
-    max-width 0.8s var(--transition),
-    opacity 0.8s var(--transition);
+    max-width 1.1s var(--transition),
+    opacity 0.3s ease;
 }
 
-.group:hover .item.prime {
-  max-width: 300px;
+.item.prime.mobile {
+  display: none;
+  opacity: 0;
+}
+
+.group:hover > .item.prime {
+  max-width: 700px;
   opacity: 1;
-}
-
-#souls:hover .item.prime {
-  max-width: 500px;
-}
-
-#ER {
-  transition: all 1s var(--transition);
-}
-
-.darkSouls img {
-  width: var(--item-width);
-  max-width: none;
-  object-fit: cover;
-  object-position: left center;
 }
 
 /* Main */
 main {
-  margin-left: 45px;
+  margin-right: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: all 1s var(--transition);
+}
+
+.main-hidden {
+  opacity: 0 !important;
+  pointer-events: none;
 }
 
 /* Citát */
@@ -273,6 +291,10 @@ main {
   text-shadow: 1px 1px 2px;
 }
 
+.quote a {
+  font-family: CinzelNormal;
+}
+
 .author {
   font-family: CinzelDecorative;
   margin-left: 20px;
@@ -298,7 +320,7 @@ main {
   position: fixed;
   left: 0;
   width: 80px;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 10%);
   align-items: center;
   justify-content: space-evenly;
   background-color: #0c0b0b;
@@ -318,14 +340,14 @@ main {
 }
 
 .sidebar div:last-of-type a {
-  margin-bottom: 40px;
+  margin-top: 20px;
 }
 
 .tooltip {
   z-index: 500;
   position: absolute;
   left: 150%;
-  top: 20%;
+  top: 50%;
   transform: translateY(-50%);
   background: var(--gradient, #ff8400);
   color: #000000;
@@ -346,7 +368,7 @@ main {
   left: 130%;
 }
 
-/* --- OBECNÉ SEKCE S TEXTEM --- */
+/* sekce s textem */
 .content-section {
   position: relative;
   max-width: 900px;
@@ -365,23 +387,22 @@ main {
   text-align: justify;
 }
 
-/*  Herní karty */
+/*  herní karty */
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 550px);
+  grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
   justify-content: center;
   gap: 30px;
   max-width: 1200px;
   margin: 40px auto;
 }
 
-.cards-grid:has(> :last-child:nth-child(odd)) > .menu-card:last-of-type {
-  left: 50%;
-}
-
+.cards-grid:has(> :last-child:nth-child(odd)) > .menu-card:last-of-type,
 .select:has(:last-child:nth-child(odd)) div:last-of-type {
-  position: relative;
-  left: 50%;
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: 100%;
+  max-width: 550px;
 }
 
 .menu-card {
@@ -415,7 +436,9 @@ main {
   background-position: center;
   opacity: 0.8;
   z-index: -1;
-  transition: opacity 0.8s var(--transition);
+  transition:
+    opacity 0.8s var(--transition),
+    filter 2s var(--transition);
 }
 
 .menu-card.is-open.menu-card::before {
@@ -453,14 +476,11 @@ main {
 
 .buttonHeader > span {
   font-family: CinzelDecorative;
-  scale: 1.25;
-  transform: if(media(width>500px): translateX(10px));
-  margin: if(media(width<500px): auto);
+  transform: scale(1.25) translateX(10px);
 }
 
 .fa.fa-chevron-down {
   transition: transform 1s var(--transition);
-  visibility: if(media(width < 500px): hidden);
 }
 
 .select {
@@ -477,22 +497,19 @@ main {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
-.select > div:first-of-type > a,
-.select > div:first-of-type > a:hover {
-  color: #d3d3d3 !important;
-}
-
-/* Herní karty specifická pozadí a barvy */
-
 /* prettier-ignore */
 #DarkSoulsCard1::before { content: ""; background-image: url(../img/DS1/gwynbg.jpeg); } /* prettier-ignore */
-#DarkSoulsCard2::before { content: ""; background-image: url(../img/DS2/cardbackground.png); } /* prettier-ignore */
+#DarkSoulsCard2::before { content: ""; background-image: url(../img/DS2/sitebackground.jpg); } /* prettier-ignore */
 #DarkSoulsCard3::before { content: ""; background-image: url(../img/DS3/DS3.jpg); } /* prettier-ignore */
 #DarkSoulsCard1 .select>div>a { color: #ff7700; } /* prettier-ignore */
-#DarkSoulsCard2 .select>div>a { color: rgb(134, 116, 116); } /* prettier-ignore */
+#DarkSoulsCard1 .select>div>a:hover { color: #ffd000; } /* prettier-ignore */
+#DarkSoulsCard2 .select>div>a { color: rgb(12, 104, 138); } /* prettier-ignore */
+#DarkSoulsCard2 .select>div>a:hover { color: rgb(81, 196, 238);} /* prettier-ignore */
 #DarkSoulsCard3 .select>div>a { color: #ffc400; } /* prettier-ignore */
+#DarkSoulsCard3 .select>div>a:hover { color: #ffee00; } /* prettier-ignore */
 
-/* Grid a karty postav */
+/* character grid a karty */
+
 .characters-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -505,6 +522,7 @@ main {
 .char-card {
   position: relative;
   height: 320px;
+  max-width: 300px;
   border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
@@ -552,7 +570,6 @@ main {
   font-style: italic;
 }
 
-/* Hover efekty karty */
 .char-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
@@ -567,7 +584,6 @@ main {
   transform: translateY(0);
 }
 
-/* Modální okno */
 .char-modal {
   position: fixed;
   top: 0;
@@ -607,7 +623,7 @@ main {
 }
 
 .modal-right::-webkit-scrollbar {
-  display: none;
+  display: inline;
 }
 
 .char-modal.active .char-modal-content {
@@ -630,7 +646,6 @@ main {
 
 .modal-left {
   flex: 1;
-  object-position: right !important;
 }
 
 .modal-left img {
@@ -653,8 +668,7 @@ main {
   padding-bottom: 15px;
 }
 
-/* Lokace */
-
+/* lokace */
 .locations-list {
   display: flex;
   flex-direction: column;
@@ -695,20 +709,17 @@ main {
   box-shadow: 0 10px 30px rgba(235, 235, 235, 0.144);
 }
 
-/* Obrázek na pozadí */
 .location-bg {
   position: absolute;
   inset: 0;
   background-size: cover;
   background-position: center;
-  /* Ztmavíme obrázek, aby byl text čitelný */
   opacity: 0.3;
   filter: grayscale(30%);
   transition: all 1s var(--transition);
   z-index: 0;
 }
 
-/* Obal pro text (musí být nad obrázkem) */
 .location-content {
   position: relative;
   z-index: 1;
@@ -723,7 +734,6 @@ main {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
-/* Malá nápověda, že lze kliknout */
 .view-hint {
   display: block;
   font-size: 14px;
@@ -733,7 +743,6 @@ main {
   transition: color 0.3s;
 }
 
-/* Animace výšky textu (stejný trik jako u zbraní) */
 .location-lore-wrapper {
   display: grid;
   grid-template-rows: 0fr;
@@ -748,31 +757,29 @@ main {
   text-align: justify;
   line-height: 1.6;
   padding-top: 15px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9); /* Důležité pro čitelnost na obrázku */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
 }
 
-/* Hover efekt pro rozbalení */
 .location-card:hover .location-lore-wrapper {
   grid-template-rows: 1fr;
   opacity: 1;
 }
 
-/* --- TŘÍDA PRO "VIEW MODE" (Přepínaná přes JS) --- */
 .location-card.view-mode {
-  border: 2px solid rgba(255, 255, 255, 0);
+  border-color: transparent;
 }
 
 .location-card.view-mode .location-content {
-  opacity: 0; /* Schová text, ale nezmenší kartu! */
+  opacity: 0;
 }
 
 .location-card.view-mode .location-bg {
-  opacity: 1; /* Plně rozsvítí obrázek */
+  opacity: 1; 
   filter: grayscale(0%);
-  transform: scale(1.025); /* Lehký dramatický zoom */
+  transform: scale(1.025);
 }
 
-/* Zbraně */
+/* zbraně */
 .weapon-list {
   display: flex;
   flex-direction: column;
@@ -782,35 +789,35 @@ main {
 }
 
 .weapon-card {
-  background: #000000;
   background: linear-gradient(
     45deg,
     rgba(0, 0, 0, 1) 0%,
     rgba(33, 33, 33, 1) 100%
   );
   margin: 15px auto;
-  background-color: #0c0b0bc7;
   border-radius: 12px;
   border: 1px solid #333;
-  width: 100%;
+  max-width: 80%;
   min-height: 120px;
   padding: 25px 30px;
-
   display: flex;
   gap: 30px;
   position: relative;
-
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
   transition:
     border-color 0.5s ease,
     box-shadow 0.5s ease;
 }
 
-.weapon-card:hover {
-  border-color: var(--gradient);
-  box-shadow: 0 10px 30px var(--gradient);
-  background-color: #0c0b0b;
+.weapon-card:last-of-type {
+  margin-bottom: 50px;
 }
+
+.weapon-card:hover {
+  border-color: rgb(255, 255, 255);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.5);
+}
+
 .weapon-info {
   flex: 1;
   display: flex;
@@ -845,6 +852,7 @@ main {
   width: 200px;
   flex-shrink: 0;
   position: relative;
+  overflow: hidden;
 }
 
 .weapon-visual img {
@@ -852,11 +860,9 @@ main {
   object-fit: contain;
   position: absolute;
   right: 0;
-
   top: 0;
   transform: translateY(0) scale(0.8);
   transform-origin: top right;
-
   max-height: 225px;
   transition: all 0.6s var(--transition);
   transition-delay: 0s;
@@ -880,86 +886,26 @@ main {
 .modal-weapon {
   max-width: 100% !important;
   margin-top: 30px !important;
+
   border: none;
 }
 
-@media (max-width: 1700px) {
-  .fa.fa-bars,
-  .fa.fa-times {
-    display: inline;
-  }
-
-  header {
-    max-height: 100px;
-  }
-
-  .row {
-    pointer-events: none;
-    display: grid;
-    grid-template-rows: auto auto;
-    grid-template-columns: auto auto;
-  }
-
-  .item img {
-    height: 60px;
-  }
-
-  #SSDT {
-    transition: transform 1s var(--transition);
-  }
-
-  #souls:hover + .group + .group {
-    position: relative;
-    transform: translateX(33%);
-  }
-
-  .sidebar {
-    height: calc(100vh - 100px);
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1536px) {
-  .group {
-    transition: transform 0.8s var(--transition);
-  }
-
-  .row:has(#SSDT:hover) #souls {
-    transform: translateX(25%);
-  }
-
-  .row:has(#ER:hover) #BB,
-  .row:has(#BB:hover) #ER {
-    transform: translateX(27%);
-  }
-}
-
 @media (max-width: 1200px) {
-  #souls:hover + .group + .group,
-  #BB:hover + .group + .group {
-    transform: translateX(25%);
+ #music-toggle{
+  bottom: 80px;
+  right: 35px;
+ }
+
+  main {
+    margin-left: 70px;
   }
 
-  #souls:hover {
-    display: grid;
-    grid-template-areas:
-      "dark dark"
-      "demon dsouls";
-    gap: 5px;
+  #ds3:hover {
+    transform: translateX(-50px);
   }
 
-  #souls > #item {
-    grid-area: demon;
-    justify-self: end;
-  }
-
-  #souls > .item.main {
-    grid-area: dsouls;
-    justify-self: start;
-  }
-
-  #souls > .darkSouls {
-    grid-area: dark;
-    justify-self: center;
+  #ds1:hover {
+    transform: translateX(50px);
   }
 
   .quotewrap {
@@ -977,10 +923,6 @@ main {
 
   .menu-card {
     max-width: 70vw;
-  }
-
-  .cards-grid:has(> :last-child:nth-child(odd)) > .menu-card:last-of-type {
-    left: 0;
   }
 
   .weapon-card {
@@ -1009,6 +951,40 @@ main {
 }
 
 @media (max-width: 768px) {
+  .row:has(#ds1:hover) .group:not(#ds1),
+  .row:has(#ds2:hover) .group:not(#ds2),
+  .row:has(#ds3:hover) .group:not(#ds3) {
+    opacity: 0.5;
+  }
+
+  .group {
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+  }
+
+  .item.prime.mobile {
+    display: block;
+    transition: all 1s var(--transition)
+  }
+
+  .group:hover > .item.prime.mobile {
+    opacity: 1;
+    max-width: 400px;
+    max-height: 200px;
+    transition: all 1s var(--transition)
+  }
+
+  .item.prime {
+    display: none;
+    max-height: 0;
+  }
+
+  .fa.fa-bars,
+  .fa.fa-times {
+    display: inline;
+  }
+
   .fa.fa-home {
     top: 10px;
     left: 9px;
@@ -1044,8 +1020,11 @@ main {
     pointer-events: all;
   }
 
-  #souls:hover + .group + .group,
-  #BB:hover + .group + .group {
+  #ds3:hover {
+    transform: translateX(0);
+  }
+
+  #ds1:hover {
     transform: translateX(0);
   }
 
@@ -1065,7 +1044,7 @@ main {
   }
 
   .sidebar div a {
-    font-size: 20px;
+    font-size: 25px;
   }
 
   .cards-grid {
@@ -1101,5 +1080,15 @@ main {
 
   .modal-right {
     padding: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .buttonHeader > span {
+    margin: auto;
+  }
+
+  .fa.fa-chevron-down {
+    visibility: hidden;
   }
 }
